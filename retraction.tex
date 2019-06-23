@@ -1,0 +1,201 @@
+\documentclass[oneside,a4paper, 12pt]{article}
+\usepackage{anysize}
+\usepackage{retraction}
+\usepackage{biber}
+
+\hypersetup{pdftitle={Short retraction in CAT(1) space},
+pdfauthor={Alexander Lytchak and Anton Petrunin}}
+
+\begin{document}
+\title{Short retraction in CAT(1) space}
+\author{Alexander Lytchak and Anton Petrunin}
+\maketitle
+
+\begin{thm}{Theorem}\label{thm:retraction}
+Let $\spc{U}$ be a complete length $\CAT(1)$
+space.
+\begin{enumerate}[(a)]
+\item\label{thm:retraction:Phi} Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and there is a point $p\in K$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in K$.
+Then there is a short retraction 
+\[\Phi\:\spc{U}\to K.\]
+\item\label{thm:retraction:Psi} Suppose there is there is a point $p\in \spc{U}$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in \spc{U}$.
+Then there is a short retraction 
+\[\Psi\:\spc{U}\times \spc{U}\to \Delta,\]
+ where $\Delta$ is the diagonal in $\spc{U}\times \spc{U}$;
+ that is, $\Delta=\{\,(x,x)\in \spc{U}\times \spc{U}\,\}$.
+\end{enumerate}
+
+\end{thm}
+
+The theorem makes possible to extend some results from $\CAT(0)$ spaces to small $\CAT(1)$ spaces.
+It gives a more geometric version of Theorem A in \cite{yokota} which has nearly identical set of applications; see also \cite[(4.1)]{kendall}.  
+
+
+\section{Part (a)}
+
+The idea of the following construction is taken from the proof of Kirszbraun's theorem; see \cite[5.1]{akp-kirszbraun} or \cite[9.4.1]{akp}. %(\ref{thm:kirsz+}).
+
+\begin{wrapfigure}{o}{55 mm}
+\centering
+\includegraphics{mppics/pic-1}
+\caption{}\label{pic-1}
+\end{wrapfigure}
+
+\parit{Construction.}
+Set $\mathring{\spc{U}}=\Cone \spc{U}$.
+Denote by $\mathring{K}$ the subcone of $\mathring{\spc{U}}$ spanned by $K$.
+The space $\spc{U}$ is the unit sphere in $\mathring{\spc{U}}$ with angle metric;
+that is, $\spc{U}=\set{z\in \mathring{\spc{U}}}{|z|=1}$ and $|u-v|_{\spc{U}}=\measuredangle[o\,{}^u_v]$, where $o$ denotes the tip of the cone $\mathring{\spc{U}}$.
+
+Note that $\mathring{\spc{U}}$ is a $\CAT(0)$ space and $\mathring{K}$ forms a convex closed subset of $\mathring{\spc{U}}$.
+In particular, for any point $x$ there is unique point $\hat x\in \mathring{K}$
+that minimize the distance to $x$;
+that is, $|\hat x-x|=\dist_K(x)$.
+
+Consider the ray $\alpha_o\:t\mapsto t\cdot p$ in  $\mathring{\spc{U}}$.
+Note that given $s\in \mathring{\spc{U}}$
+the geodesics $[s\ t\cdot p]$ converge as $t\to\infty$ to a ray, 
+say $\alpha_s\:[0,\infty)\to \mathring{\spc{U}}$ that is parallel to $\alpha_o$.
+
+Note that if $|x|=1$, then $|\hat x|\le 1$.
+By assumption for any $k\in \mathring{K}$ the function $t\mapsto |\alpha_k(t)|$ is monotonically increasing.
+Therefore there is unique value $t_x\ge 0$ such that
+$|\alpha_{\hat x}(t_x)|=1$;
+set $x'=\alpha_{\hat x}(t_x)$ and define the map $\Phi$ as $x\mapsto x'$.
+
+Evidently $x\mapsto x'$ is a retraction of $\spc{U}$ to $K$;
+that is,
+$\Phi(x)\in K$ for any $x\in \spc{U}$
+and 
+$\Phi(k)=k$ for any $k\in K$.
+It remains to show that $x\mapsto x'$ is short; the latter is done by straightforward calculations. 
+
+
+\parit{Calculations.}
+Let us describe this map intrinsically in $\spc{U}$, without passing to the cone.
+
+Note that if $\dist_K(x)\ge\tfrac\pi2$, then $\hat x=o$ and therefore $x'=p$.
+
+Otherwise, if $\dist_K(x)<\tfrac\pi2$, %\ref{lem:closest point}, 
+there is unique point $x^*\in K$ that minimizes distance to $x$;
+that is, $|x^*-x|_{\spc{U}}=\dist_K(x)$.
+Note that $x^*=\hat x/|\hat x|$.
+Let us define $\ell_x$, $\phi_x$ and $\psi_x$ using the following identities:
+\begin{align*}
+\ell_x&=|p-x^*|_{\spc{U}},
+\\
+\phi_x&=\tfrac\pi2-|x^*-x|_{\spc{U}},
+\\
+\sin\psi_x&=\sin\phi_x\cdot\sin\ell_x, 
+\ \ 0\le \psi_x\le \tfrac\pi2.
+\intertext{Note that}
+x'&=\gamma_x(\psi_x),
+\end{align*}
+where $\gamma_x$ denoted the geodesic from $p$ to $x^*$ in $\spc{U}$.
+
+Given two points $x$ and $y$ in the $\tfrac\pi2$-neigborhood of $K$, set
+\begin{align*}
+r&=|x-y|
+&
+r'&=|x'-y'|
+\\
+d&=|x^*-y^*|
+&
+\alpha&=\angk{p}{x^*}{y^*}
+\end{align*}
+
+Note that 
+\[\cos r\le 
+\cos\phi_x\cdot\cos\phi_y
+-
+\cos d\cdot\sin\phi_x\cdot\sin\phi_y.\eqlbl{eq:cos(r)}\]
+
+Indeed, if $x,y\notin K$,
+then 
+$\mangle\hinge{x^*}{x}{y*}, 
+\mangle\hinge{y^*}{y}{x*}
+\ge 
+\tfrac\pi2$
+and
+the inequality~\ref{eq:cos(r)} follows from the Arm lemma. % (\ref{lem:arm}).
+If $x\in K$ and $y\notin K$, we get \ref{eq:cos(r)}, by angle comparison %(\ref{cat-hinge}) 
+since $\mangle\hinge{y^*}{y}{x*}\ge \tfrac\pi2$.
+The same way \ref{eq:cos(r)} is proved 
+in case $x\notin K$ and $y\in K$.
+Finally, if $x,y\in K$, $\phi_x=\phi_y=\tfrac\pi2$ and $r=d$;
+that is, the inequality trivially holds.
+
+Further note that
+\[\cos\alpha
+=
+\frac{\cos d-\cos \ell_x\cdot\cos\ell_y}{\sin\ell_x\cdot\sin\ell_y}.\]
+Applying angle-sidelength  monotonicity %(\ref{cor:monoton-cba}) 
+we get
+\[\begin{aligned}
+\cos r'&\ge
+\cos\psi_x\cdot\cos\psi_y
+-
+\cos \alpha \cdot\sin\psi_x\cdot\sin\psi_y=
+\\
+&=
+\cos\psi_x\cdot\cos\psi_y
+-(\cos d-\cos \ell_x\cdot\cos\ell_y)\cdot\sin\phi_x\cdot\sin\phi_y\ge
+\\
+&\ge \cos\psi_x\cdot\cos\psi_y
+-\cos d\cdot\sin\phi_x\cdot\sin\phi_y
+\end{aligned}
+\eqlbl{eq:cos(r')}
+\]
+
+
+Note that 
+$\psi_x\le \phi_x<\tfrac\pi2$
+and
+$\psi_y\le \phi_y<\tfrac\pi2$;
+in particular,
+\[
+\cos\phi_x\cdot\cos\phi_y\le \cos\psi_x\cdot\cos\psi_y.
+\]
+Therefore \ref{eq:cos(r)} and \ref{eq:cos(r')} implies 
+\[\cos r'\ge \cos r;\]
+that is, the restriction of $x\mapsto x'$ to the $\tfrac\pi2$-neighborhood of $K$ is short.
+Clearly the map $x\mapsto x'$ is continuous,
+since the complement of the neighborhood is mapped to $p$,
+we get that $\Phi$ is short; that is,
+\[|x'-y'|\le |x-y| \eqlbl{eq:cos=<cos}\]
+for any $x,y\in\spc{U}$.
+\qeds
+
+\section{Reduction (b) to (a)}
+
+Recall that spherical join $\spc{U}\star\spc{V}$ of two metric spaces $\spc{U}$ and $\spc{V}$
+is defined as the unit sphere equipped with the angle metric in the product of Euclidean cones $\Cone \spc{U}\times \Cone\spc{V}$.
+It can be also defined as a metric space that admits an onto map $\iota\:\spc{U}\times\spc{V}\times[0,\tfrac\pi2]\to \spc{U}\star\spc{V}$ such that
+\begin{align*}
+|\iota(u_1,v_1,t_1)&-\iota(u_2,v_2,t_2)|_{\spc{U}\star\spc{V}}=
+\\
+&=\arccos[\sin t_1\cdot\sin t_2\cdot \cos|u_1-u_2|_{\spc{U}}+\cos t_1\cdot \cos t_2\cdot \cos|v_1-v_2|_{\spc{V}}];
+\end{align*}
+abusing the notation, we assume that $\cos x=-1$ if $x\ge \pi$.
+
+From now on we will be interested in the space $\spc{U}\star\spc{U}$, where $\spc{U}$ is the space as in (\ref{thm:retraction:Psi}).
+It is straightforward to see that 
+\[|\iota(u_1,v_1,\tfrac\pi2)-\iota(u_2,v_2,\tfrac\pi2)|^2_{\spc{U}\star\spc{U}}\le |u_1-u_2|^2_{\spc{U}}+|v_1-v_2|_{\spc{U}}^2;\]
+that is, the map $(u,v)\mapsto \iota(u,v,\tfrac\pi4)$ induces a short map 
+\[\Theta\:{\tfrac1{\sqrt{2}}}\cdot(\spc{U}\times\spc{U})\to\spc{U}\star\spc{U}.\]
+(The map $\Theta$ is also length preserving, but we will not need it.)
+
+Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac1{\sqrt{2}}\cdot(\spc{U}\times\spc{U})$.
+Moreover the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving;
+in particular the image $\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
+Applying part (\ref{thm:retraction:Phi}) we get a short retraction $\spc{U}\star\spc{U}\to \Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$.
+Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
+
+
+{\small\sloppy
+
+\printbibliography[heading=bibintoc]
+
+}
+
+\end{document}
