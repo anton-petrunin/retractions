@@ -14,12 +14,11 @@ pdfauthor={Alexander Lytchak and Anton Petrunin}}
 
 \begin{abstract}
 We construct short retractions of a CAT(1) space to its convex subset.
-This construction provides an alternative geometric description of one tool introduced by Wilfrid Kendall. 
-We also show how to apply it to Dirichlet problem and its relatives.
+This construction provides an alternative geometric description of a tool introduced by Wilfrid Kendall.
 \end{abstract}
 
 
-\section{Introduction}
+\section{Results}
 
 Recall that a  subset $K$ in a metric space ${\spc{U}}$ is called \emph{weakly convex} if any two points $x,y\in K$ can be connected by a minimizing geodesic in $K$.
 
@@ -29,37 +28,31 @@ If in addition a local Lipschitz constant of $f$ is strictly less than 1 at any 
 then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K$}.  
 
 \begin{thm}{Proposition}\label{thm:retraction:Phi}
-Let $\spc{U}$ be a complete length $\CAT(1)$.
+Let $\spc{U}$ be a complete length $\CAT(1)$ space.
  Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and $K\subset \bar B[p,\tfrac\pi2]$ for some point $p\in K$.
-Then 
-\begin{enumerate}[(a)]
- \item There is a short strong deformation retraction
-\[\phi_t\:\bar B[p,\tfrac\pi2]\to K.\]
- \item There is a short retraction 
-\[\Phi\:\spc{U}\to K.\]
-\end{enumerate}
-Moreover, if $\spc{U}$ be a $\CAT(\kappa)$ space for some $\kappa<1$, then both retractions are strictly short.
+Then there is a short retraction 
+$\Phi\:\spc{U}\to K$.
+
+Moreover, if $\spc{U}$ be a $\CAT(\kappa)$ space for some $\kappa<1$, then $\Phi$ is strictly short retraction.
 \end{thm}
 
 This statement is a generalization of the following well known statement about $\CAT(0)$ spaces:
-\emph{if ${\spc{U}}$ is a complete $\CAT(0)$ space and $K$ is a closed convex subset in ${\spc{U}}$,
-then the closest point projection ${\spc{U}}\to K$ is a short retraction}.
+\emph{If ${\spc{U}}$ is a complete $\CAT(0)$ space and $K$ is a closed convex subset in ${\spc{U}}$,
+then the closest point projection ${\spc{U}}\to K$ is a short retraction. Moreover, if $\spc{U}$ be a $\CAT(\kappa)$ space for some $\kappa<0$, then the the closest point projection is a strictly short  retraction.}.
 
 
 The proof is given in Section~\ref{sec:proofs};
-it is done by using a simple trick together with \emph{tractrix flow} which we are about to describe informally.
-Suppose that two points $p$ and $q$ in a $\CAT(1)$ space ${\spc{U}}$ are connected to each other by a thread of fixed length $r<\pi$.
-Imagine that the point $q$ follow a path and drags $p$ if the thread is tight; 
+it is done by using a simple trick together with the \emph{tractrix flow} which we are about to describe informally.
+Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r<\pi$.
+Imagine that the point $q$ follow a curve and drags $p$ if the thread is tight; 
 if the is not tight, then $p$ does not move.
-Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the path
+Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the curve
 and the family of maps $\phi_t$ that send initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
 
-A more formal treatment of tractrix flow is given in Appendix~\ref{sec:Tractrix flow}.
+A more formal treatment of tractrix flow is given in Section~\ref{sec:Tractrix flow}.
 The important properties of the tractrix flow are collected in Proposition~\ref{prop-def}.
 In particular, if $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$ 
 and if $r< \tfrac\pi2$ then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
-
-The following statement is proved using the proposition and another trick. 
 
 \begin{thm}{Corollary}\label{cor}
 Let $\spc{U}$ be a complete length $\CAT(1)$.
@@ -72,37 +65,44 @@ that is, $\Delta=\{\,(x,x)\in \spc{U}\times \spc{U}\,\}$.
 Moreover, if $\spc{U}$ be a $\CAT(\kappa)$ space for some $\kappa<1$, then $\Psi$ is a strictly short retraction.
 \end{thm}
 
+The corollary is proved using the proposition and another trick. 
+The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space (the space $\spc{U}$ in our case) is perfectly smooth;
+this is an important freedom of the Alexandrov's worlds.
+More involved examples of such arguments are given Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, and Stephan Stadler \cite{stadler}.
+
+
 \section{Motivation}
 
-In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{U}$ is a regular geodesic ball or radius $r<\tfrac\pi2$ in a manifold with sectional curvature at most 1, then for appropriate choice of constant $\lambda$, the following function
+In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regular geodesic ball or radius $r<\tfrac\pi2$ in a manifold with sectional curvature at most 1, then for appropriate choice of constant $\lambda$, the following function
 \[(x,y)\mapsto 
-\frac{1+\lambda-\cos|x-y|_{\spc{U}}}{\cos|p-x|_{\spc{U}}\cdot \cos|p-y|_{\spc{U}}}
+\frac{1+\lambda-\cos|x-y|_{\spc{B}}}{\cos|p-x|_{\spc{B}}\cdot \cos|p-y|_{\spc{B}}}
 \]
-has convex level sets in ${\spc{U}}\times {\spc{U}}$.
+has convex level sets in ${\spc{B}}\times {\spc{B}}$.
 This observation became a useful tool to study Dirichlet problem and its relatives;
 it makes possible to extend number of results from Hadamard manifolds to Riemannian manifolds of small size
-and more generally to $\CAT(1)$ spaces~\cite{yokota} MORE???.
+and more generally to $\CAT(1)$ spaces~\cite{yokota}. %MORE???
 
-Our original goal was to make this tool transparent for geometers and \ref{cor} can be considered as a more geometric version of this tool.
-In addition, \ref{thm:retraction:Phi} provides a slightly weaker condition for the existence problem than it was known before --- let us describe the difference. 
+Our original goal was to make this tool transparent for geometers.
+Corollary~\ref{cor} can be considered as a more geometric version of this tool.
+Proposition~\ref{thm:retraction:Phi} provides a slightly weaker condition for the existence problem than it was known before.
+Let us describe the latter difference. 
 
- 
-Let us recall the definition of \emph{$1$-complemented metric spaces},
-which were introduced by Stephan Wenger \cite{Wenger-1comp}.
-A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of ultraproduct ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
-For the definitions of ultrafilters and ultraproducts, we referring to \cite{Wenger-1comp,Wenger-2comp,akp}. 
+Recall that a metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of ultraproduct ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
+This definition was introduced by Stephan Wenger \cite{Wenger-1comp};
+for the definitions of ultrafilters and ultraproducts, we refer to \cite{Wenger-1comp,Wenger-2comp,akp}. 
 
 Recall that any metric space ${\spc{U}}$ forms a subset in its ultraproduct ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$.
-Moreover if ${\spc{U}}$ is $\CAT(\kappa)$ then so is ${\spc{U}}^\omega$. 
-Applying these two observations together with the part (\ref{thm:retraction:Phi}) of the theorem, we obtain  the following corollary.
+Moreover if ${\spc{U}}$ is $\CAT(\kappa)$ then so is~${\spc{U}}^\omega$. 
+Applying these two observations together with the part Proposition~\ref{thm:retraction:Phi}, we obtain  the following:
 
-\begin{thm}{Corollary}
+\begin{thm}{Theorem}\label{thm:complemented}
 Let ${\spc{U}}$ be  a $\CAT(1)$ space.
 Assume  there exists some $p\in {\spc{U}}$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in {\spc{U}}$.
 Then ${\spc{U}}$ is $1$-complemented.
 \end{thm}
 
-Let us list few existence results which hold for $1$-complemented $\CAT(1)$ space ${\spc{U}}$:
+Let us list few existence results which hold for $1$-complemented $\CAT(1)$ %do we need it???
+space ${\spc{U}}$:
 \begin{enumerate}[(a)]
 \item\label{dirichlet}   The existence of solution $u$ of Dirichlet problem on the minimization of energy 
 in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain in a Riemannian manifold with prescirbed trace $tr(u)$.
@@ -115,78 +115,40 @@ for the descriptions of the Dirichlet problem.)
 \item\label{center} For any Radon measure $\mu$ on ${\spc{U}}$ there exists a center of mass $x\in {\spc{U}}$ for the measure~$\mu$. (See \cite{Sturm, Yokota} for the theory of centers of mass.)
 \end{enumerate}
 
-If in the corollary, we would assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
-Moreover the uniqueness hold true under this stronger assumption,
+If in the Theorem~\ref{thm:complemented}, we would assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
+Moreover the uniqueness hold true under this stronger assumption
 \cite{Yokota,Serbinowski}.
 In our boundary case uniqueness definitely fails, since geodesics between points in a round hemisphere are not unique.
 
 The uniqueness in each case can be shown using Corollary \ref{cor}.
-Indeed if the solution of one of these problems is not unique, then their product in ${\spc{U}}\times {\spc{U}}$ does not lie in the diagonal.
+Indeed if there are different solutions of one of these problems, then their product in ${\spc{U}}\times {\spc{U}}$ does not lie in the diagonal.
 The latter contradicts existence of the projection $\Psi$ provided by \ref{cor}.
 
-\section{Proofs}\label{sec:proofs}
+\section{Preliminaries}\label{sec:Tractrix flow}
 
-First let us recall that spherical join $\spc{U}\star\spc{V}$ of two metric spaces $\spc{U}$ and $\spc{V}$
-is defined as the unit sphere equipped with the angle metric in the product of Euclidean cones $\Cone \spc{U}\times \Cone\spc{V}$.
-If diameters of $\spc{U}$ and $\spc{V}$ do not exceed $\pi$, then $\spc{U}\star\spc{V}$
-can be defined as a metric space that admits an onto map $\iota\:\spc{U}\times\spc{V}\times[0,\tfrac\pi2]\to \spc{U}\star\spc{V}$ such that
-\begin{align*}
-|\iota(u_1,v_1,t_1)&-\iota(u_2,v_2,t_2)|_{\spc{U}\star\spc{V}}=
-\\
-&=\arccos[\sin t_1\cdot\sin t_2\cdot \cos|u_1-u_2|_{\spc{U}}+\cos t_1\cdot \cos t_2\cdot \cos|v_1-v_2|_{\spc{V}}].
-\end{align*}
+Let $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
+An $r$-tractrix with respect $\gamma$ can be defined as gradient curve for time-dependent family of function 
+\[f_t=- \max\{r,\dist_{\gamma(t)}\}\]
+if the initial point lies in $B[\gamma(a),r]$.
+These curves, in a bloodcurdling generality, were studied by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1;
+their results \cite[5.4 and 5.9 in][]{ferreira-valencia} imply the following proposition.
 
-\parit{Proof of \ref{thm:retraction:Phi}.}
-Consider a join of  $K$ with a one-point space, $\spc{J}=K\star \{s\}$.
-Since join of two $\CAT(1)$ spaces is $\CAT(1)$, $\spc{J}$ is a $\CAT(1)$ space.
-By Reshetnyak's gluing theorem the space $\spc{W}$ glued from ${\spc{U}}$ and $\spc{J}$ along $K$ is a $\CAT(1)$ space;
-moreover each space ${\spc{U}}$ and $\spc{J}$ are convex subsets in $\spc{W}$.
+Recall that if $\tau$ is a $r$-tractrix, then the map $\phi_t\:\bar B[\gamma(0),r]\to\bar B[\gamma(t),r] $ defined as $\phi_t\:\tau(a)\mapsto \tau(t)$ is called $r$-\emph{tractrix flow}.
 
-Let $\gamma$ be the geodesic path in $\spc{W}$ from $p$ to the pole $s$ of $\spc{J}$.
-Note that $\bar B[\gamma(t),\tfrac\pi2]\supset \spc{J}$ for any $t$  
-and the family $B_t=\bar B[\gamma(t),\tfrac\pi2]$ is decreasing in $t$.
+\begin{thm}{Proposition}\label{prop-def}
+The $\tfrac\pi2$-tractrix flow $\phi_t$ is uniquely defined for any 1-Lipschitz curve $\gamma\:[a,b]\to \spc{U}$ in a  $\CAT(1)$ space.
+Moreover,
+\begin{enumerate}[(a)]
+ \item $\phi_t$ is short for any $t$;
+ \item if ${\spc{U}}$ is $\CAT(\kappa)$ for some $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
+ \item If the family of balls $B_t=\bar B[\gamma(t),r]$ is decreasing in $t$ (that is, if $B_{t_1}\supset B_{t_2}$ for $t_1<t_2$), then $\phi_t$ is a strong deformation retraction from $B_a$ to $B_b$.
+\end{enumerate}
+\end{thm}
 
-Note that $B_0=B[p,\tfrac\pi 2]$ and $B_1=\spc{J}$.
-According to \ref{prop-def}, the family of $\tfrac\pi2$-tractrix maps $\phi_t$ provide a strong deformation retraction which is short and it is strictly short in case $\spc{U}$ is $\CAT(\kappa)$ for some $\kappa<\tfrac\pi2$.
+Let us indicate a direct proof of the proposition;
+a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
-Since ${\spc{U}}$ is $\CAT(1)$,
-given a point $x\in B(p,\pi)$ there is unique geodesic $\gamma_p$ parametrized by its length from $p$ to $x$. 
-By $\CAT(1)$ comparison, the map 
-\[\Theta(x)=
-\begin{cases}
-p&\text{if\ }|p-x|_{\spc{U}}\ge \pi,
-\\
-\gamma_x(\pi-\ell)&\text{if\ }|p-x|_{\spc{U}}< \pi.
-\end{cases}
-\]
-is a short retraction of ${\spc{U}}$ to $\bar B[p,\tfrac\pi2]$, which is strictly short if $\spc{U}$ is $\CAT(\kappa)$ for some $\kappa<\tfrac\pi2$.
-Therefore the composition $\phi_1\circ\Theta$ is a short retraction of ${\spc{U}}$ to $K$.
-\qeds
-
-
-\parit{Proof of \ref{cor}.}
-Consider the joint $\spc{U}\star\spc{U}$.
-It is straightforward to see that 
-\[|\iota(u_1,v_1,\tfrac\pi2)-\iota(u_2,v_2,\tfrac\pi2)|^2_{\spc{U}\star\spc{U}}\le |u_1-u_2|^2_{\spc{U}}+|v_1-v_2|_{\spc{U}}^2;\]
-that is, the map $(u,v)\mapsto \iota(u,v,\tfrac\pi4)$ induces a short map 
-\[\Theta\:{\tfrac1{\sqrt{2}}}\cdot(\spc{U}\times\spc{U})\to\spc{U}\star\spc{U}.\]
-(The map $\Theta$ is also length preserving, but we will not need it.)
-
-Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac1{\sqrt{2}}\cdot(\spc{U}\times\spc{U})$.
-Moreover the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving;
-in particular the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
-
-Further note that $|p-x|_{\spc{U}\star\spc{U}}\le \tfrac\pi2$ for any $p\in K$.
-Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star\spc{U}\to \Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$.
-Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
-\qeds
-
-\appendix
-
-\section{Tractrix flow}\label{sec:Tractrix flow}
-
-A tractrix can be defined by taking a limit for the following construction.
-
+First let us define discrete tractrix.
 Fix a positive numbers $r<\pi$ and $\eps<\pi-r$. 
 A sequence of points $q_0,\dots,q_n$ in a metric space ${\spc{U}}$ will be called $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
 Suppose $p=p_0$ is a point that lies on distance at most $r$ from  $q_0$.
@@ -208,24 +170,87 @@ Fix a fine partition $a=t_0<\dots<t_n=b$ and set $q_i=\gamma(t_i)$.
 Since the partition is fine, we can assume that $(q_i)$ is an $\eps$-chain for any $\eps>0$ fixed in advance.
 Moreover, we may assume that each arc $\gamma|_{[t_{i-1},t_i]}$ has diameter at most $\eps$ for each $i$.
 Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ that will be called $r$-tractrix of $p$ with respect to $\gamma$.
-The one-parameter family of maps $\phi_t\:\bar B[\gamma(a),r]\to \bar B[\gamma(t),r]$ defined by $\phi_t\:\tau(a)\mapsto \tau(t)$ will be called $r$-\emph{tractrix flow}.
+The needed distance estimates also follow from the corresponding estimates in the discrete case.
 
-\begin{thm}{Proposition}\label{prop-def}
-The $\tfrac\pi2$-tractrix flow $\phi_t$ is uniquely defined for any Lipschitz curve $\gamma$ in a  $\CAT(1)$ space ${\spc{U}}$.
-Moreover,
-\begin{enumerate}[(a)]
- \item $\phi_t$ is short for any $t$;
- \item if ${\spc{U}}$ is $\CAT(\kappa)$ for some $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
- \item If the family of balls $\bar B[\gamma(t),r]$ is decreasing in $t$ (that is, if $\bar B[\gamma(t_1),r]\supset\bar B[\gamma(t_2),r]$ for $t_1<t_2$), then $\phi_t$ is a strong deformation retraction from $\bar B[\gamma(0),r]$ to $\bar B[\gamma(t),r]$.
-\end{enumerate}
-\end{thm}
 
-The tractrix is analogous to the pursuer flow introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun}.
-More generally, $r$-tractrix flow of 1-Lipschitz curve $\gamma$ could be considered as gradient curves for time-dependent family of function 
-\[f_t=- \max\{r,\dist_{\gamma(t)}\}.\]
-Such flows were studied in \cite{jun-thesis} only in the $\CAT(0)$ case (despite that $\CAT(\kappa)$ case is equally simple).
-Gradient flow for time-independent function were studied in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia}.
-The proof from any of these papers can be easily adapted to prove our proposition. 
+\parbf{Remark.}
+The tractrix flow is analogous to the pursuer flow introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
+The time-dependent gradient flow was studied in \cite{jun-thesis,jun:grad} but only in the $\CAT(0)$ case, despite that $\CAT(\kappa)$ case is equally simple.
+Gradient flow for time-independent function were studied in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia}. 
+The proofs from any of these papers can be easily adapted to prove our proposition.
+
+\section{Proofs}\label{sec:proofs}
+
+Recall that spherical join $\spc{U}\star\spc{V}$ of two metric spaces $\spc{U}$ and $\spc{V}$
+is defined as the unit sphere equipped with the angle metric in the product of Euclidean cones $\Cone \spc{U}\times \Cone\spc{V}$. 
+If diameters of $\spc{U}$ and $\spc{V}$ do not exceed $\pi$, then $\spc{U}\star\spc{V}$
+can be defined as a metric space that admits an onto map $\iota\:\spc{U}\times\spc{V}\times[0,\tfrac\pi2]\to \spc{U}\star\spc{V}$ such that
+\begin{align*}
+|\iota(u_1,v_1,t_1)&-\iota(u_2,v_2,t_2)|_{\spc{U}\star\spc{V}}=
+\\
+&=\arccos[\sin t_1\cdot\sin t_2\cdot \cos|u_1-u_2|_{\spc{U}}+\cos t_1\cdot \cos t_2\cdot \cos|v_1-v_2|_{\spc{V}}].
+\end{align*}
+
+Note that join of two $\CAT(1)$ spaces is $\CAT(1)$.
+Indeed, $\spc{U}$ and $\spc{V}$ are $\CAT(1)$ if and only if their Euclidean cones $\Cone \spc{U}$ and $\Cone\spc{V}$ are $\CAT(0)$ \cite[10.4.2]{akp}.
+Therefore, the product-cone $\Cone \spc{U}\times\Cone\spc{V}$ is also $\CAT(0)$ and the unit sphere $\spc{U}\star\spc{V}$ in this cone is $\CAT(1)$.
+ 
+
+\parit{Proof of \ref{thm:retraction:Phi}.}
+Consider a join of  $K$ with a one-point space, $\spc{J}=K\star \{s\}$.
+As it stated above, $\spc{J}$ is a $\CAT(1)$ space.
+By Reshetnyak's gluing theorem \cite[8.9.1]{akp} the space $\spc{W}$ glued from ${\spc{U}}$ and $\spc{J}$ along $K$ is a $\CAT(1)$ space;
+moreover each space ${\spc{U}}$ and $\spc{J}$ is a convex subsets in $\spc{W}$.
+
+Let $\gamma$ be the geodesic in $\spc{W}$ from $p$ to the pole $s$ of $\spc{J}$.
+Set $B_t=\bar B[\gamma(t),\tfrac\pi2]_{\spc{W}}$, then
+\begin{itemize}
+\item $B_0=\bar B[p,\tfrac\pi2]_{\spc{U}}\cup \spc{J}$,
+\item $B_{\frac\pi2}=\spc{J}$, in particular $B_{\frac\pi2}\cap \spc{U}=K$,
+\item the family $B_t$ is decreasing in $t$.
+\end{itemize}
+According to \ref{prop-def}, the family of $\tfrac\pi2$-tractrix maps $\phi_t$ provide a strong deformation retraction of $B_0$ to $B_{\frac\pi2}$ which is short and it is strictly short in case $\spc{U}$ is $\CAT(\kappa)$ for some $\kappa<\tfrac\pi2$.
+
+Since ${\spc{U}}$ is $\CAT(1)$,
+given a point $x\in B(p,\pi)$ there is unique geodesic $\gamma_x$ parametrized by its length from $p$ to $x$. 
+By $\CAT(1)$ comparison, the map 
+\[\Theta(x)=
+\begin{cases}
+p&\text{if\ }|p-x|_{\spc{U}}\ge \pi,
+\\
+\gamma_x(\pi-|p-x|_{\spc{U}})&\text{if\ }|p-x|_{\spc{U}}< \pi.
+\end{cases}
+\]
+is a short retraction of ${\spc{U}}$ to $\bar B[p,\tfrac\pi2]_{\spc{U}}=B_0\cap \spc{U}$.
+Moreover $\Theta$ is strictly short retraction if $\spc{U}$ is $\CAT(\kappa)$ for some $\kappa<\tfrac\pi2$.
+
+Therefore the composition $\phi_{\frac\pi2}\circ\Theta$ induces a short retraction of ${\spc{U}}$ to $K$
+which is strictly short in case $\spc{U}$ is $\CAT(\kappa)$ for some $\kappa<\tfrac\pi2$.
+\qeds
+
+
+\parit{Proof of \ref{cor}.}
+Consider the joint $\spc{U}\star\spc{U}$.
+It is straightforward to see that 
+\[|\iota(u_1,v_1,\tfrac\pi2)-\iota(u_2,v_2,\tfrac\pi2)|^2_{\spc{U}\star\spc{U}}\le |u_1-u_2|^2_{\spc{U}}+|v_1-v_2|_{\spc{U}}^2;\]
+that is, the map $(u,v)\mapsto \iota(u,v,\tfrac\pi4)$ induces a short map 
+\[\Theta\:{\tfrac1{\sqrt{2}}}\cdot(\spc{U}\times\spc{U})\to\spc{U}\star\spc{U}.\]
+(The map $\Theta$ is also length preserving, but we will not need it.)
+
+Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac1{\sqrt{2}}\cdot(\spc{U}\times\spc{U})$.
+Moreover the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving.
+In particular the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
+
+Further note that $|p-x|_{\spc{U}\star\spc{U}}\le \tfrac\pi2$ for any $p\in K$.
+Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star\spc{U}\to \Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$.
+Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
+
+Finally, by \ref{thm:retraction:Phi}, if $\spc{U}$ is $\CAT(\kappa)$ for some $\kappa<\tfrac\pi2$, then $\Phi$ is a strictly short retraction and therefore so is $\Psi$.
+\qeds
+
+
+
+
 
 {\small\sloppy
 
