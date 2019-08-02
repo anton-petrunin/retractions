@@ -26,11 +26,12 @@ Recall that a  subset $K$ in a metric space ${\spc{U}}$ is called \emph{weakly c
 Let ${\spc{U}}$ be a metric space and $K\subset {\spc{U}}$.
 A distance nonexpanding map $f\:{\spc{U}}\to K$ such that $f(x)=x$ for any $x\in K$ is called a \emph{short retraction to $K$}.
 If in addition a local Lipschitz constant of $f$ is strictly less than 1 at any point $p\notin K$, 
-then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K$}.  
+then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K$}.
 
 \begin{thm}{Proposition}\label{thm:retraction:Phi}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
-Suppose $K$ is a weakly convex closed subset in $\spc{U}$and $K\subset \bar B[p,\tfrac\pi2]$ .
+Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and $K\subset \bar B[p,\tfrac\pi2]$;
+
 
 \begin{enumerate}[(a)]
  \item If $p\in K$ and $\kappa\le 1$, then there is a short retraction 
@@ -41,8 +42,9 @@ $\Phi\:\spc{U}\to K$.
 \end{thm}
 
 This statement is a generalization of the following well known statement about $\CAT(0)$ spaces:
-\emph{If ${\spc{U}}$ is a complete $\CAT(0)$ space and $K$ is a closed convex subset in ${\spc{U}}$,
-then the closest point projection ${\spc{U}}\to K$ is a short retraction. Moreover, if $\spc{U}$ be a $\CAT(\kappa)$ space for some $\kappa<0$, then the the closest point projection is a strictly short  retraction.}.
+\emph{If ${\spc{U}}$ is a complete length $\CAT(0)$ space and $K$ is a closed convex subset in ${\spc{U}}$,
+then the closest point projection ${\spc{U}}\to K$ is a short retraction.
+Moreover, if $\spc{U}$ is a $\CAT(\kappa)$ space for some $\kappa<0$, then the the closest point projection is a strictly short retraction}.
 
 \begin{thm}{Corollary}\label{cor}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
@@ -58,7 +60,8 @@ If $\kappa\le 1$, then there is a short retraction $\Psi\:\spc{U}\times \spc{U}\
 
 \end{thm}
 
-%???midpoint map
+It is well known that if $\spc{U}$ be a complete length $\CAT(0)$ space, then the midpoint map $\spc{U}\times \spc{U}\to \spc{U}$ is $\tfrac1{\sqrt{2}}$-Lipschitz and therefore it induces a short retraction of the product space $\spc{U}\times \spc{U}\to\Delta$. 
+The corollary provides an analogous statement for $\CAT(1)$ spaces.
 
 
 \parbf{Motivation.}
@@ -67,22 +70,23 @@ In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regula
 \frac{1+\lambda-\cos|x-y|_{\spc{B}}}{\cos|p-x|_{\spc{B}}\cdot \cos|p-y|_{\spc{B}}}
 \]
 has convex level sets in ${\spc{B}}\times {\spc{B}}$.
-This observation became a useful tool to study Dirichlet problem and its relatives;
+He also shows the existence of a nonnegative convex function on ${\spc{B}}\times {\spc{B}}$ that vanish only on the diagonal \cite[(4.2)]{kendall}.
+These observations became a useful tool to study Dirichlet problem and its relatives;
 it makes possible to extend number of results from Hadamard manifolds to Riemannian manifolds of small size
-and more generally to $\CAT(1)$ spaces~\cite{yokota}. %MORE???
+and more generally to $\CAT(1)$ spaces~\cite{yokota,BFHMSZ,fuglede,serbinowski}. 
 
 Our original goal was to make this tool transparent for geometers.
 Corollary~\ref{cor} can be considered as a more geometric version of this tool.
-Proposition~\ref{thm:retraction:Phi} provides a slightly weaker condition for the existence problem than it was known before.
-Let us describe the latter difference. 
+While Kendall's condition is optimal for uniqueness and regularity questions, the existence statements can be derived from  Proposition~\ref{thm:retraction:Phi} in a
+slightly greater generality, as  we are going to explain now.
 
 Recall that a metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
 This definition was introduced by Stephan Wenger \cite{Wenger-1comp};
-for the definitions of ultrafilters, ultraproducts, and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}. 
+for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}. 
 
 Recall that any metric space ${\spc{U}}$ forms a subset in its ultracompletion ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$.
 Moreover if ${\spc{U}}$ is $\CAT(\kappa)$ then so is~${\spc{U}}^\omega$. 
-Applying these two observations together with the part Proposition~\ref{thm:retraction:Phi}, we obtain  the following:
+Applying these two observations together with Proposition~\ref{thm:retraction:Phi}, we obtain  the following:
 
 \begin{thm}{Theorem}\label{thm:complemented}
 Let ${\spc{U}}$ be  a $\CAT(1)$ space.
@@ -90,33 +94,31 @@ Assume  there exists some $p\in {\spc{U}}$ such that $|p-x|\le \tfrac\pi2$ for a
 Then ${\spc{U}}$ is $1$-complemented.
 \end{thm}
 
-Let us list few existence results which hold for $1$-complemented $\CAT(1)$ %do we need it???
-space ${\spc{U}}$:
+Let us list few existence results which follow from the theorem, assuming that the space ${\spc{U}}$ as above:
 \begin{enumerate}[(a)]
 \item\label{dirichlet}   The existence of solution $u$ of Dirichlet problem on the minimization of energy 
 in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannian manifold with prescirbed trace $tr(u)$.
-(See \cite{KS}, 
-for the descriptions of the Dirichlet problem and \cite[Theorem 1.4]{guo-wenger} for the cited result).
+(See \cite{KS} and \cite[Theorem 1.4]{guo-wenger}).
 \item The existence of a minimal integral $k$-current filling of any prescribed boundaryless $(k-1)$ integral current in ${\spc{U}}$. 
-(See \cite{Ambrosio} for a discussion of Plateau's problem in  the theory of currents and \cite[Theorem 3.3]{Wenger-1comp}.)
+(See \cite{Ambrosio} and \cite[Theorem 3.3]{Wenger-1comp}.)
 \item   The existence of a conformally parametrized disc $u:D\to {\spc{U}}$ of minimal area for a given boundary curve $\gamma$, which is a Jordan curve of finite length in ${\spc{U}}$.
-(See \cite{LWplateau} for a discussion classical Plateau's problem for discs in metric spaces and \cite[Theorem 1.2]{guo-wenger}).
-\item\label{center} For any Radon measure $\mu$ on ${\spc{U}}$ there exists a center of mass $x\in {\spc{U}}$ for the measure~$\mu$. (See \cite{Sturm, Yokota} for the theory of centers of mass.)
+(See \cite{LWplateau} and \cite[Theorem 1.2]{guo-wenger}).
+\item\label{center} For any Radon measure $\mu$ on ${\spc{U}}$ there exists a center of mass $x\in {\spc{U}}$ for the measure~$\mu$ \cite{Sturm, yokota}.
 \end{enumerate}
 
-If in the Theorem~\ref{thm:complemented}, we would assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
+If in the theorem, we assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
 Moreover the uniqueness hold true under this stronger assumption
-\cite{Yokota,Serbinowski}.
+\cite{yokota,serbinowski}.
 In our boundary case uniqueness definitely fails, since geodesics between points in a round hemisphere are not unique.
 
 The uniqueness in each case can be shown using Corollary \ref{cor}.
 Indeed if there are different solutions of one of these problems, then their product in ${\spc{U}}\times {\spc{U}}$ does not lie in the diagonal.
-The latter contradicts existence of the strictly short retraction $\Psi$ provided by \ref{cor}.
+The latter contradicts the existence of the strictly short retraction $\Psi$ provided by \ref{cor}.
 
 \parbf{About the proofs.}
-The proof of Proposition~\ref{thm:retraction:Phi} are done by using a simple trick together with a new tool which we call \emph{tractrix flow}.
-The tractrix flow gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
+We use a new tool which we call \emph{tractrix flow}; it gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
 Let us describe this flow informally.
+See Section \ref{sec:Tractrix flow} for its formal description, history and relatives
 
 Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r<\pi$.
 Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
@@ -128,23 +130,28 @@ The important properties of the tractrix flow are collected in Proposition~\ref{
 In particular, if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$ 
 and if $r< \tfrac\pi2$ then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
 
-The trick is a combination of the spherical-join construction and the Reshetnyak gluing theorem. 
-The Corollary \ref{cor} is proved using another trick with the spherical-join construction.
+In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$.
+The arising space is $\CAT(1)$ by Reshetnyaks gluing theorem.
 
-The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space (the space $\spc{U}$ in our case) is perfectly smooth;
+In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product $\spc{U}\times \spc{U}$ in a canonical way with a subset of the spherical join $\spc{U}\star \spc{U}$ and apply Proposition~\ref{thm:retraction:Phi} to the latter.
+
+The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space ($\spc{U}$) is perfectly smooth;
 this is an important freedom of the Alexandrov's worlds.
 More involved examples of such arguments are given Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, and Stephan Stadler~\cite{stadler}.
 
-\section{Preliminaries}\label{sec:Tractrix flow}
+\section{Tractrix flow}\label{sec:Tractrix flow}
+
+For $\CAT(\kappa)$ spaces, we will follow the conventions in \cite{akp}.
 
 Let $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
-An $r$-tractrix with respect $\gamma$ can be defined as gradient curve for time-dependent family of function 
+An $r$-tractrix with respect $\gamma$ is defined as gradient curve for the time-dependent family of functions 
 \[f_t=- \max\{r,\dist_{\gamma(t)}\}\]
-if the initial point lies in $B[\gamma(a),r]$.
-These curves, in a bloodcurdling generality, were studied by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1;
-their results \cite[5.4 and 5.9 in][]{ferreira-valencia} imply the following proposition.
+if the initial point lies in $\bar B[\gamma(a),r]$
+(here $\bar B[x,r]$ denotes closed ball of radius of radius $r$ centered at $x$).
 
-Recall that if $\tau$ is a $r$-tractrix, then the map $\phi_t\:\bar B[\gamma(0),r]\to\bar B[\gamma(t),r] $ defined as $\phi_t\:\tau(a)\mapsto \tau(t)$ is called $r$-\emph{tractrix flow}.
+If $\tau$ is a $r$-tractrix, then the map $\phi_t\:\bar B[\gamma(0),r]\to\bar B[\gamma(t),r] $ defined as $\phi_t\:\tau(a)\mapsto \tau(t)$ is called $r$-\emph{tractrix flow}.
+
+The following proposition includes the properties of tractrix flow which will be used further in the paper.
 
 \begin{thm}{Proposition}\label{prop-def}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space for $\kappa\le 1$.
@@ -157,27 +164,29 @@ Moreover,
 \end{enumerate}
 \end{thm}
 
+\parbf{Remarks.}
 The tractrix flow has number of relatives.
-First  is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
-Second to the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
+First relative is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
+Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 The proofs from any of these papers can be easily adapted to prove our proposition.
 
-Let us also mention that time-dependent gradient flow was studied in \cite{jun-thesis,jun:grad} but only in the $\CAT(0)$ case, despite that $\CAT(\kappa)$ case is equally simple.
-Gradient flow for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
-In both cases we get a proof of the proposition.
+Let us also mention that time-dependent gradient flows were studied in \cite{jun-thesis,jun:grad} but only in the $\CAT(0)$ case, despite that $\CAT(\kappa)$ case is equally simple.
+In a bloodcurdling generality, time-dependent gradient flows were studied by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}; unfortunately they were considered only the case of strictly concave functions that is not sufficient for our purpuses.
+Gradient flows for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
 
-In addition, let us indicate a direct proof of the proposition;
+Since we can not find a precise reference to the statement; we give a sketch of a very direct proof of the proposition;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
-First let us define discrete tractrix.
-Fix a positive numbers $r<\pi$ and $\eps<\pi-r$. 
-A sequence of points $q_0,\dots,q_n$ in a metric space ${\spc{U}}$ will be called $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
+\parit{Stretch of proof.}
+First let us define a \emph{discrete} tractrix.
+Fix positive numbers $r<\pi$ and $\eps<\pi-r$. 
+A sequence of points $q_0,\dots,q_n$ in  ${\spc{U}}$ will be called an $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
 Suppose $p=p_0$ is a point that lies on distance at most $r$ from  $q_0$.
 Consider another sequence $p_0,\dots p_n$ defined recursively the following way:
 \emph{$p_i$ is the closest point to $p_{i-1}$ that lies on the distance at most $r$ from $q_i$}.
 This sequence (if defined) will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $(q_i)$.
 
-Note that if ${\spc{U}}$ is geodesic, then 
+Note that if ${\spc{U}}$ is a geodesic space, then 
 $p_i$ lies on a geodesic from $p_{i-1}$ to $q_i$; 
 in this case the sequence $(p_i)$ is defined.
 Moreover the triangle inequality implies that $(p_i)$ is an $\eps$-chain.
@@ -191,7 +200,9 @@ Fix a fine partition $a=t_0<\dots<t_n=b$ and set $q_i=\gamma(t_i)$.
 Since the partition is fine, we can assume that $(q_i)$ is an $\eps$-chain for any $\eps>0$ fixed in advance.
 Moreover, we may assume that each arc $\gamma|_{[t_{i-1},t_i]}$ has diameter at most $\eps$ for each $i$.
 Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ that will be called $r$-tractrix of $p$ with respect to $\gamma$.
+
 The needed distance estimates also follow from the corresponding estimates in the discrete case.
+\qeds
 
 
 \section{Proofs}\label{sec:proofs}
