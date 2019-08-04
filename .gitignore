@@ -1,4 +1,5 @@
 lib/*
+*.pdf
 *.backup
 *.log
 *.aux
