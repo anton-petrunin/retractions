@@ -30,7 +30,7 @@ then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K
 
 \begin{thm}{Proposition}\label{thm:retraction:Phi}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
-Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and $K\subset \bar B[p,\tfrac\pi2]$;
+Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and $|p-x|\le \tfrac\pi2$ for for a fixed point $p\in \spc{U}$ and any point $x\in K$.
 
 
 \begin{enumerate}[(a)]
@@ -117,21 +117,12 @@ The latter contradicts the existence of the strictly short retraction $\Psi$ pro
 
 \parbf{About the proofs.}
 We use a new tool which we call \emph{tractrix flow}; it gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
-Let us describe this flow informally.
-See Section \ref{sec:Tractrix flow} for its formal description, history and relatives
-
-Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r<\pi$.
-Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
-if the is not tight, then $p$ does not move.
-Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the curve
-and the family of maps $\phi_t$ that send initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
-
 The important properties of the tractrix flow are collected in Proposition~\ref{prop-def}.
 In particular, if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$ 
 and if $r< \tfrac\pi2$ then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
 
-In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$.
-The arising space is $\CAT(1)$ by Reshetnyaks gluing theorem.
+In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
+this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
 
 In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product $\spc{U}\times \spc{U}$ in a canonical way with a subset of the spherical join $\spc{U}\star \spc{U}$ and apply Proposition~\ref{thm:retraction:Phi} to the latter.
 
@@ -143,20 +134,29 @@ More involved examples of such arguments are given Dmitry Burago, Sergei Ferlege
 
 For $\CAT(\kappa)$ spaces, we will follow the conventions in \cite{akp}.
 
-Let $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
-An $r$-tractrix with respect $\gamma$ is defined as gradient curve for the time-dependent family of functions 
+First let us describe the tractrix flow informally.
+Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r<\pi$.
+Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
+if the is not tight, then $p$ does not move.
+Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the curve
+and the family of maps $\phi_t$ that send initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
+
+Speaking more formally, let $\gamma\:[a,b]\to \spc{U}$ be a 1-Lipschitz curve. 
+An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
 \[f_t=- \max\{r,\dist_{\gamma(t)}\}\]
 if the initial point lies in $\bar B[\gamma(a),r]$
-(here $\bar B[x,r]$ denotes closed ball of radius of radius $r$ centered at $x$).
+(here $\bar B[x,r]$ denotes the closed ball of radius $r$ centered at $x$).
 
-If $\tau$ is a $r$-tractrix, then the map $\phi_t\:\bar B[\gamma(0),r]\to\bar B[\gamma(t),r] $ defined as $\phi_t\:\tau(a)\mapsto \tau(t)$ is called $r$-\emph{tractrix flow}.
+The map $\phi_t\:\bar B[\gamma(a),r]\to\bar B[\gamma(t),r] $ defined as $\phi_t\:\tau(a)\mapsto \tau(t)$ 
+for an $r$-tractrix $\tau$
+is called the $r$-\emph{tractrix flow} with respect to $\gamma$.
 
-The following proposition includes the properties of tractrix flow which will be used further in the paper.
+The following proposition includes the properties of the tractrix flow which will be used further in the paper.
 
 \begin{thm}{Proposition}\label{prop-def}
-Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space for $\kappa\le 1$.
-Then the $\tfrac\pi2$-tractrix flow $\phi_t$ is uniquely defined for any 1-Lipschitz curve $\gamma\:[a,b]\to \spc{U}$.
-Moreover,
+Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space for $\kappa\le 1$ and $r<\pi$.
+Then the $r$-tractrix flow $\phi_t\:\bar B[\gamma(a),r]\to\bar B[\gamma(t),r]$ is uniquely defined for any  1-Lipschitz curve $\gamma\:[a,b]\to \spc{U}$.
+Moreover, if $r=\tfrac\pi2$, then
 \begin{enumerate}[(a)]
  \item $\phi_t$ is short for any $t$;
  \item if $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
@@ -164,17 +164,16 @@ Moreover,
 \end{enumerate}
 \end{thm}
 
-\parbf{Remarks.}
-The tractrix flow has number of relatives.
-First relative is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
+Historically the first relative of tractrix flow
+is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 The proofs from any of these papers can be easily adapted to prove our proposition.
 
 Let us also mention that time-dependent gradient flows were studied in \cite{jun-thesis,jun:grad} but only in the $\CAT(0)$ case, despite that $\CAT(\kappa)$ case is equally simple.
-In a bloodcurdling generality, time-dependent gradient flows were studied by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}; unfortunately they were considered only the case of strictly concave functions that is not sufficient for our purpuses.
+In a bloodcurdling generality, time-dependent gradient flows were studied by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}.
 Gradient flows for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
 
-Since we can not find a precise reference to the statement; we give a sketch of a very direct proof of the proposition;
+Since we can not find a precise reference to the statement, we give a sketch of a very direct proof of the proposition;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
 \parit{Stretch of proof.}
