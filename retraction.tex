@@ -60,7 +60,7 @@ If $\kappa\le 1$, then there is a short retraction $\Psi\:\spc{U}\times \spc{U}\
 
 \end{thm}
 
-It is well known that if $\spc{U}$ be a complete length $\CAT(0)$ space, then the midpoint map $\spc{U}\times \spc{U}\to \spc{U}$ is $\tfrac1{\sqrt{2}}$-Lipschitz and therefore it induces a short retraction of the product space $\spc{U}\times \spc{U}\to\Delta$. 
+It is well known that if $\spc{U}$ be a complete length $\CAT(0)$ space, then the midpoint map $\spc{U}\times \spc{U}\to \spc{U}$ is $\tfrac1{\sqrt{2}}$-Lipschitz and therefore it induces a short retraction $\spc{U}\times \spc{U}\to\Delta$. 
 The corollary provides an analogous statement for $\CAT(1)$ spaces.
 
 
@@ -89,7 +89,7 @@ Moreover if ${\spc{U}}$ is $\CAT(\kappa)$ then so is~${\spc{U}}^\omega$.
 Applying these two observations together with Proposition~\ref{thm:retraction:Phi}, we obtain
 
 \begin{thm}{Theorem}\label{thm:complemented}
-Let ${\spc{U}}$ be  a $\CAT(1)$ space.
+Let ${\spc{U}}$ be a complete length $\CAT(1)$ space.
 Assume  there exists some $p\in {\spc{U}}$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in {\spc{U}}$.
 Then ${\spc{U}}$ is $1$-complemented.
 \end{thm}
@@ -116,7 +116,7 @@ Indeed if there are different solutions of one of these problems, then their pro
 The latter contradicts the existence of the strictly short retraction $\Psi$ provided by Corollary \ref{cor}.
 
 \parbf{About the proofs.}
-We use a new tool which we call \emph{tractrix flow}; it gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
+We use a new tool which we call $r$-\emph{tractrix flow}; it gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
 The important properties of the tractrix flow are collected in Proposition~\ref{prop-def}.
 In particular, if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$ 
 and if $r< \tfrac\pi2$ then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
@@ -124,7 +124,7 @@ and if $r< \tfrac\pi2$ then the local Lipschitz constant of $\phi_t$ at $p$ is s
 In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
 this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
 
-In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product $\spc{U}\times \spc{U}$ in a canonical way with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
+In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
 
 The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space ($\spc{U}$) is perfectly smooth;
 this is an important freedom of the Alexandrov's worlds.
@@ -135,11 +135,11 @@ More involved examples of such arguments are given by Dmitry Burago, Sergei Ferl
 For $\CAT(\kappa)$ spaces, we will follow the conventions in \cite{akp}.
 
 First let us describe the tractrix flow informally.
-Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r<\pi$.
+Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r$.
 Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
-if the is not tight, then $p$ does not move.
-Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the curve
-and the family of maps $\phi_t$ that send initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
+if the thread is not tight, then $p$ does not move.
+Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the curve.
+The family of maps $\phi_t$ that sends the initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
 
 Speaking more formally, let $\gamma\:[a,b]\to \spc{U}$ be a 1-Lipschitz curve. 
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
@@ -147,15 +147,16 @@ An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the 
 if the initial point lies in $\bar B[\gamma(a),r]$
 (here $\bar B[x,r]$ denotes the closed ball of radius $r$ centered at $x$).
 
-The map $\phi_t\:\bar B[\gamma(a),r]\to\bar B[\gamma(t),r] $ defined as $\phi_t\:\tau(a)\mapsto \tau(t)$ 
-for an $r$-tractrix $\tau$
-is called the $r$-\emph{tractrix flow} with respect to $\gamma$.
+The $r$-\emph{tractrix flow} with respect to $\gamma$ is defined as a family of maps
+\[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\] defined as $\phi_t\:p\mapsto \tau(t)$
+for an $r$-tractrix $\tau\:[a,b]\to \spc{U}$ that starts at $p$; that is $\tau(a)=p$.
 
 The following proposition includes the properties of the tractrix flow which will be used further in the paper.
 
 \begin{thm}{Proposition}\label{prop-def}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space for $\kappa\le 1$ and $r<\pi$.
 Then the $r$-tractrix flow $\phi_t\:\bar B[\gamma(a),r]\to\bar B[\gamma(t),r]$ is uniquely defined for any  1-Lipschitz curve $\gamma\:[a,b]\to \spc{U}$.
+
 Moreover, if $r=\tfrac\pi2$, then
 \begin{enumerate}[(a)]
  \item $\phi_t$ is short for any $t$;
@@ -169,11 +170,11 @@ is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a fa
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 The proofs from any of these papers can be easily adapted to prove our proposition.
 
-Let us also mention that time-dependent gradient flows were studied in \cite{jun-thesis,jun:grad} but only in the $\CAT(0)$ case, despite that $\CAT(\kappa)$ case is equally simple.
-In a bloodcurdling generality, time-dependent gradient flows were studied by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}.
+Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}.
 Gradient flows for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
 
-Since we can not find a precise reference to the statement, we give a sketch of a very direct proof of the proposition;
+Despite that we can not find a precise reference to the statement.
+By that reason we give a sketch of a very direct proof of the proposition;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
 \parit{Stretch of proof.}
@@ -182,25 +183,19 @@ Fix positive numbers $r<\pi$ and $\eps<\pi-r$.
 A sequence of points $q_0,\dots,q_n$ in  ${\spc{U}}$ will be called an $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
 Suppose $p=p_0$ is a point that lies on distance at most $r$ from  $q_0$.
 Consider another sequence $p_0,\dots p_n$ defined recursively the following way:
-\emph{$p_i$ is the closest point to $p_{i-1}$ that lies on the distance at most $r$ from $q_i$}.
+\emph{$p_i$ is the closest point to $p_{i-1}$ on the geodesic $[p_{i-1}q_i]$ that lies on the distance at most $r$ from $q_i$}.
 This sequence (if defined) will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $(q_i)$.
 
-Note that if ${\spc{U}}$ is a geodesic space, then 
-$p_i$ lies on a geodesic from $p_{i-1}$ to $q_i$; 
-in this case the sequence $(p_i)$ is defined.
-Moreover the triangle inequality implies that $(p_i)$ is an $\eps$-chain.
-
-Note also that $|p_{i-1}-p_i|_{\spc{U}}<\pi$ for each $i$.
-Therefore, if ${\spc{U}}$ is $\CAT(1)$, then the geodesic $[p_{i-1},q_i]$ is uniquely defined and 
+Note that the triangle inequality implies that $(p_i)$ is an $\eps$-chain.
+Since $|p_{i-1}-q_i|_{\spc{U}}<\pi$ for each $i$, the geodesic $[p_{i-1},q_i]$ is uniquely defined and 
 so is the discrete tractrix $(p_i)$.
 
 Now assume that $\gamma\:[a,b]\to \spc{U}$ is a Lipschitz curve.
 Fix a fine partition $a=t_0<\dots<t_n=b$ and set $q_i=\gamma(t_i)$.
 Since the partition is fine, we can assume that $(q_i)$ is an $\eps$-chain for any $\eps>0$ fixed in advance.
 Moreover, we may assume that each arc $\gamma|_{[t_{i-1},t_i]}$ has diameter at most $\eps$ for each $i$.
-Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ that will be called $r$-tractrix of $p$ with respect to $\gamma$.
-
-The needed distance estimates also follow from the corresponding estimates in the discrete case.
+Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ which is an $r$-tractrix of $p$ with respect to $\gamma$.
+The needed distance estimates follow from the corresponding estimates in the discrete case.
 \qeds
 
 
