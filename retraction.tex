@@ -80,13 +80,14 @@ Corollary~\ref{cor} can be considered as a more geometric version of this tool.
 While Kendall's condition is optimal for uniqueness and regularity questions, the existence statements can be derived from  Proposition~\ref{thm:retraction:Phi} in a
 slightly greater generality, as  we are going to explain now.
 
-Recall that a metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
-This definition was introduced by Stefan Wenger \cite{Wenger-1comp};
-for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}. 
+The following definition was introduced by Stefan Wenger \cite{Wenger-1comp};
+for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}.
 
-Recall that any metric space ${\spc{U}}$ forms a subset in its ultracompletion ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$.
-Moreover if ${\spc{U}}$ is $\CAT(\kappa)$ then so is~${\spc{U}}^\omega$. 
-Applying these two observations together with Proposition~\ref{thm:retraction:Phi}, we obtain
+A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
+The statement makes sense since any metric space ${\spc{U}}$ forms a subset in its ultracompletion ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$. 
+
+Recall that if ${\spc{U}}$ is $\CAT(\kappa)$, then so is~${\spc{U}}^\omega$. 
+Applying these observations together with Proposition~\ref{thm:retraction:Phi}, we obtain
 
 \begin{thm}{Theorem}\label{thm:complemented}
 Let ${\spc{U}}$ be a complete length $\CAT(1)$ space.
@@ -118,8 +119,8 @@ The latter contradicts the existence of the strictly short retraction $\Psi$ pro
 \parbf{About the proofs.}
 We use a new tool which we call $r$-\emph{tractrix flow}; it gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
 The important properties of the tractrix flow are collected in Proposition~\ref{prop-def}.
-In particular, if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$ 
-and if $r< \tfrac\pi2$ then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
+In particular, (1) if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$, 
+and (2) if $r< \tfrac\pi2$, then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
 
 In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
 this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
@@ -127,7 +128,7 @@ this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
 In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
 
 The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space ($\spc{U}$) is perfectly smooth;
-this is an important freedom of the Alexandrov's worlds.
+this is a powerful freedom of Alexandrov's world.
 More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, and Stephan Stadler~\cite{stadler}.
 
 \section{Tractrix flow}\label{sec:Tractrix flow}
@@ -138,18 +139,19 @@ First let us describe the tractrix flow informally.
 Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r$.
 Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
 if the thread is not tight, then $p$ does not move.
-Then the trajectory of the point $p$ will be called $r$-\emph{tractrix} of $p$ with respect to the curve.
-The family of maps $\phi_t$ that sends the initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
+Then the trajectory of the point $p$ will be called $r$-\emph{tractrix of $p$ with respect to~$\gamma$}.
+The family of maps $\phi_t$ that send the initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
 
 Speaking more formally, let $\gamma\:[a,b]\to \spc{U}$ be a 1-Lipschitz curve. 
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
 \[f_t=- \max\{r,\dist_{\gamma(t)}\}\]
-if the initial point lies in $\bar B[\gamma(a),r]$
-(here $\bar B[x,r]$ denotes the closed ball of radius $r$ centered at $x$).
+if the initial point lies in $\bar B[\gamma(a),r]$;
+here $\bar B[x,r]$ denotes the closed ball of radius $r$ centered at $x$ and $\dist_{x}$ denotes the distance function from the point $x$.
 
 The $r$-\emph{tractrix flow} with respect to $\gamma$ is defined as a family of maps
-\[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\] defined as $\phi_t\:p\mapsto \tau(t)$
-for an $r$-tractrix $\tau\:[a,b]\to \spc{U}$ that starts at $p$; that is $\tau(a)=p$.
+\[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\]
+defined by $\phi_t\:p\mapsto \tau(t)$
+for an $r$-tractrix $\tau\:[a,b]\to \spc{U}$ that starts at $p$; that is, $\tau(a)=p$.
 
 The following proposition includes the properties of the tractrix flow which will be used further in the paper.
 
@@ -168,13 +170,13 @@ Moreover, if $r=\tfrac\pi2$, then
 Historically the first relative of tractrix flow
 is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
-The proofs from any of these papers can be easily adapted to prove our proposition.
 
 Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}.
 Gradient flows for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
 
-Despite that we can not find a precise reference to the statement.
-By that reason we give a sketch of a very direct proof of the proposition;
+These papers implicitly contain a proof of the proposition,
+but we can not find a precise reference.
+By that reason we give a sketch of a very direct proof;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
 \parit{Stretch of proof.}
@@ -182,9 +184,9 @@ First let us define a \emph{discrete} tractrix.
 Fix positive numbers $r<\pi$ and $\eps<\pi-r$. 
 A sequence of points $q_0,\dots,q_n$ in  ${\spc{U}}$ will be called an $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
 Suppose $p=p_0$ is a point that lies on distance at most $r$ from  $q_0$.
-Consider another sequence $p_0,\dots p_n$ defined recursively the following way:
+Consider a sequence $p_0,\dots,p_n$ defined recursively the following way:
 \emph{$p_i$ is the closest point to $p_{i-1}$ on the geodesic $[p_{i-1}q_i]$ that lies on the distance at most $r$ from $q_i$}.
-This sequence (if defined) will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $(q_i)$.
+The sequence $p_0,\dots,p_n$ (if defined) will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $q_0,\dots,q_n$.
 
 Note that the triangle inequality implies that $(p_i)$ is an $\eps$-chain.
 Since $|p_{i-1}-q_i|_{\spc{U}}<\pi$ for each $i$, the geodesic $[p_{i-1},q_i]$ is uniquely defined and 
@@ -235,8 +237,8 @@ Set $B_t=\bar B[\gamma(t),\tfrac\pi2]_{\spc{W}}$, then
 \item $B_{\frac\pi2}=\spc{J}$, in particular $B_{\frac\pi2}\cap \spc{U}=K$,
 \item the family $B_t$ is decreasing in $t$.
 \end{itemize}
-According to \ref{prop-def}(\ref{sharafutdinov}), the family of $\tfrac\pi2$-tractrix maps $\phi_t$ provide a strong deformation retraction of $B_0$ to $B_{\frac\pi2}$.
-Note that $\phi_{\frac\pi2}$ which is a short retraction.
+According to \ref{prop-def}(\ref{sharafutdinov}), the $\tfrac\pi2$-tractrix flow $\phi_t$ is a strong deformation retraction of $B_0$ to $B_{\frac\pi2}$.
+Note that $\phi_{\frac\pi2}$ is a short retraction.
 If $\kappa<1$, then by \ref{prop-def}(\ref{strict}), $\phi_{\frac\pi2}$ is a strictly short retraction.
 
 Since ${\spc{U}}$ is $\CAT(1)$,
