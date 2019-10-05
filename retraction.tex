@@ -14,7 +14,10 @@ pdfauthor={Alexander Lytchak and Anton Petrunin}}
 
 \begin{abstract}
 We construct short retractions of a CAT(1) space to its small convex subsets.
-This construction provides an alternative geometric description of an analytic tool introduced by Wilfrid Kendall. 
+This construction provides an alternative geometric description of an analytic tool introduced by Wilfrid Kendall.
+
+Our construction use \emph{tractrix flow} which is defined as a gradient flow for a family of functions of certain type.
+In the appendix we develop the necessary background in gradient flow which should be also useful elsewhere.
 \end{abstract}
 
 
@@ -171,12 +174,13 @@ Historically the first relative of tractrix flow
 is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 
-Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira1 and Julio C. Valencia-Guevara1 \cite{ferreira-valencia}.
+Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
 Gradient flows for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
 
 These papers implicitly contain a proof of the proposition,
 but we can not find a precise reference.
-By that reason we give a sketch of a very direct proof;
+In the appendix we define time-dependent gradient flow and develop its properties which in imply Proposition~\ref{prop-def}, but should be useful elsewhere.
+We also give the following sketch of a very direct proof;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
 \parit{Stretch of proof.}
@@ -199,6 +203,12 @@ Moreover, we may assume that each arc $\gamma|_{[t_{i-1},t_i]}$ has diameter at 
 Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ which is an $r$-tractrix of $p$ with respect to $\gamma$.
 The needed distance estimates follow from the corresponding estimates in the discrete case.
 \qeds
+
+
+
+
+
+
 
 \section{Proofs}\label{sec:proofs}
 
@@ -281,6 +291,194 @@ Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star
 Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
 
 Finally, by \ref{thm:retraction:Phi}, if $\kappa<1$, then $\Phi$ is a strictly short retraction and therefore so is $\Psi$.
+\qeds
+
+\appendix
+\section{Flow}
+
+\parbf{Time-independent flow.}
+Suppose $\spc{U}$ is a complete length $\CAT(\kappa)$ space.
+
+For a locally Lipschitz semiconcave function $f$ defined on an open set $\Dom f\subset \spc{U}$, the differential $d_pf\:\T_p\to\RR$ is defined at each point $p\in \Dom f$;
+it is a concave, Lipschitz, and positive-homogeneous of degree 1 function on the tangent space at $p$. %ADDREF
+
+Further, for any point $p\in \Dom f$ there is unique tangent vector $u\in \T_p$
+such that the following two conditions hold:
+\[
+\begin{aligned}
+\langle u,w\rangle &\ge \nabla_{p}f(w),
+\\
+\langle u,u\rangle &= \nabla_{p}f(u).
+\end{aligned}
+\eqlbl{<u,w>}
+\]
+for any tangent vector $w\in \T_p$.%
+\footnote{Here \emph{tangent vector} means \emph{element of tangent cone}, we use this term despite the tangent cone is not a vector space.
+The scalar product $\langle u,w\rangle$ is defined as $|u|\cdot|w|\cdot\cos\theta$ where $\theta$ is the angle between the vectors.}
+The vector $u$ is called \emph{gradient of $f$ at $p$}; briefly $u=\nabla_pf$.
+%ADDREF
+
+A locally Lipschitz map $t\mapsto \alpha(t)$ is called \emph{$f$-gradient curve} if it satisfies the following equation
+\[\alpha^+(t)=\nabla_{\alpha(t)}f\eqlbl{grad-flow}\]
+for any $t$, where $\alpha^+(t)\in \T_{\alpha(t)}$ denotes the \emph{right velocity vector}; that is,
+\[\alpha^+(t)=\lim_{\eps\to 0+} \frac{\log_{\alpha(t)}[\alpha(t+\eps)]}\eps,\]
+where $v=\log_pq$ if the vector $v\in\T_p$ points form $p$ in the direction of $q$ and $|v|=|p-q|$.
+
+The following proposition can be extracted from \cite[Theorem 1.7]{lytchak-open-map}.
+
+\begin{thm}{Proposition}\label{prop:time-independent}
+Let ${\spc{U}}$ be a complete length $\CAT(\kappa)$ space and
+$f$ a locally Lipschitz and semiconcave function defined on an open set $\Dom f\subset {\spc{U}}$.
+Then for any
+initial point $p\in \Dom f$  
+there is unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a maximal semiopen interval $[0,\eps)$ for some $\eps>0$ such that $\alpha(0)=p$. 
+\end{thm}
+
+Note that the proposition can be applied recursively to obtain a gradient curve defined on a maximal semiopen interval.
+
+\parbf{Time-dependent gradient flow.}
+Our next aim is to define gradient flow for a time-dependent family of functions and prove an analog of Proposition~\ref{prop:time-independent} for this flow.
+Let $f_t$ be family of functions defined on open subsets $\Dom f_t$ of~$\spc{U}$.
+More precisely, we assume that the parameter $t$ lies in a real interval $\II$ and 
+\[\Omega=\set{(x,t)\in\spc{U}\times \II}{x\in\Dom f_t}\]
+is an open subset in $\spc{U}\times \II$.
+
+The family $f_t$ is called continuous if for product of a closed set $K$ with a closed interval $[a,b]$ such that $K\times[a,b]\subset \Omega$ the family of the restrictions $f_t|_K$ is uniformly continuous in $[a,b]$.
+A family of functions $f_t$ is called \emph{Lipschitz} if 
+the function $x\mapsto f_t(x)$ is $L$-Lipschitz for some fixed $L$.
+It is called \emph{locally Lipschitz} if each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
+the restriction of the family to $\Omega'$ is Lipschitz.
+
+A family of functions $f_t$ will be called \emph{$\lambda$-concave} if 
+the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
+A family $f_t$ is called \emph{semiconcave} if for for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
+
+Note that one can not expect that a direct generalization of equation \ref{grad-flow} holds for a family of functions $f_t$.
+
+For example, consider a $1$-Lipschitz curve $\alpha$ in the real line. 
+Note that it is reasonable to assume that $\alpha$ is an $f_t$-gradient curve for the family $f_t(x)=-|x-\alpha(t)|$.
+(Indeed $\alpha$ can be realized as a limit of the gradient curves for a smoothed family $f_t$.)
+On the other hand, $\alpha^+(t)$ might be undefined,
+but even it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t=0$.
+
+
+Instead we define $f_t$-gradient curve as a curve $\alpha$ that satisfies the following inequality 
+for $\eps>0$ and any point $p\in\spc{U}$ 
+\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot d_{\alpha(t)}f_t(\dir{\alpha(t)}p)+o(\eps),\eqlbl{def:tdflow}\]
+where $\dir qp\in \T_{q}$ denotes a unit tangent vector at $q$ in the direction of $p$.
+
+Note that if $\alpha^+(t)=\nabla_{\alpha(t)}f_t$, then \ref{def:tdflow} holds;
+this follow from \ref{<u,w>}.
+On the other hand, the example above shows that the converse does not hold;
+that is, \ref{def:tdflow} generalize the definition~\ref{grad-flow}.
+
+\begin{thm}{Distance estimate}
+Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\kappa)$ space $\spc{U}$ and $s\ge 0$.
+Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ and $|f_t(x)-h_t(x)|\le s$ for any $(x,t)\in \Omega$.
+Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly, set $\ell(t)=|\alpha(t)-\beta(t)|_{\spc{U}}$.
+If for some $t$ a minimizing geodesic $[\alpha(t),\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
+\[\ell'(t)\le \lambda\cdot\ell(t)+s/\ell(t),\]
+assuming that the left hand side is defined.
+
+In particular the inequality holds for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
+\end{thm}
+
+\parit{Proof.}
+Choose a time moment $t$.
+Let $p$ be the midpoint of the geodesic $[\alpha(t)\beta(t)]$.
+Let $\gamma\:[0,\ell(t)]\to \spc{U}$ be an arc length parameterization of $[\alpha(t)\beta(t)]$ from $\alpha(t)$ to $\beta(t)$.
+Note that $d_{\alpha(t)}f(\dir{\alpha(t)}{p})$ is the right derivative of $f\circ\gamma$ at $0$
+and $-d_{\alpha(t)}g(\dir{\beta(t)}p)$ is the left derivative of $g\circ\gamma$ at $\ell(t)$.
+Since $f$ and $g$ are $\lambda$-concave,
+\begin{align*}
+f(\beta(t))&\le f(\alpha(t)+\ell(t)\cdot d_{\alpha(t)}f(\dir{\alpha(t)}{p}) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
+\\
+g(\alpha(t))&\le g(\beta(t)+\ell(t)\cdot d_{\alpha(t)}g(\dir{\beta(t)}p) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
+\end{align*}
+Adding these inequalities up and taking into account that $|f(x)-g(x)|<s$ for any $x$, we conclude that 
+\[d_{\alpha(t)}f(\dir{\alpha(t)}{p})+d_{\alpha(t)}g(\dir{\beta(t)}p)\ge \lambda\cdot \ell(t)+2\cdot s/\ell(t).\]
+
+Applying the triangle inequality and the definition of gradient curve at $p$, we get that
+\begin{align*}
+\ell(t+\eps)&=|\alpha(t+\eps)-\beta(t+\eps)|\le
+\\
+&\le |\alpha(t+\eps)-p|+|\beta(t+\eps)-p|\le 
+\\
+&\le |\alpha(t)-p|-\eps\cdot d_{\alpha_t}f(\dir{\alpha(t)}{p})+|\beta(t+\eps)-p|-\eps\cdot d_{\beta_t}g(\dir{\beta(t)}p)+o(\eps)=
+\\
+&=\ell(t)-\eps\cdot(\lambda\cdot \ell(t)+2\cdot s/\ell(t))+o(\eps)
+\end{align*}
+for $\eps>0$; whence the statement.
+\qeds
+
+\begin{thm}{Proposition}\label{prop:def-time-dependent}
+Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
+Suppose $f_t$ is a family of $\lambda$-concave functions for $t\in [a,b)$ and $\Dom f_t\supset B(z,2\cdot r)$ for some fixed $z\in\spc{U}$, $r>0$ and any~$t$.
+
+Let $\alpha\:[a,b)\to B(z,r)$ be a Lipschitz curve.
+Then $\alpha$ is a $f_t$-gradient if and only if 
+\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\tfrac{f(p)-f\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|\right]+o(\eps)\eqlbl{def:tdflow-plus}\]
+for any $p\in B(z,r)$.
+\end{thm}
+
+\parit{Proof.}
+Note that geodesics $[\alpha(t)p]$ lie in $\Dom f_t$ for any $t$.
+
+Since $f_t$ is $\lambda$ concave, we have that 
+\[d_{\alpha(t)}f_t(\dir{\alpha(t)}p)\ge \tfrac{f(p)-f\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|.\]
+Whence the only-if part follows.
+
+Given a point $p\in \spc{U}$ and $t$,
+consider a point $\bar p\in [\alpha(t)p]$.
+Applying \ref{def:tdflow-plus} for $\bar p$ and the triangle inequality, we get
+\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\tfrac{f(\bar p)-f\circ\alpha(t)}{|\bar p-\alpha(t)|}-\tfrac\lambda2\cdot |\bar p-\alpha(t)|\right]+o(\eps).\]
+By taking $\bar p$ close to $\alpha(t)$,
+the value $\tfrac{f(\bar p)-f\circ\alpha(t)}{|\bar p-\alpha(t)|}-\tfrac\lambda2\cdot |\bar p-\alpha(t)|$ can be made arbitrary close to $d_{\alpha(t)}f_t(\dir{\alpha(t)}p)$.
+Therefore, given $\delta>0$, the following inequality
+\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot d_{\alpha(t)}f_t(\dir{\alpha(t)}p)+\eps\cdot\delta\]
+holds for all sufficiently small positive values $\eps$.
+Therefore \ref{def:tdflow} holds.
+\qeds
+
+
+Now we are ready to formulate and prove an analog of Proposition~\ref{prop:time-independent} for time-dependent family.
+
+\begin{thm}{Proposition}\label{prop:time-dependent}
+Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space and
+$\{f_t\}_{t\in[a,b)}$ a continuous locally Lipschitz and semiconcave family of function defined on an open sets $\Dom f_t\subset {\spc{U}}$.
+Then for any initial point $p\in \Dom f_a$ and sufficiently small $\eps=\eps(p)>0$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[a,a+\eps)$. 
+\end{thm}
+
+As well as its time-independent version, this proposition can be applied recursively to obtain a unique gradient curve defined on a maximal semiopen interval.
+
+\parit{Proof.}
+By \ref{prop:time-independent}, the proposition holds if $f_t$ is a constant family.
+Moreover it holds if $f_t$ is piecewise constant;
+that is, if there is a partition of interval $[a,b)$ into a finite collection of semiopen subintervals such that $f_t$ is time-independent on each of subintervals and its domain is fixed.
+
+Fix $\eps>0$ sufficiently small so that there is $L$ such that the functions $f_t$ are $L$-Lipschitz and $\Dom f_t\supset B(p,\eps\cdot L)$ for any $t\in[a,a+\eps)$.
+Consider sequence  $a=t_0<t_1\dots<t_n\z=a+\eps$ and a piecewise constant family of functions on $B(p,\eps\cdot L)$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t<t_{i+1}$.
+By above discussion we have that there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,a+\eps)$.
+
+Note that the distance estimates show that as the partition gets finer, the gradinet curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
+
+Note that 
+\begin{align*}
+\dist_p\circ\hat\alpha(t+\eps)
+&\le 
+\dist_p\circ\hat\alpha(t)
+-\eps\cdot \left[\tfrac{\hat f_t(p)-\hat f_t\circ\hat\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\hat\alpha(t)|\right]
++o(\eps)
+\\
+&\le 
+\dist_p\circ\hat\alpha(t)
+-\eps\cdot \left[\tfrac{f_t(p)-f_t\circ\hat\alpha(t)-2\cdot s}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\hat\alpha(t)|\right]
++o(\eps)
+\end{align*}
+where 
+\[s=\sup_{t,x} \{|f_t(x)-\hat f_t(x)|\}.\]
+Since $s\to 0$ as $\hat\alpha\to \alpha$, we get that \ref{def:tdflow-plus} holds for $\alpha$;
+that is, $\alpha$ is an $f_t$-gradient curve.
 \qeds
 
 
