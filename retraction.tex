@@ -16,24 +16,24 @@ pdfauthor={Alexander Lytchak and Anton Petrunin}}
 We construct short retractions of a CAT(1) space to its small convex subsets.
 This construction provides an alternative geometric description of an analytic tool introduced by Wilfrid Kendall.
 
-Our construction use \emph{tractrix flow} which is defined as a gradient flow for a family of functions of certain type.
-In the appendix we develop the necessary background in gradient flow which should be also useful elsewhere.
+Our construction use \emph{tractrix flow} which cab be defined as a gradient flow for a family of functions of certain type.
+In the appendix we develop gradient flow for families of semiconcave functions which should be also useful elsewhere.
 \end{abstract}
 
 
 \section{Introduction}
 
-\parbf{Results.}
+
 Recall that a  subset $K$ in a metric space ${\spc{U}}$ is called \emph{weakly convex} if any two points $x,y\in K$ can be connected by a minimizing geodesic in $K$.
 
 Let ${\spc{U}}$ be a metric space and $K\subset {\spc{U}}$.
 A distance nonexpanding map $f\:{\spc{U}}\to K$ such that $f(x)=x$ for any $x\in K$ is called a \emph{short retraction to $K$}.
-If in addition a local Lipschitz constant of $f$ is strictly less than 1 at any point $p\notin K$, 
+If in addition a local Lipschitz constant of $f$ is strictly less than 1 at any point $x\notin K$, 
 then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K$}.
 
 \begin{thm}{Proposition}\label{thm:retraction:Phi}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
-Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and $|p-x|\le \tfrac\pi2$ for for a fixed point $p\in \spc{U}$ and any point $x\in K$.
+Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and there is $p$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in K$.
 
 
 \begin{enumerate}[(a)]
@@ -130,7 +130,7 @@ this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
 
 In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
 
-The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space ($\spc{U}$) is perfectly smooth;
+The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space ($\spc{U}$) is smooth;
 this is a powerful freedom of Alexandrov's world.
 More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, and Stephan Stadler~\cite{stadler}.
 
@@ -145,7 +145,7 @@ if the thread is not tight, then $p$ does not move.
 Then the trajectory of the point $p$ will be called $r$-\emph{tractrix of $p$ with respect to~$\gamma$}.
 The family of maps $\phi_t$ that send the initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
 
-Speaking more formally, let $\gamma\:[a,b]\to \spc{U}$ be a 1-Lipschitz curve. 
+More formally, suppose $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
 \[f_t=- \max\{r,\dist_{\gamma(t)}\}\]
 if the initial point lies in $\bar B[\gamma(a),r]$;
@@ -164,7 +164,7 @@ Then the $r$-tractrix flow $\phi_t\:\bar B[\gamma(a),r]\to\bar B[\gamma(t),r]$ i
 
 Moreover, if $r=\tfrac\pi2$, then
 \begin{enumerate}[(a)]
- \item $\phi_t$ is short for any $t$;
+ \item\label{non-strict} $\phi_t$ is short for any $t$;
  \item\label{strict} if $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
  \item\label{sharafutdinov} If the family of balls $B_t=\bar B[\gamma(t),r]$ is decreasing in $t$ (that is, if $B_{t_1}\supset B_{t_2}$ for $t_1<t_2$), then $\phi_t$ is a strong deformation retraction from $B_a$ to $B_b$.
 \end{enumerate}
@@ -175,11 +175,10 @@ is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a fa
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 
 Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
-Gradient flows for time-independent function in $\CAT(\kappa)$ spaces were studied in \cite{lytchak-open-map} and \cite{ohta-palfia} and it is not hard to generalize their results to the time dependent flow.
 
-These papers implicitly contain a proof of the proposition,
-but we can not find a precise reference.
-In the appendix we define time-dependent gradient flow and develop its properties which in imply Proposition~\ref{prop-def}, but should be useful elsewhere.
+Unfortunately Proposition~\ref{prop-def} does not follow directly from these papers
+and we had to develop time-dependent gradient flow our self.
+The proposition follows from the distance estimate (\ref{Distance estimate}) and the existence of gradient curves (\ref{prop:time-dependent}).
 We also give the following sketch of a very direct proof;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
@@ -190,7 +189,7 @@ A sequence of points $q_0,\dots,q_n$ in  ${\spc{U}}$ will be called an $\eps$-ch
 Suppose $p=p_0$ is a point that lies on distance at most $r$ from  $q_0$.
 Consider a sequence $p_0,\dots,p_n$ defined recursively the following way:
 \emph{$p_i$ is the closest point to $p_{i-1}$ on the geodesic $[p_{i-1}q_i]$ that lies on the distance at most $r$ from $q_i$}.
-The sequence $p_0,\dots,p_n$ (if defined) will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $q_0,\dots,q_n$.
+The sequence $p_0,\dots,p_n$ will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $q_0,\dots,q_n$.
 
 Note that the triangle inequality implies that $(p_i)$ is an $\eps$-chain.
 Since $|p_{i-1}-q_i|_{\spc{U}}<\pi$ for each $i$, the geodesic $[p_{i-1},q_i]$ is uniquely defined and 
@@ -227,17 +226,17 @@ can be defined as a metric space that admits an onto map $\iota\:\spc{U}\times\s
 
 Recall that join of two $\CAT(1)$ spaces is $\CAT(1)$ \cite[Corollary 3.14]{bridson-haefliger}.
 
-\begin{wrapfigure}{o}{50 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-2}
-\end{wrapfigure} 
-
 \parit{Proof of \ref{thm:retraction:Phi}.}
 Consider a join of  $K$ with a one-point space, $\spc{J}=K\star \{s\}$.
 Since $\spc{J}$ is a $\CAT(1)$ space,
 by Reshetnyak's gluing theorem \cite[8.9.1]{akp}, the space $\spc{W}$ glued from ${\spc{U}}$ and $\spc{J}$ along $K$ is a $\CAT(1)$ space;
 moreover each space ${\spc{U}}$ and $\spc{J}$ is a convex subsets in $\spc{W}$.
+
+\begin{wrapfigure}{o}{50 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2}
+\end{wrapfigure} 
 
 
 Let $\gamma$ be the geodesic in $\spc{W}$ from $p$ to the pole $s$ of $\spc{J}$.
@@ -248,7 +247,7 @@ Set $B_t=\bar B[\gamma(t),\tfrac\pi2]_{\spc{W}}$, then
 \item the family $B_t$ is decreasing in $t$.
 \end{itemize}
 According to \ref{prop-def}(\ref{sharafutdinov}), the $\tfrac\pi2$-tractrix flow $\phi_t$ is a strong deformation retraction of $B_0$ to $B_{\frac\pi2}$.
-Note that $\phi_{\frac\pi2}$ is a short retraction.
+By \ref{prop-def}(\ref{non-strict}) $\phi_{\frac\pi2}$ is a short.
 If $\kappa<1$, then by \ref{prop-def}(\ref{strict}), $\phi_{\frac\pi2}$ is a strictly short retraction.
 
 Since ${\spc{U}}$ is $\CAT(1)$,
@@ -294,7 +293,7 @@ Finally, by \ref{thm:retraction:Phi}, if $\kappa<1$, then $\Phi$ is a strictly s
 \qeds
 
 \appendix
-\section{Flow}
+\section{Time-dependent gradient flow}
 
 \parbf{Time-independent flow.}
 Suppose $\spc{U}$ is a complete length $\CAT(\kappa)$ space.
@@ -303,7 +302,7 @@ For a locally Lipschitz semiconcave function $f$ defined on an open set $\Dom f\
 it is a concave, Lipschitz, and positive-homogeneous of degree 1 function on the tangent space at $p$. %ADDREF
 
 Further, for any point $p\in \Dom f$ there is unique tangent vector $u\in \T_p$
-such that the following two conditions hold:
+such that the following two conditions
 \[
 \begin{aligned}
 \langle u,w\rangle &\ge \nabla_{p}f(w),
@@ -312,7 +311,7 @@ such that the following two conditions hold:
 \end{aligned}
 \eqlbl{<u,w>}
 \]
-for any tangent vector $w\in \T_p$.%
+hold for any tangent vector $w\in \T_p$.%
 \footnote{Here \emph{tangent vector} means \emph{element of tangent cone}, we use this term despite the tangent cone is not a vector space.
 The scalar product $\langle u,w\rangle$ is defined as $|u|\cdot|w|\cdot\cos\theta$ where $\theta$ is the angle between the vectors.}
 The vector $u$ is called \emph{gradient of $f$ at $p$}; briefly $u=\nabla_pf$.
@@ -329,8 +328,7 @@ The following proposition can be extracted from \cite[Theorem 1.7]{lytchak-open-
 \begin{thm}{Proposition}\label{prop:time-independent}
 Let ${\spc{U}}$ be a complete length $\CAT(\kappa)$ space and
 $f$ a locally Lipschitz and semiconcave function defined on an open set $\Dom f\subset {\spc{U}}$.
-Then for any
-initial point $p\in \Dom f$  
+Then for any point $p\in \Dom f$  
 there is unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a maximal semiopen interval $[0,\eps)$ for some $\eps>0$ such that $\alpha(0)=p$. 
 \end{thm}
 
@@ -343,7 +341,7 @@ More precisely, we assume that the parameter $t$ lies in a real interval $\II$ a
 \[\Omega=\set{(x,t)\in\spc{U}\times \II}{x\in\Dom f_t}\]
 is an open subset in $\spc{U}\times \II$.
 
-The family $f_t$ is called continuous if for product of a closed set $K$ with a closed interval $[a,b]$ such that $K\times[a,b]\subset \Omega$ the family of the restrictions $f_t|_K$ is uniformly continuous in $[a,b]$.
+The family $f_t$ is called continuous if for any closed set $K$ and closed interval $[a,b]$ such that $K\times[a,b]\subset \Omega$ the family of the restrictions $f_t|_K$ is uniformly continuous in $[a,b]$.
 A family of functions $f_t$ is called \emph{Lipschitz} if 
 the function $x\mapsto f_t(x)$ is $L$-Lipschitz for some fixed $L$.
 It is called \emph{locally Lipschitz} if each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
@@ -357,9 +355,9 @@ Note that one can not expect that a direct generalization of equation \ref{grad-
 
 For example, consider a $1$-Lipschitz curve $\alpha$ in the real line. 
 Note that it is reasonable to assume that $\alpha$ is an $f_t$-gradient curve for the family $f_t(x)=-|x-\alpha(t)|$.
-(Indeed $\alpha$ can be realized as a limit of the gradient curves for a smoothed family $f_t$.)
+(Indeed $\alpha$ can be realized as a limit of the gradient curves for a family of functions obtained by smoothing $f_t$.)
 On the other hand, $\alpha^+(t)$ might be undefined,
-but even it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t=0$.
+but even if it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t\equiv0$.
 
 
 Instead we define $f_t$-gradient curve as a curve $\alpha$ that satisfies the following inequality 
@@ -372,16 +370,21 @@ this follow from \ref{<u,w>}.
 On the other hand, the example above shows that the converse does not hold;
 that is, \ref{def:tdflow} generalize the definition~\ref{grad-flow}.
 
-\begin{thm}{Distance estimate}
+\begin{thm}{Distance estimate}\label{Distance estimate}
 Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\kappa)$ space $\spc{U}$ and $s\ge 0$.
 Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ and $|f_t(x)-h_t(x)|\le s$ for any $(x,t)\in \Omega$.
 Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly, set $\ell(t)=|\alpha(t)-\beta(t)|_{\spc{U}}$.
 If for some $t$ a minimizing geodesic $[\alpha(t),\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
-\[\ell'(t)\le \lambda\cdot\ell(t)+s/\ell(t),\]
+\[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),\]
 assuming that the left hand side is defined.
 
 In particular the inequality holds for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
 \end{thm}
+
+Note that $t\mapsto \ell$ is a Lipschitz function.
+Therefore by Rademacher's theorem, its derivative $\ell'$ is defined almost everywhere and it satisfies the fundamental theorem of calculus.
+In particular, it implies uniqueness of the future of gradient curve with given initial point.
+It also makes possible to estimate the distance between two gradient curves for close functions which implies convergence of gradient curves $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly to a family $f_t$ as $n\to \infty$. 
 
 \parit{Proof.}
 Choose a time moment $t$.
@@ -391,9 +394,9 @@ Note that $d_{\alpha(t)}f(\dir{\alpha(t)}{p})$ is the right derivative of $f\cir
 and $-d_{\alpha(t)}g(\dir{\beta(t)}p)$ is the left derivative of $g\circ\gamma$ at $\ell(t)$.
 Since $f$ and $g$ are $\lambda$-concave,
 \begin{align*}
-f(\beta(t))&\le f(\alpha(t)+\ell(t)\cdot d_{\alpha(t)}f(\dir{\alpha(t)}{p}) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
+f(\beta(t))&\le f(\alpha(t))+\ell(t)\cdot d_{\alpha(t)}f(\dir{\alpha(t)}{p}) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
 \\
-g(\alpha(t))&\le g(\beta(t)+\ell(t)\cdot d_{\alpha(t)}g(\dir{\beta(t)}p) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
+g(\alpha(t))&\le g(\beta(t))+\ell(t)\cdot d_{\alpha(t)}g(\dir{\beta(t)}p) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
 \end{align*}
 Adding these inequalities up and taking into account that $|f(x)-g(x)|<s$ for any $x$, we conclude that 
 \[d_{\alpha(t)}f(\dir{\alpha(t)}{p})+d_{\alpha(t)}g(\dir{\beta(t)}p)\ge \lambda\cdot \ell(t)+2\cdot s/\ell(t).\]
@@ -460,7 +463,7 @@ Fix $\eps>0$ sufficiently small so that there is $L$ such that the functions $f_
 Consider sequence  $a=t_0<t_1\dots<t_n\z=a+\eps$ and a piecewise constant family of functions on $B(p,\eps\cdot L)$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t<t_{i+1}$.
 By above discussion we have that there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,a+\eps)$.
 
-Note that the distance estimates show that as the partition gets finer, the gradinet curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
+Note that the distance estimates (\ref{Distance estimate}) show that as the partition gets finer, the gradinet curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
 
 Note that 
 \begin{align*}
