@@ -127,6 +127,7 @@ and (2) if $r< \tfrac\pi2$, then the local Lipschitz constant of $\phi_t$ at $p$
 
 In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
 this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
+In Appendix~\ref{Another way} we indicate another way to prove Proposition~\ref{thm:retraction:Phi}.
 
 In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
 
@@ -484,7 +485,46 @@ Since $s\to 0$ as $\hat\alpha\to \alpha$, we get that \ref{def:tdflow-plus} hold
 that is, $\alpha$ is an $f_t$-gradient curve.
 \qeds
 
+\section{Another way}\label{Another way}
 
+Here we present an alternative way to prove Proposition~\ref{thm:retraction:Phi}
+The idea is taken from the proof of Kirszbraun's theorem; see \cite[5.1]{akp-kirszbraun} or \cite[9.4.1]{akp}. %(\ref{thm:kirsz+}).
+
+\begin{wrapfigure}{o}{55 mm}
+\centering
+\includegraphics{mppics/pic-1}
+\end{wrapfigure}
+
+\parit{Proof of \ref{thm:retraction:Phi}.}
+Set $\mathring{\spc{U}}=\Cone \spc{U}$.
+Denote by $\mathring{K}$ the subcone of $\mathring{\spc{U}}$ spanned by $K$.
+The space $\spc{U}$ is the unit sphere in $\mathring{\spc{U}}$ with angle metric;
+that is, $\spc{U}=\set{z\in \mathring{\spc{U}}}{|z|=1}$ and $|u-v|_{\spc{U}}=\measuredangle[o\,{}^u_v]$, where $o$ denotes the tip of the cone $\mathring{\spc{U}}$.
+
+Note that $\mathring{\spc{U}}$ is a $\CAT(0)$ space and $\mathring{K}$ forms a convex closed subset of $\mathring{\spc{U}}$.
+In particular, for any point $x$ there is unique point $\hat x\in \mathring{K}$
+that minimize the distance to $x$;
+that is, $|\hat x-x|=\dist_K(x)$.
+
+Consider the ray $\alpha_o\:t\mapsto t\cdot p$ in  $\mathring{\spc{U}}$.
+Note that given $s\in \mathring{\spc{U}}$
+the geodesics $[s\ t\cdot p]$ converge as $t\to\infty$ to a ray, 
+say $\alpha_s\:[0,\infty)\to \mathring{\spc{U}}$ that is parallel to $\alpha_o$.
+
+Note that if $|x|=1$, then $|\hat x|\le 1$.
+By assumption for any $k\in \mathring{K}$ the function $t\mapsto |\alpha_k(t)|$ is monotonically increasing.
+Therefore there is unique value $t_x\ge 0$ such that
+$|\alpha_{\hat x}(t_x)|=1$;
+set $x'=\alpha_{\hat x}(t_x)$ and define the map $\Phi$ as $x\mapsto x'$.
+
+Evidently $x\mapsto x'$ is a retraction of $\spc{U}$ to $K$;
+that is,
+$\Phi(x)\in K$ for any $x\in \spc{U}$
+and 
+$\Phi(k)=k$ for any $k\in K$.
+It remains to show that $x\mapsto x'$ is short; 
+the latter can be done by straightforward calculations.
+\qeds
 
 {\small\sloppy
 
