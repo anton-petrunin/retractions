@@ -377,15 +377,16 @@ Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ an
 Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly, set $\ell(t)=|\alpha(t)-\beta(t)|_{\spc{U}}$.
 If for some $t$ a minimizing geodesic $[\alpha(t),\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
 \[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),\]
-assuming that the left hand side is defined.
+assuming that the left hand side is defined
+and
+\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(0)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot t}\]
+for $t\ge 0$
 
-In particular the inequality holds for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
+In particular the inequalities hold for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
 \end{thm}
 
-Note that $t\mapsto \ell$ is a Lipschitz function.
-Therefore by Rademacher's theorem, its derivative $\ell'$ is defined almost everywhere and it satisfies the fundamental theorem of calculus.
-In particular, it implies uniqueness of the future of gradient curve with given initial point.
-It also makes possible to estimate the distance between two gradient curves for close functions which implies convergence of gradient curves $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly to a family $f_t$ as $n\to \infty$. 
+The second inequality (applied for $s=0$) implies uniqueness of the future of gradient curve with given initial point.
+This inequality also makes possible to estimate the distance between two gradient curves for close functions. In particular it implies convergence of $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly as $n\to \infty$. 
 
 \parit{Proof.}
 Choose a time moment $t$.
@@ -413,6 +414,10 @@ Applying the triangle inequality and the definition of gradient curve at $p$, we
 &=\ell(t)-\eps\cdot(\lambda\cdot \ell(t)+2\cdot s/\ell(t))+o(\eps)
 \end{align*}
 for $\eps>0$; whence the statement.
+
+Note that $t\mapsto \ell(t)$ is a Lipschitz function.
+By Rademacher's theorem, its derivative $\ell'$ is defined almost everywhere and it satisfies the fundamental theorem of calculus.
+Therefore the first inequality implies the second one.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:def-time-dependent}
