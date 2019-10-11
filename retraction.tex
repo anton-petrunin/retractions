@@ -16,8 +16,8 @@ pdfauthor={Alexander Lytchak and Anton Petrunin}}
 We construct short retractions of a CAT(1) space to its small convex subsets.
 This construction provides an alternative geometric description of an analytic tool introduced by Wilfrid Kendall.
 
-Our construction use \emph{tractrix flow} which cab be defined as a gradient flow for a family of functions of certain type.
-In the appendix we develop gradient flow for families of semiconcave functions which should be also useful elsewhere.
+Our construction use \emph{tractrix flow} which can be defined as a gradient flow for a family of functions of certain type.
+In an appendix we prove a general existence result for gradient flows of time-dependent locally Lipschitz semiconcave functions, which might be of independent interest.
 \end{abstract}
 
 
@@ -48,6 +48,8 @@ This statement is a generalization of the following well known statement about $
 \emph{If ${\spc{U}}$ is a complete length $\CAT(0)$ space and $K$ is a closed convex subset in ${\spc{U}}$,
 then the closest point projection ${\spc{U}}\to K$ is a short retraction.
 Moreover, if $\spc{U}$ is a $\CAT(\kappa)$ space for some $\kappa<0$, then  the closest point projection is a strictly short retraction}.
+
+The proposition and a small trick imply the followng:
 
 \begin{thm}{Corollary}\label{cor}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
@@ -120,7 +122,8 @@ Indeed if there are different solutions of one of these problems, then their pro
 The latter contradicts the existence of the strictly short retraction $\Psi$ provided by Corollary \ref{cor}.
 
 \parbf{About the proofs.}
-We use a new tool which we call $r$-\emph{tractrix flow}; it gives a family of maps $\phi_t$ for a given rectifiable curve $t\mapsto\gamma(t)$.
+We use a new tool whichwe call $r$-\emph{tractrix flow}, a special  time-dependent gradient flow.
+It gives a family of maps $\phi_t$ for a given rectifiable curve $t\z\mapsto\gamma(t)$.
 The important properties of the tractrix flow are collected in Proposition~\ref{prop-def}.
 In particular, (1) if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$, 
 and (2) if $r< \tfrac\pi2$, then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
@@ -131,9 +134,9 @@ In Appendix~\ref{Another way} we indicate another way to prove Proposition~\ref{
 
 In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
 
-The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space ($\spc{U}$) is smooth;
+The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space $\spc{U}$ is smooth;
 this is a powerful freedom of Alexandrov's world.
-More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, and Stephan Stadler~\cite{stadler}.
+More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, Paul Creutz~\cite{creutz}, and Stephan Stadler~\cite{stadler}. 
 
 \section{Tractrix flow}\label{sec:Tractrix flow}
 
@@ -177,8 +180,8 @@ Second relative is the \emph{pursuer flow} introduced and studied by Stephanie A
 
 Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
 
-Unfortunately Proposition~\ref{prop-def} does not follow directly from these papers
-and we had to develop time-dependent gradient flow our self.
+Unfortunately Proposition~\ref{prop-def} does not follow directly from these papers; for this reason we provide in the appendix a short proof of the existence of
+gradient flows of time-dependent locally Lipschitz semiconcave functions in $\CAT(\kappa)$ spaces.
 The proposition follows from the distance estimate (\ref{Distance estimate}) and the existence of gradient curves (\ref{prop:time-dependent}).
 We also give the following sketch of a very direct proof;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
@@ -231,7 +234,7 @@ Recall that join of two $\CAT(1)$ spaces is $\CAT(1)$ \cite[Corollary 3.14]{brid
 Consider a join of  $K$ with a one-point space, $\spc{J}=K\star \{s\}$.
 Since $\spc{J}$ is a $\CAT(1)$ space,
 by Reshetnyak's gluing theorem \cite[8.9.1]{akp}, the space $\spc{W}$ glued from ${\spc{U}}$ and $\spc{J}$ along $K$ is a $\CAT(1)$ space;
-moreover each space ${\spc{U}}$ and $\spc{J}$ is a convex subsets in $\spc{W}$.
+moreover ${\spc{U}}$ and $\spc{J}$ are convex subsets in $\spc{W}$.
 
 \begin{wrapfigure}{o}{50 mm}
 \vskip-0mm
@@ -268,7 +271,7 @@ Therefore the composition $\Phi=\phi_{\frac\pi2}\circ\Theta$ induces a short ret
 which is strictly short if $\kappa<1$.
 
 Finally, we need to take care of the case $\kappa<1$ and $p\notin K$.
-Denote by $\bar p\in K$ the closest point to $p$; by $\CAT(\kappa)$ comparison it is uniquely defined.
+Denote by $\bar p\in K$ the closest point to $p$; by $\CAT(\kappa)$ comparison it exists and unique.
 Note that $|\bar p-x|_{\spc{U}}< |p-x|_{\spc{U}}$ for any $x\in K$;
 therefore $K\subset B(\bar p,\tfrac\pi2)$. 
 It remains to apply the construction above with $\bar p$ instead $p$.
@@ -286,7 +289,7 @@ Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac
 Moreover \ref{join-formula} implies that the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving.
 In particular the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
 
-Further note that $|p-x|_{\spc{U}\star\spc{U}}\le \tfrac\pi2$ for any $p\in K$.
+Further note that $|q-y|_{\spc{U}\star\spc{U}}$ for any $y\in \spc{U}\star\spc{U}}$ and $q=\Theta(p,p)$.
 Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star\spc{U}\to K$.
 Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
 
