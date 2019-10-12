@@ -289,7 +289,7 @@ Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac
 Moreover \ref{join-formula} implies that the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving.
 In particular the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
 
-Further note that $|q-y|_{\spc{U}\star\spc{U}}$ for any $y\in \spc{U}\star\spc{U}}$ and $q=\Theta(p,p)$.
+Further note that $|q-y|_{\spc{U}\star\spc{U}}$ for any $y\in \spc{U}\star\spc{U}$ and $q=\Theta(p,p)$.
 Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star\spc{U}\to K$.
 Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
 
@@ -298,6 +298,9 @@ Finally, by \ref{thm:retraction:Phi}, if $\kappa<1$, then $\Phi$ is a strictly s
 
 \appendix
 \section{Time-dependent gradient flow}
+
+Here we will define gradient flow for time-dependent family of functions and prove its existence for certain families.
+The proof relies mostly on an existence result for gradient flow for time-independent families --- with minor conditions on the space, the same proof should work once the existence of time-independent gradient flow is proved.
 
 \parbf{Time-independent flow.}
 Suppose $\spc{U}$ is a complete length $\CAT(\kappa)$ space.
@@ -309,9 +312,9 @@ Further, for any point $p\in \Dom f$ there is unique tangent vector $u\in \T_p$
 such that the following two conditions
 \[
 \begin{aligned}
-\langle u,w\rangle &\ge \nabla_{p}f(w),
+\langle u,w\rangle &\ge d_{p}f(w),
 \\
-\langle u,u\rangle &= \nabla_{p}f(u).
+\langle u,u\rangle &= d_{p}f(u).
 \end{aligned}
 \eqlbl{<u,w>}
 \]
@@ -333,7 +336,7 @@ The following proposition can be extracted from \cite[Theorem 1.7]{lytchak-open-
 Let ${\spc{U}}$ be a complete length $\CAT(\kappa)$ space and
 $f$ a locally Lipschitz and semiconcave function defined on an open set $\Dom f\subset {\spc{U}}$.
 Then for any point $p\in \Dom f$  
-there is unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a maximal semiopen interval $[0,\eps)$ for some $\eps>0$ such that $\alpha(0)=p$. 
+there is unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[0,\eps)$ for some $\eps>0$ such that $\alpha(0)=p$. 
 \end{thm}
 
 Note that the proposition can be applied recursively to obtain a gradient curve defined on a maximal semiopen interval.
@@ -345,15 +348,15 @@ More precisely, we assume that the parameter $t$ lies in a real interval $\II$ a
 \[\Omega=\set{(x,t)\in\spc{U}\times \II}{x\in\Dom f_t}\]
 is an open subset in $\spc{U}\times \II$.
 
-The family $f_t$ is called continuous if for any closed set $K$ and closed interval $[a,b]$ such that $K\times[a,b]\subset \Omega$ the family of the restrictions $f_t|_K$ is uniformly continuous in $[a,b]$.
+The family $f_t$ is called \emph{locally uniformly upper continuous} if for any closed set $K$ and a semiopen interval $[a,b)$ such that $K\times[a,b)\subset \Omega$ the family of the restrictions $f_t|_K$ converge uniformly to $f_a|_K$ as $t\to a^+$.
 A family of functions $f_t$ is called \emph{Lipschitz} if 
 the function $x\mapsto f_t(x)$ is $L$-Lipschitz for some fixed $L$.
-It is called \emph{locally Lipschitz} if each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
+It is called \emph{locally uniformly Lipschitz} if each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
 the restriction of the family to $\Omega'$ is Lipschitz.
 
 A family of functions $f_t$ will be called \emph{$\lambda$-concave} if 
 the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
-A family $f_t$ is called \emph{semiconcave} if for for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
+A family $f_t$ is called \emph{locally uniformly semiconcave} if for for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
 
 Note that one can not expect that a direct generalization of equation \ref{grad-flow} holds for a family of functions $f_t$.
 
@@ -377,13 +380,13 @@ that is, \ref{def:tdflow} generalize the definition~\ref{grad-flow}.
 \begin{thm}{Distance estimate}\label{Distance estimate}
 Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\kappa)$ space $\spc{U}$ and $s\ge 0$.
 Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ and $|f_t(x)-h_t(x)|\le s$ for any $(x,t)\in \Omega$.
-Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly, set $\ell(t)=|\alpha(t)-\beta(t)|_{\spc{U}}$.
+Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly defined on a common interval $t\in [a,b)$; set $\ell(t)\z=|\alpha(t)\z-\beta(t)|_{\spc{U}}$.
 If for some $t$ a minimizing geodesic $[\alpha(t),\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
 \[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),\]
 assuming that the left hand side is defined
 and
-\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(0)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot t}\]
-for $t\ge 0$
+\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(a)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot (t-a)}\]
+for any $t$.
 
 In particular the inequalities hold for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
 \end{thm}
@@ -457,7 +460,13 @@ Now we are ready to formulate and prove an analog of Proposition~\ref{prop:time-
 
 \begin{thm}{Proposition}\label{prop:time-dependent}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space and
-$\{f_t\}_{t\in[a,b)}$ a continuous locally Lipschitz and semiconcave family of function defined on an open sets $\Dom f_t\subset {\spc{U}}$.
+$\{f_t\}_{t\in[a,b)}$ a family of function defined on an open sets $\Dom f_t\subset {\spc{U}}$.
+Suppose that $f_t$ is
+\begin{enumerate}[(i)]
+\item locally uniformly upper continuous,
+\item locally uniformly Lipschitz,
+\item locally uniformly semiconcave.
+\end{enumerate}
 Then for any initial point $p\in \Dom f_a$ and sufficiently small $\eps=\eps(p)>0$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[a,a+\eps)$. 
 \end{thm}
 
