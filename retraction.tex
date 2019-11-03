@@ -301,6 +301,7 @@ Finally, by \ref{thm:retraction:Phi}, if $\kappa<1$, then $\Phi$ is a strictly s
 
 Here we will define gradient flow for time-dependent family of functions and prove its existence for certain families.
 The proof relies mostly on an existence result for gradient flow for time-independent families --- with minor conditions on the space, the same proof should work once the existence of time-independent gradient flow is proved.
+For instance the proof works nearly without changes for spaces with lower curvature bound.
 
 \parbf{Time-independent flow.}
 Suppose $\spc{U}$ is a complete length $\CAT(\kappa)$ space.
@@ -330,7 +331,7 @@ for any $t$, where $\alpha^+(t)\in \T_{\alpha(t)}$ denotes the \emph{right veloc
 \[\alpha^+(t)=\lim_{\eps\to 0+} \frac{\log_{\alpha(t)}[\alpha(t+\eps)]}\eps,\]
 where $v=\log_pq$ if the vector $v\in\T_p$ points form $p$ in the direction of $q$ and $|v|=|p-q|$.
 
-The following proposition can be extracted from \cite[Theorem 1.7]{lytchak-open-map}.
+The following proposition can be extracted from \cite[Theorem 1.7]{lytchak-open-map} or \cite{ohta-palfia}.
 
 \begin{thm}{Proposition}\label{prop:time-independent}
 Let ${\spc{U}}$ be a complete length $\CAT(\kappa)$ space and
@@ -348,15 +349,16 @@ More precisely, we assume that the parameter $t$ lies in a real interval $\II$ a
 \[\Omega=\set{(x,t)\in\spc{U}\times \II}{x\in\Dom f_t}\]
 is an open subset in $\spc{U}\times \II$.
 
-The family $f_t$ is called \emph{locally uniformly upper continuous} if for any closed set $K$ and a semiopen interval $[a,b)$ such that $K\times[a,b)\subset \Omega$ the family of the restrictions $f_t|_K$ converge uniformly to $f_a|_K$ as $t\to a^+$.
+The family $f_t$ is called \emph{locally uniformly upper continuous in time} if for any closed set $K$ and a semiopen interval $[a,b)$ such that $K\times[a,b)\subset \Omega$ the family of the restrictions $f_t|_K$ converge uniformly to $f_a|_K$ as $t\to a^+$.
+
 A family of functions $f_t$ is called \emph{Lipschitz} if 
 the function $x\mapsto f_t(x)$ is $L$-Lipschitz for some fixed $L$.
-It is called \emph{locally uniformly Lipschitz} if each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
+It is called \emph{locally uniformly Lipschitz} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
 the restriction of the family to $\Omega'$ is Lipschitz.
 
 A family of functions $f_t$ will be called \emph{$\lambda$-concave} if 
 the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
-A family $f_t$ is called \emph{locally uniformly semiconcave} if for for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
+A family $f_t$ is called \emph{locally uniformly semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
 
 Note that one can not expect that a direct generalization of equation \ref{grad-flow} holds for a family of functions $f_t$.
 
@@ -367,13 +369,14 @@ On the other hand, $\alpha^+(t)$ might be undefined,
 but even if it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t\equiv0$.
 
 
-Instead we define $f_t$-gradient curve as a curve $\alpha$ that satisfies the following inequality 
-for $\eps>0$ and any point $p\in\spc{U}$ 
+Instead we define \emph{$f_t$-gradient curve} as a Lipschitz curve $\alpha$ that satisfies the following inequality 
+for $\eps>0$, $t$, and any point $p\in\spc{U}$  
 \[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot d_{\alpha(t)}f_t(\dir{\alpha(t)}p)+o(\eps),\eqlbl{def:tdflow}\]
-where $\dir qp\in \T_{q}$ denotes a unit tangent vector at $q$ in the direction of $p$.
+where $\dir qp\in \T_{q}$ denotes a unit tangent vector at $q$ in the direction of $p$
+(if there is no geodesic $[\alpha(t)\,p]$ then we impose no condition).
 
-Note that if $\alpha^+(t)=\nabla_{\alpha(t)}f_t$, then \ref{def:tdflow} holds;
-this follow from \ref{<u,w>}.
+If $\alpha^+(t)=\nabla_{\alpha(t)}f_t$ for all $t$, then \ref{def:tdflow} holds;
+it follows from \ref{<u,w>}.
 On the other hand, the example above shows that the converse does not hold;
 that is, \ref{def:tdflow} generalize the definition~\ref{grad-flow}.
 
@@ -381,10 +384,9 @@ that is, \ref{def:tdflow} generalize the definition~\ref{grad-flow}.
 Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\kappa)$ space $\spc{U}$ and $s\ge 0$.
 Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ and $|f_t(x)-h_t(x)|\le s$ for any $(x,t)\in \Omega$.
 Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly defined on a common interval $t\in [a,b)$; set $\ell(t)\z=|\alpha(t)\z-\beta(t)|_{\spc{U}}$.
-If for some $t$ a minimizing geodesic $[\alpha(t),\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
+If for all $t$ a minimizing geodesic $[\alpha(t)\,\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
 \[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),\]
-assuming that the left hand side is defined
-and
+assuming that the left hand side is defined and
 \[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(a)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot (t-a)}\]
 for any $t$.
 
@@ -392,22 +394,23 @@ In particular the inequalities hold for any $t\in\II$ if $\Omega\supset B(p,2\cd
 \end{thm}
 
 The second inequality (applied for $s=0$) implies uniqueness of the future of gradient curve with given initial point.
-This inequality also makes possible to estimate the distance between two gradient curves for close functions. In particular it implies convergence of $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly as $n\to \infty$. 
+This inequality also makes possible to estimate the distance between two gradient curves for close functions.
+In particular, it implies convergence of $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly as $n\to \infty$. 
 
 \parit{Proof.}
-Choose a time moment $t$.
+Fix a time moment $t$ and set $f=f_t$ and $h=h_t$.
 Let $p$ be the midpoint of the geodesic $[\alpha(t)\beta(t)]$.
 Let $\gamma\:[0,\ell(t)]\to \spc{U}$ be an arc length parameterization of $[\alpha(t)\beta(t)]$ from $\alpha(t)$ to $\beta(t)$.
 Note that $d_{\alpha(t)}f(\dir{\alpha(t)}{p})$ is the right derivative of $f\circ\gamma$ at $0$
-and $-d_{\alpha(t)}g(\dir{\beta(t)}p)$ is the left derivative of $g\circ\gamma$ at $\ell(t)$.
-Since $f$ and $g$ are $\lambda$-concave,
+and $-d_{\alpha(t)}h(\dir{\beta(t)}p)$ is the left derivative of $h\circ\gamma$ at $\ell(t)$.
+Since $f$ and $h$ are $\lambda$-concave,
 \begin{align*}
 f(\beta(t))&\le f(\alpha(t))+\ell(t)\cdot d_{\alpha(t)}f(\dir{\alpha(t)}{p}) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
 \\
-g(\alpha(t))&\le g(\beta(t))+\ell(t)\cdot d_{\alpha(t)}g(\dir{\beta(t)}p) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
+h(\alpha(t))&\le h(\beta(t))+\ell(t)\cdot d_{\alpha(t)}h(\dir{\beta(t)}p) +\tfrac12\cdot\lambda\cdot\ell(t)^2,
 \end{align*}
-Adding these inequalities up and taking into account that $|f(x)-g(x)|<s$ for any $x$, we conclude that 
-\[d_{\alpha(t)}f(\dir{\alpha(t)}{p})+d_{\alpha(t)}g(\dir{\beta(t)}p)\ge \lambda\cdot \ell(t)+2\cdot s/\ell(t).\]
+Adding these inequalities up and taking into account that $|f(x)-h(x)|<s$ for any $x$, we conclude that 
+\[d_{\alpha(t)}f(\dir{\alpha(t)}{p})+d_{\alpha(t)}h(\dir{\beta(t)}p)\ge \lambda\cdot \ell(t)+2\cdot s/\ell(t).\]
 
 Applying the triangle inequality and the definition of gradient curve at $p$, we get that
 \begin{align*}
@@ -415,13 +418,13 @@ Applying the triangle inequality and the definition of gradient curve at $p$, we
 \\
 &\le |\alpha(t+\eps)-p|+|\beta(t+\eps)-p|\le 
 \\
-&\le |\alpha(t)-p|-\eps\cdot d_{\alpha_t}f(\dir{\alpha(t)}{p})+|\beta(t+\eps)-p|-\eps\cdot d_{\beta_t}g(\dir{\beta(t)}p)+o(\eps)=
+&\le |\alpha(t)-p|-\eps\cdot d_{\alpha_t}f(\dir{\alpha(t)}{p})+|\beta(t+\eps)-p|-\eps\cdot d_{\beta_t}h(\dir{\beta(t)}p)+o(\eps)=
 \\
 &=\ell(t)-\eps\cdot(\lambda\cdot \ell(t)+2\cdot s/\ell(t))+o(\eps)
 \end{align*}
-for $\eps>0$; whence the statement.
+for $\eps>0$; hence the statement.
 
-Note that $t\mapsto \ell(t)$ is a Lipschitz function.
+Since $\alpha$ and $\beta$ are Lipschitz, $t\mapsto \ell(t)$ is a Lipschitz function.
 By Rademacher's theorem, its derivative $\ell'$ is defined almost everywhere and it satisfies the fundamental theorem of calculus.
 Therefore the first inequality implies the second one.
 \qeds
@@ -432,16 +435,16 @@ Suppose $f_t$ is a family of $\lambda$-concave functions for $t\in [a,b)$ and $\
 
 Let $\alpha\:[a,b)\to B(z,r)$ be a Lipschitz curve.
 Then $\alpha$ is a $f_t$-gradient if and only if 
-\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\tfrac{f(p)-f\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|\right]+o(\eps)\eqlbl{def:tdflow-plus}\]
-for any $p\in B(z,r)$.
+\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\frac{f_t(p)-f_t\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|\right]+o(\eps)\eqlbl{def:tdflow-plus}\]
+for $\eps>0$, any $p\in B(z,r)$ and $t\in[a,b)$.
 \end{thm}
 
 \parit{Proof.}
 Note that geodesics $[\alpha(t)p]$ lie in $\Dom f_t$ for any $t$.
 
-Since $f_t$ is $\lambda$ concave, we have that 
+Since $f_t$ is $\lambda$-concave, we have 
 \[d_{\alpha(t)}f_t(\dir{\alpha(t)}p)\ge \tfrac{f(p)-f\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|.\]
-Whence the only-if part follows.
+Hence the only-if part follows.
 
 Given a point $p\in \spc{U}$ and $t$,
 consider a point $\bar p\in [\alpha(t)p]$.
@@ -463,9 +466,9 @@ Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space and
 $\{f_t\}_{t\in[a,b)}$ a family of function defined on an open sets $\Dom f_t\subset {\spc{U}}$.
 Suppose that $f_t$ is
 \begin{enumerate}[(i)]
-\item locally uniformly upper continuous,
-\item locally uniformly Lipschitz,
-\item locally uniformly semiconcave.
+\item locally uniformly upper continuous in time,
+\item locally uniformly Lipschitz in space,
+\item locally uniformly semiconcave in space.
 \end{enumerate}
 Then for any initial point $p\in \Dom f_a$ and sufficiently small $\eps=\eps(p)>0$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[a,a+\eps)$. 
 \end{thm}
@@ -473,15 +476,14 @@ Then for any initial point $p\in \Dom f_a$ and sufficiently small $\eps=\eps(p)>
 As well as its time-independent version, this proposition can be applied recursively to obtain a unique gradient curve defined on a maximal semiopen interval.
 
 \parit{Proof.}
-By \ref{prop:time-independent}, the proposition holds if $f_t$ is a constant family.
-Moreover it holds if $f_t$ is piecewise constant;
-that is, if there is a partition of interval $[a,b)$ into a finite collection of semiopen subintervals such that $f_t$ is time-independent on each of subintervals and its domain is fixed.
-
-Fix $\eps>0$ sufficiently small so that there is $L$ such that the functions $f_t$ are $L$-Lipschitz and $\Dom f_t\supset B(p,\eps\cdot L)$ for any $t\in[a,a+\eps)$.
+Fix $\eps>0$ sufficiently small so that there is $L$ such that $\Dom f_t\supset B(p,\eps\cdot L)$ for any $t\in[a,a+\eps)$ and the restrictions $f_t|_{B(p,\eps\cdot L)}$ are $L$-Lipschitz for any $t\in[a,a+\eps)$.
 Consider sequence  $a=t_0<t_1\dots<t_n\z=a+\eps$ and a piecewise constant family of functions on $B(p,\eps\cdot L)$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t<t_{i+1}$.
-By above discussion we have that there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,a+\eps)$.
 
-Note that the distance estimates (\ref{Distance estimate}) show that as the partition gets finer, the gradinet curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
+Applying \ref{prop:time-independent} recursively on each interval $[t_i,t_{i+1})$, we get that the proposition holds for $\hat f_t$.
+if $f_t$ is a constant family.
+That is, there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,a+\eps)$.
+
+Note that the distance estimates (\ref{Distance estimate}) show that as the partition gets finer, the gradient curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
 
 Note that 
 \begin{align*}
