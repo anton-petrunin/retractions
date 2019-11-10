@@ -31,7 +31,7 @@ A distance nonexpanding map $f\:{\spc{U}}\to K$ such that $f(x)=x$ for any $x\in
 If in addition a local Lipschitz constant of $f$ is strictly less than 1 at any point $x\notin K$, 
 then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K$}.
 
-\begin{thm}{Proposition}\label{thm:retraction:Phi}
+\begin{thm}{Theorem}\label{thm:retraction:Phi}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
 Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and there is $p$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in K$.
 
@@ -77,22 +77,22 @@ In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regula
 has convex level sets in ${\spc{B}}\times {\spc{B}}$.
 He also shows the existence of a nonnegative convex function on ${\spc{B}}\times {\spc{B}}$ that vanish only on the diagonal \cite[(4.2)]{kendall}.
 These observations became a useful tool to study Dirichlet problem and its relatives;
-it makes possible to extend number of results from Hadamard manifolds to Riemannian manifolds of small size
+it makes possible to extend a number of results from Hadamard manifolds to Riemannian manifolds of small size
 and more generally to $\CAT(1)$ spaces~\cite{yokota,BFHMSZ,fuglede,serbinowski}. 
 
 Our original goal was to make this tool transparent for geometers.
 Corollary~\ref{cor} can be considered as a more geometric version of this tool.
-While Kendall's condition is optimal for uniqueness and regularity questions, the existence statements can be derived from  Proposition~\ref{thm:retraction:Phi} in a
+While Kendall's condition is optimal for uniqueness and regularity questions, the existence statements can be derived from Theorem~\ref{thm:retraction:Phi} in a
 slightly greater generality, as  we are going to explain now.
 
 The following definition was introduced by Stefan Wenger \cite{Wenger-1comp};
 for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}.
 
-A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
-The statement makes sense since any metric space ${\spc{U}}$ forms a subset in its ultracompletion ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$. 
+A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of the ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
+%The statement makes sense since any metric space ${\spc{U}}$ forms a subset in its ultracompletion ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$. 
 
 Recall that if ${\spc{U}}$ is $\CAT(\kappa)$, then so is~${\spc{U}}^\omega$. 
-Applying these observations together with Proposition~\ref{thm:retraction:Phi}, we obtain
+Applying these observations together with Theorem~\ref{thm:retraction:Phi}, we obtain
 
 \begin{thm}{Theorem}\label{thm:complemented}
 Let ${\spc{U}}$ be a complete length $\CAT(1)$ space.
@@ -100,9 +100,9 @@ Assume  there exists some $p\in {\spc{U}}$ such that $|p-x|\le \tfrac\pi2$ for a
 Then ${\spc{U}}$ is $1$-complemented.
 \end{thm}
 
-Let us list few existence results which follow from the theorem, assuming that the space ${\spc{U}}$ as above:
+Let us list few existence results which follow from the theorem, assuming that the space ${\spc{U}}$ is as above:
 \begin{enumerate}[(a)]
-\item\label{dirichlet}   The existence of solution $u$ of Dirichlet problem on the minimization of energy 
+\item\label{dirichlet}   The existence of a solution $u$ of Dirichlet problem on the minimization of energy 
 in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannian manifold with prescirbed trace $tr(u)$.
 (See \cite{KS} and \cite[Theorem 1.4]{guo-wenger}).
 \item The existence of a minimal integral $k$-current filling of any prescribed boundaryless $(k-1)$ integral current in ${\spc{U}}$. 
@@ -122,17 +122,17 @@ Indeed if there are different solutions of one of these problems, then their pro
 The latter contradicts the existence of the strictly short retraction $\Psi$ provided by Corollary \ref{cor}.
 
 \parbf{About the proofs.}
-We use a new tool whichwe call $r$-\emph{tractrix flow}, a special  time-dependent gradient flow.
+We use a new tool which we call $r$-\emph{tractrix flow}, a special  time-dependent gradient flow.
 It gives a family of maps $\phi_t$ for a given rectifiable curve $t\z\mapsto\gamma(t)$.
 The important properties of the tractrix flow are collected in Proposition~\ref{prop-def}.
 In particular, (1) if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$, 
 and (2) if $r< \tfrac\pi2$, then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
 
-In the proof of Proposition~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
+In the proof of Theorem~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
 this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
-In Appendix~\ref{Another way} we indicate another way to prove Proposition~\ref{thm:retraction:Phi}.
+In Appendix~\ref{Another way} we indicate another way to prove Theorem~\ref{thm:retraction:Phi}.
 
-In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying  Proposition~\ref{thm:retraction:Phi} to the latter.
+In the proof of Corollary~\ref{cor} the additional trick consists in identifying the product space $\spc{U}\z\times \spc{U}$ with a subset of the spherical join $\spc{U}\star \spc{U}$ and applying Theorem~\ref{thm:retraction:Phi} to the latter.
 
 The tricks in both proofs show that it is useful to consider singular spaces even in the case when the original space $\spc{U}$ is smooth;
 this is a powerful freedom of Alexandrov's world.
@@ -147,7 +147,7 @@ Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other b
 Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
 if the thread is not tight, then $p$ does not move.
 Then the trajectory of the point $p$ will be called $r$-\emph{tractrix of $p$ with respect to~$\gamma$}.
-The family of maps $\phi_t$ that send the initial position of $p$ to its position at the time $t$ will be called $r$-\emph{tractrix flow}.
+The family of maps $\phi_t$ that send the initial position of $p$ to its position at the time $t$ will be called the $r$-\emph{tractrix flow} defined by $\gamma$.
 
 More formally, suppose $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
@@ -228,10 +228,10 @@ can be defined as a metric space that admits an onto map $\iota\:\spc{U}\times\s
 \eqlbl{join-formula}
 \]
 
-Recall that join of two $\CAT(1)$ spaces is $\CAT(1)$ \cite[Corollary 3.14]{bridson-haefliger}.
+Recall that the join of two $\CAT(1)$ spaces is $\CAT(1)$ \cite[Corollary 3.14]{bridson-haefliger}.
 
 \parit{Proof of \ref{thm:retraction:Phi}.}
-Consider a join of  $K$ with a one-point space, $\spc{J}=K\star \{s\}$.
+Consider the join of  $K$ with a one-point space, $\spc{J}=K\star \{s\}$.
 Since $\spc{J}$ is a $\CAT(1)$ space,
 by Reshetnyak's gluing theorem \cite[8.9.1]{akp}, the space $\spc{W}$ glued from ${\spc{U}}$ and $\spc{J}$ along $K$ is a $\CAT(1)$ space;
 moreover ${\spc{U}}$ and $\spc{J}$ are convex subsets in $\spc{W}$.
@@ -301,7 +301,8 @@ Finally, by \ref{thm:retraction:Phi}, if $\kappa<1$, then $\Phi$ is a strictly s
 
 Here we will define gradient flow for time-dependent family of functions and prove its existence for certain families.
 The proof relies mostly on an existence result for gradient flow for time-independent families --- with minor conditions on the space, the same proof should work once the existence of time-independent gradient flow is proved.
-For instance the proof works nearly without changes for spaces with lower curvature bound.
+For instance the proof works nearly without changes for spaces with lower curvature bound
+and it should work in nearly any space with well defined angles between geodesics starting at one point.
 
 \parbf{Time-independent flow.}
 Suppose $\spc{U}$ is a complete length $\CAT(\kappa)$ space.
@@ -327,7 +328,8 @@ The vector $u$ is called \emph{gradient of $f$ at $p$}; briefly $u=\nabla_pf$.
 
 A locally Lipschitz map $t\mapsto \alpha(t)$ is called \emph{$f$-gradient curve} if it satisfies the following equation
 \[\alpha^+(t)=\nabla_{\alpha(t)}f\eqlbl{grad-flow}\]
-for any $t$, where $\alpha^+(t)\in \T_{\alpha(t)}$ denotes the \emph{right velocity vector}; that is,
+for any $t$. 
+Here $\alpha^+(t)\in \T_{\alpha(t)}$ denotes the \emph{right velocity vector}; that is,
 \[\alpha^+(t)=\lim_{\eps\to 0+} \frac{\log_{\alpha(t)}[\alpha(t+\eps)]}\eps,\]
 where $v=\log_pq$ if the vector $v\in\T_p$ points form $p$ in the direction of $q$ and $|v|=|p-q|$.
 
@@ -343,34 +345,33 @@ there is unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen int
 Note that the proposition can be applied recursively to obtain a gradient curve defined on a maximal semiopen interval.
 
 \parbf{Time-dependent gradient flow.}
-Our next aim is to define gradient flow for a time-dependent family of functions and prove an analog of Proposition~\ref{prop:time-independent} for this flow.
-Let $f_t$ be family of functions defined on open subsets $\Dom f_t$ of~$\spc{U}$.
+Our next aim is to define a gradient flow for a time-dependent family of functions and prove an analog of Proposition~\ref{prop:time-independent} for this flow.
+Let $f_t$ be a family of functions defined on open subsets $\Dom f_t$ of~$\spc{U}$.
 More precisely, we assume that the parameter $t$ lies in a real interval $\II$ and 
 \[\Omega=\set{(x,t)\in\spc{U}\times \II}{x\in\Dom f_t}\]
 is an open subset in $\spc{U}\times \II$.
 
-The family $f_t$ is called \emph{locally uniformly upper continuous in time} if for any closed set $K$ and a semiopen interval $[a,b)$ such that $K\times[a,b)\subset \Omega$ the family of the restrictions $f_t|_K$ converge uniformly to $f_a|_K$ as $t\to a^+$.
-
-A family of functions $f_t$ is called \emph{Lipschitz} if 
-the function $x\mapsto f_t(x)$ is $L$-Lipschitz for some fixed $L$.
-It is called \emph{locally uniformly Lipschitz} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
+A family of functions $f_t$ is called \emph{Lipschitz in space} if 
+the function $(x,t)\mapsto f_t(x)$ is $L$-Lipschitz for some constant $L$.
+It is called \emph{locally Lipschitz} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
 the restriction of the family to $\Omega'$ is Lipschitz.
 
 A family of functions $f_t$ will be called \emph{$\lambda$-concave} if 
 the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
-A family $f_t$ is called \emph{locally uniformly semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
+A family $f_t$ is called \emph{locally semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
 
 Note that one can not expect that a direct generalization of equation \ref{grad-flow} holds for a family of functions $f_t$.
 
 For example, consider a $1$-Lipschitz curve $\alpha$ in the real line. 
-Note that it is reasonable to assume that $\alpha$ is an $f_t$-gradient curve for the family $f_t(x)=-|x-\alpha(t)|$.
+It is reasonable to assume that $\alpha$ is an $f_t$-gradient curve for the family $f_t(x)=-|x-\alpha(t)|$.
 (Indeed $\alpha$ can be realized as a limit of the gradient curves for a family of functions obtained by smoothing $f_t$.)
 On the other hand, $\alpha^+(t)$ might be undefined,
 but even if it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t\equiv0$.
 
 
 Instead we define \emph{$f_t$-gradient curve} as a Lipschitz curve $\alpha$ that satisfies the following inequality 
-for $\eps>0$, $t$, and any point $p\in\spc{U}$  
+for any point $p$, time $t$, and
+small $\epsilon >0$:  
 \[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot d_{\alpha(t)}f_t(\dir{\alpha(t)}p)+o(\eps),\eqlbl{def:tdflow}\]
 where $\dir qp\in \T_{q}$ denotes a unit tangent vector at $q$ in the direction of $p$
 (if there is no geodesic $[\alpha(t)\,p]$ then we impose no condition).
@@ -386,15 +387,15 @@ Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ an
 Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves correspondingly defined on a common interval $t\in [a,b)$; set $\ell(t)\z=|\alpha(t)\z-\beta(t)|_{\spc{U}}$.
 If for all $t$ a minimizing geodesic $[\alpha(t)\,\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
 \[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),\]
-assuming that the left hand side is defined and
-\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(a)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot (t-a)}\]
-for any $t$.
+assuming that the left hand side is defined.
+Moreover
+\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(a)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot (t-a)}.\]
 
 In particular the inequalities hold for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
 \end{thm}
 
 The second inequality (applied for $s=0$) implies uniqueness of the future of gradient curve with given initial point.
-This inequality also makes possible to estimate the distance between two gradient curves for close functions.
+This inequality also makes it possible to estimate the distance between two gradient curves for close functions.
 In particular, it implies convergence of $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly as $n\to \infty$. 
 
 \parit{Proof.}
@@ -433,23 +434,27 @@ Therefore the first inequality implies the second one.
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
 Suppose $f_t$ is a family of $\lambda$-concave functions for $t\in [a,b)$ and $\Dom f_t\supset B(z,2\cdot r)$ for some fixed $z\in\spc{U}$, $r>0$ and any~$t$.
 
-Let $\alpha\:[a,b)\to B(z,r)$ be a Lipschitz curve.
-Then $\alpha$ is a $f_t$-gradient if and only if 
+Let $\alpha\:[a,b)\to B(z,r)$ be Lipschitz.
+Then $\alpha$ is a $f_t$-gradient curve if and only if 
 \[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\frac{f_t(p)-f_t\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|\right]+o(\eps)\eqlbl{def:tdflow-plus}\]
-for $\eps>0$, any $p\in B(z,r)$ and $t\in[a,b)$.
+for any $t\in [a,b)$ and $p\in B(z,r)\setminus \{\alpha (t)\}$.
 \end{thm}
 
 \parit{Proof.}
 Note that geodesics $[\alpha(t)p]$ lie in $\Dom f_t$ for any $t$.
 
 Since $f_t$ is $\lambda$-concave, we have 
-\[d_{\alpha(t)}f_t(\dir{\alpha(t)}p)\ge \tfrac{f(p)-f\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|.\]
+\[d_{\alpha(t)}f_t(\dir{\alpha(t)}p)
+\ge
+\frac{f(p)-f\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|.\]
 Hence the only-if part follows.
 
 Given a point $p\in \spc{U}$ and $t$,
 consider a point $\bar p\in [\alpha(t)p]$.
 Applying \ref{def:tdflow-plus} for $\bar p$ and the triangle inequality, we get
-\[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\tfrac{f(\bar p)-f\circ\alpha(t)}{|\bar p-\alpha(t)|}-\tfrac\lambda2\cdot |\bar p-\alpha(t)|\right]+o(\eps).\]
+\[\dist_p\circ\alpha(t+\eps)
+\le
+\dist_p\circ\alpha(t)-\eps\cdot \left[\frac{f(\bar p)-f\circ\alpha(t)}{|\bar p-\alpha(t)|}-\tfrac\lambda2\cdot |\bar p-\alpha(t)|\right]+o(\eps).\]
 By taking $\bar p$ close to $\alpha(t)$,
 the value $\tfrac{f(\bar p)-f\circ\alpha(t)}{|\bar p-\alpha(t)|}-\tfrac\lambda2\cdot |\bar p-\alpha(t)|$ can be made arbitrary close to $d_{\alpha(t)}f_t(\dir{\alpha(t)}p)$.
 Therefore, given $\delta>0$, the following inequality
@@ -461,15 +466,10 @@ Therefore \ref{def:tdflow} holds.
 
 Now we are ready to formulate and prove an analog of Proposition~\ref{prop:time-independent} for time-dependent family.
 
-\begin{thm}{Proposition}\label{prop:time-dependent}
+\begin{thm}{Theorem}\label{prop:time-dependent}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space and
 $\{f_t\}_{t\in[a,b)}$ a family of function defined on an open sets $\Dom f_t\subset {\spc{U}}$.
-Suppose that $f_t$ is
-\begin{enumerate}[(i)]
-\item locally uniformly upper continuous in time,
-\item locally uniformly Lipschitz in space,
-\item locally uniformly semiconcave in space.
-\end{enumerate}
+Suppose that $f_t$ is locally Lipschitz and locally uniformly semiconcave.
 Then for any initial point $p\in \Dom f_a$ and sufficiently small $\eps=\eps(p)>0$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[a,a+\eps)$. 
 \end{thm}
 
@@ -479,23 +479,22 @@ As well as its time-independent version, this proposition can be applied recursi
 Fix $\eps>0$ sufficiently small so that there is $L$ such that $\Dom f_t\supset B(p,\eps\cdot L)$ for any $t\in[a,a+\eps)$ and the restrictions $f_t|_{B(p,\eps\cdot L)}$ are $L$-Lipschitz for any $t\in[a,a+\eps)$.
 Consider sequence  $a=t_0<t_1\dots<t_n\z=a+\eps$ and a piecewise constant family of functions on $B(p,\eps\cdot L)$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t<t_{i+1}$.
 
+Note that $\hat f_t$ is time-independent on each interval $[t_i,t_{i+1})$.
 Applying \ref{prop:time-independent} recursively on each interval $[t_i,t_{i+1})$, we get that the proposition holds for $\hat f_t$.
-if $f_t$ is a constant family.
 That is, there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,a+\eps)$.
 
-Note that the distance estimates (\ref{Distance estimate}) show that as the partition gets finer, the gradient curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
-
-Note that 
+The distance estimates (\ref{Distance estimate}) show that as the partition gets finer, the gradient curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
+Then
 \begin{align*}
 \dist_p\circ\hat\alpha(t+\eps)
 &\le 
 \dist_p\circ\hat\alpha(t)
--\eps\cdot \left[\tfrac{\hat f_t(p)-\hat f_t\circ\hat\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\hat\alpha(t)|\right]
+-\eps\cdot \left[\frac{\hat f_t(p)-\hat f_t\circ\hat\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\hat\alpha(t)|\right]
 +o(\eps)
 \\
 &\le 
 \dist_p\circ\hat\alpha(t)
--\eps\cdot \left[\tfrac{f_t(p)-f_t\circ\hat\alpha(t)-2\cdot s}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\hat\alpha(t)|\right]
+-\eps\cdot \left[\frac{f_t(p)-f_t\circ\hat\alpha(t)-2\cdot s}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\hat\alpha(t)|\right]
 +o(\eps)
 \end{align*}
 where 
@@ -506,7 +505,7 @@ that is, $\alpha$ is an $f_t$-gradient curve.
 
 \section{Another way}\label{Another way}
 
-Here we present an alternative way to prove Proposition~\ref{thm:retraction:Phi}
+Here we indicate an alternative way to prove Theorem~\ref{thm:retraction:Phi}.
 The idea is taken from the proof of Kirszbraun's theorem; see \cite[5.1]{akp-kirszbraun} or \cite[9.4.1]{akp}. %(\ref{thm:kirsz+}).
 
 \begin{wrapfigure}{o}{55 mm}
