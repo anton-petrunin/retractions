@@ -391,7 +391,10 @@ Moreover
 In particular the inequalities hold for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
 \end{thm}
 
-The second inequality (applied for $s=0$) implies uniqueness of the future of gradient curve with given initial point.
+Note that if $f_t=h_t$ then $s=0$;
+in this case the second inequality can be written as
+\[\ell(t)\le \ell(a)\cdot e^{\lambda\cdot (t-a)}.\eqlbl{dist-est-s=0}\]
+In particular it implies uniqueness of the future of gradient curve with given initial data.
 This inequality also makes it possible to estimate the distance between two gradient curves for close functions.
 In particular, it implies convergence of $f_t^n$-gradient curves if a sequence of $L$-Lipschitz and $\lambda$-concave families $f^n_t$ converges uniformly as $n\to \infty$. 
 
@@ -467,7 +470,7 @@ Now we are ready to formulate and prove an analog of Proposition~\ref{prop:time-
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space and
 $\{f_t\}$ a family of function defined on an open set $\Omega=\set{(x,t)\in \spc{U}\times\RR}{x\in \Dom f_t}$.
 Suppose that $f_t$ is Lipschitz and locally semiconcave.
-Then for any time moment $a$ and initial point $p\in \Dom f_a$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a maximal semiopen interval $[a,b)$. 
+Then for any time moment $a$ and initial point $p\in \Dom f_a$ there is a unique $f_t$-gradient curve $t\mapsto\alpha(t)$ defined on a maximal semiopen interval $[a,b)$. 
 Moreover if $b<\infty$, then $(\alpha(t),t)$ escapes from any closed set $K\subset \Omega$.
 \end{thm}
 
@@ -501,7 +504,7 @@ that is, $\alpha$ is an $f_t$-gradient curve.
 
 It proves a short time existence.
 Applying this argument recursively we can find a gradient curve defined on a maximal interval $[a,b)$.
-Uniqueness of this curve follows from the distance estimate. 
+Uniqueness of this curve follows from the distance estimate \ref{dist-est-s=0}. 
 
 Note that $\alpha$ is $L$-Lipschitz.
 In particular, if $b<\infty$, then $\alpha(t)\to p'$ as $t\to b$.
