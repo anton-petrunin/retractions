@@ -337,12 +337,11 @@ The following proposition can be extracted from \cite[Theorem 1.7]{lytchak-open-
 
 \begin{thm}{Proposition}\label{prop:time-independent}
 Let ${\spc{U}}$ be a complete length $\CAT(\kappa)$ space and
-$f$ a locally Lipschitz and semiconcave function defined on an open set $\Dom f\subset {\spc{U}}$.
+$f$ a Lipschitz and semiconcave function defined on an open set $\Dom f\subset {\spc{U}}$.
 Then for any point $p\in \Dom f$  
-there is unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[0,\eps)$ for some $\eps>0$ such that $\alpha(0)=p$. 
+there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ with initial point $\alpha(0)=p$ defined on a maximal semiopen interval $[0,T)$ for some $T\in(0,\infty]$.
+Moreover if $T<\infty$ then $\alpha$ escapes from any closed set $K\subset \Omega$.
 \end{thm}
-
-Note that the proposition can be applied recursively to obtain a gradient curve defined on a maximal semiopen interval.
 
 \parbf{Time-dependent gradient flow.}
 Our next aim is to define a gradient flow for a time-dependent family of functions and prove an analog of Proposition~\ref{prop:time-independent} for this flow.
@@ -351,14 +350,12 @@ More precisely, we assume that the parameter $t$ lies in a real interval $\II$ a
 \[\Omega=\set{(x,t)\in\spc{U}\times \II}{x\in\Dom f_t}\]
 is an open subset in $\spc{U}\times \II$.
 
-A family of functions $f_t$ is called \emph{Lipschitz in space} if 
+A family of functions $f_t$ is called \emph{Lipschitz} if 
 the function $(x,t)\mapsto f_t(x)$ is $L$-Lipschitz for some constant $L$.
-It is called \emph{locally Lipschitz} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ such that 
-the restriction of the family to $\Omega'$ is Lipschitz.
 
-A family of functions $f_t$ will be called \emph{$\lambda$-concave} if 
+A family of functions $f_t$ will be called \emph{semiconcave} if 
 the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
-A family $f_t$ is called \emph{locally semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
+A family $f_t$ is called \emph{locally semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is semiconcave. 
 
 Note that one can not expect that a direct generalization of equation \ref{grad-flow} holds for a family of functions $f_t$.
 
@@ -468,20 +465,20 @@ Now we are ready to formulate and prove an analog of Proposition~\ref{prop:time-
 
 \begin{thm}{Theorem}\label{prop:time-dependent}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space and
-$\{f_t\}_{t\in[a,b)}$ a family of function defined on an open sets $\Dom f_t\subset {\spc{U}}$.
-Suppose that $f_t$ is locally Lipschitz and locally uniformly semiconcave.
-Then for any initial point $p\in \Dom f_a$ and sufficiently small $\eps=\eps(p)>0$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a semiopen interval $[a,a+\eps)$. 
+$\{f_t\}$ a family of function defined on an open set $\Omega=\set{(x,t)\in \spc{U}\times\RR}{x\in \Dom f_t}$.
+Suppose that $f_t$ is Lipschitz and locally semiconcave.
+Then for any time moment $a$ and initial point $p\in \Dom f_a$ there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ defined on a maximal semiopen interval $[a,b)$. 
+Moreover if $b<\infty$, then $(\alpha(t),t)$ escapes from any closed set $K\subset \Omega$.
 \end{thm}
 
-As well as its time-independent version, this proposition can be applied recursively to obtain a unique gradient curve defined on a maximal semiopen interval.
-
 \parit{Proof.}
-Fix $\eps>0$ sufficiently small so that there is $L$ such that $\Dom f_t\supset B(p,\eps\cdot L)$ for any $t\in[a,a+\eps)$ and the restrictions $f_t|_{B(p,\eps\cdot L)}$ are $L$-Lipschitz for any $t\in[a,a+\eps)$.
-Consider sequence  $a=t_0<t_1\dots<t_n\z=a+\eps$ and a piecewise constant family of functions on $B(p,\eps\cdot L)$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t<t_{i+1}$.
+Let $L$ be a Lipschitz constant of $f_t$.
+Fix $b>a$ sufficiently small so that $\Dom f_t\supset B(p,\eps\cdot L)$ for any $t\in[a,b)$.
+Consider sequence  $a=t_0<t_1\dots<t_n\z=b$ and a piecewise constant family of functions on $B(p,\eps\cdot L)$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t<t_{i+1}$.
 
 Note that $\hat f_t$ is time-independent on each interval $[t_i,t_{i+1})$.
 Applying \ref{prop:time-independent} recursively on each interval $[t_i,t_{i+1})$, we get that the proposition holds for $\hat f_t$.
-That is, there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,a+\eps)$.
+That is, there is a unique $\hat f_t$-gradient curve $\hat \alpha$ that starts at $p$ and defined on the interval $[a,b)$.
 
 The distance estimates (\ref{Distance estimate}) show that as the partition gets finer, the gradient curves $\hat\alpha$ form a Cauchy sequence; denote its limit by $\alpha$.
 Then
@@ -501,6 +498,14 @@ where
 \[s=\sup_{t,x} \{|f_t(x)-\hat f_t(x)|\}.\]
 Since $s\to 0$ as $\hat\alpha\to \alpha$, we get that \ref{def:tdflow-plus} holds for $\alpha$;
 that is, $\alpha$ is an $f_t$-gradient curve.
+
+It proves a short time existence.
+Applying this argument recursively we can find a gradient curve defined on a maximal interval $[a,b)$.
+Uniqueness of this curve follows from the distance estimate. 
+
+Note that $\alpha$ is $L$-Lipschitz.
+In particular, if $b<\infty$, then $\alpha(t)\to p'$ as $t\to b$.
+If $(p',b)\in \Omega$, then we can repeating the the procedure, otherwise it escapes from any closed set in $\Omega$. 
 \qeds
 
 \section{Another way}\label{Another way}
