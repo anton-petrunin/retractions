@@ -181,12 +181,30 @@ Second relative is the \emph{pursuer flow} introduced and studied by Stephanie A
 Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
 
 Unfortunately Proposition~\ref{prop-def} does not follow directly from these papers; for this reason we provide in the appendix a short proof of the existence of
-gradient flows of time-dependent locally Lipschitz semiconcave functions in $\CAT(\kappa)$ spaces.
+gradient flows of Lipschitz time-dependent family of semiconcave functions in $\CAT(\kappa)$ spaces.
 The proposition follows from the distance estimate (\ref{Distance estimate}) and the existence of gradient curves (\ref{prop:time-dependent}).
-We also give the following sketch of a very direct proof;
+
+\parit{Proof.}
+Set $f_t=- \max\{\tfrac\pi2,\dist_{\gamma(t)}\}$.
+Consider the map $\phi^t\:\alpha(a)\mapsto \alpha(t)$, where $\alpha$ is a $f_t$-gradient curve;
+By \ref{prop:time-dependent}, if $\phi^t(p)$ is unique if it is defined.
+Consider the function $\ell(t)\z=|\phi^t(p)-\gamma(t)|$.
+By the definition of the flow it follows that $\ell'\le 0$ if $\ell> \tfrac\pi2$.
+It follows that $\phi^t$ maps $\bar B[\gamma(a),\tfrac\pi2]$ to $\bar B[\gamma(t),\tfrac\pi2]$ for any $t$.
+
+By $\CAT(1)$-comparison, given $\eps>0$ there is $\delta>0$ such that $f_t$ is $\eps$-concave in $ B(\gamma(t),\tfrac\pi2+\delta)$ for any $t$.
+Applying the distance estimate (\ref{Distance estimate}) for $s=0$, we get that 
+\[|\phi^t(p)-\phi^t(q)|\le |p-q|\cdot e^{\eps\cdot (t-a)}\]
+for any $p,q\in \bar B[\gamma(a),\tfrac\pi2]$, $t\ge a$.
+Since $\eps>0$ is arbitrary, (\ref{non-strict}) follows.
+The proof of (\ref{strict}) is analogous.
+To prove part (\ref{sharafutdinov}) it is sufficient to notice that $\phi^t(p)=p$ up to the moment when $|p-\gamma(t)|=\tfrac\pi2$.
+\qeds
+
+In addition we give the following sketch of a very direct proof;
 a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
 
-\parit{Stretch of proof.}
+\parit{Stretch of an alternative proof.}
 First let us define a \emph{discrete} tractrix.
 Fix positive numbers $r<\pi$ and $\eps<\pi-r$. 
 A sequence of points $q_0,\dots,q_n$ in  ${\spc{U}}$ will be called an $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
@@ -200,7 +218,7 @@ Since $|p_{i-1}-q_i|_{\spc{U}}<\pi$ for each $i$, the geodesic $[p_{i-1},q_i]$ i
 so is the discrete tractrix $(p_i)$.
 
 Now assume that $\gamma\:[a,b]\to \spc{U}$ is a Lipschitz curve.
-Fix a fine partition $a=t_0<\dots<t_n=b$ and set $q_i=\gamma(t_i)$.
+Fix a fine partition $a=t_0\z<\dots<t_n=b$ and set $q_i=\gamma(t_i)$.
 Since the partition is fine, we can assume that $(q_i)$ is an $\eps$-chain for any $\eps>0$ fixed in advance.
 Moreover, we may assume that each arc $\gamma|_{[t_{i-1},t_i]}$ has diameter at most $\eps$ for each $i$.
 Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ which is an $r$-tractrix of $p$ with respect to $\gamma$.

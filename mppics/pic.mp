@@ -67,7 +67,7 @@ beginfig(2)
 save u;
 u:=1.4cm;
 
-z.p=(-.2,0)*u;
+z.p=(-.3,0)*u;
 z.s=(0,1.5)*u;
 
 z.p0=(-1.5,0)*u;
@@ -75,12 +75,18 @@ z.p1=(1.5,0)*u;
 z.q0=(-.7,0)*u;
 z.q1=(.7,0)*u;
 
+save p;
+path p;
+
+p=z.q0{up}..z.s--z.s..{down}z.q1--cycle;
+
 draw z.p0--z.p1;
 
-draw z.q1--z.q0 penbold;
+fill p withcolor .7;
+draw p penbold;
 draw z.p{up}..z.s;
-draw z.q0{up}..z.s;
-draw z.q1{up}..z.s;
+
+
 
 dOt z.p,z.s;
 
@@ -88,7 +94,7 @@ label.top(btex $s$ etex, z.s);
 label.bot(btex $p$ etex, z.p);
 label.bot(btex $K$ etex, .7[z.p,z.q1]);
 label.bot(btex $\spc{U}$ etex, z.p1+(-5,0));
-label.urt(btex $\spc{J}$ etex, point .4 of (z.q1{up}..z.s));
+label.llft(btex $\spc{J}$ etex, point .4 of (z.q1{up}..z.s));
 label.lrt(btex $\gamma$ etex, point .6 of (z.p{up}..z.s));
 endfig;
 end
