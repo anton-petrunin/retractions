@@ -16,7 +16,7 @@ pdfauthor={Alexander Lytchak and Anton Petrunin}}
 We construct short retractions of a CAT(1) space to its small convex subsets.
 This construction provides an alternative geometric description of an analytic tool introduced by Wilfrid Kendall.
 
-Our construction use \emph{tractrix flow} which can be defined as a gradient flow for a family of functions of certain type.
+Our construction uses a \emph{tractrix flow} which can be defined as a gradient flow for a family of functions of certain type.
 In an appendix we prove a general existence result for gradient flows of time-dependent locally Lipschitz semiconcave functions, which might be of independent interest.
 \end{abstract}
 
@@ -70,12 +70,12 @@ The corollary provides an analogous statement for $\CAT(1)$ spaces.
 
 
 \parbf{Motivation.}
-In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regular geodesic ball or radius $r<\tfrac\pi2$ in a manifold with sectional curvature at most 1, then for appropriate choice of constant $\lambda$, the following function
+In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regular geodesic ball or radius $r<\tfrac\pi2$ in a manifold with sectional curvature at most 1, then for an appropriate choice of constant $\lambda$, the following function
 \[(x,y)\mapsto 
 \frac{1+\lambda-\cos|x-y|_{\spc{B}}}{\cos|p-x|_{\spc{B}}\cdot \cos|p-y|_{\spc{B}}}
 \]
 has convex level sets in ${\spc{B}}\times {\spc{B}}$.
-He also shows the existence of a nonnegative convex function on ${\spc{B}}\times {\spc{B}}$ that vanish only on the diagonal \cite[(4.2)]{kendall}.
+He also shows the existence of a nonnegative convex function on ${\spc{B}}\times {\spc{B}}$ that vanishes only on the diagonal \cite[(4.2)]{kendall}.
 These observations became a useful tool to study Dirichlet problem and its relatives;
 it makes possible to extend a number of results from Hadamard manifolds to Riemannian manifolds of small size
 and more generally to $\CAT(1)$ spaces~\cite{yokota,BFHMSZ,fuglede,serbinowski}. 
@@ -100,7 +100,7 @@ Assume  there exists some $p\in {\spc{U}}$ such that $|p-x|\le \tfrac\pi2$ for a
 Then ${\spc{U}}$ is $1$-complemented.
 \end{thm}
 
-Let us list few existence results which follow from the theorem, assuming that the space ${\spc{U}}$ is as above:
+Let us list a few existence results which follow from the theorem, assuming that the space ${\spc{U}}$ is as above:
 \begin{enumerate}[(a)]
 \item\label{dirichlet}   The existence of a solution $u$ of Dirichlet problem on the minimization of energy 
 in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannian manifold with prescirbed trace $tr(u)$.
@@ -113,7 +113,7 @@ in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannia
 \end{enumerate}
 
 If in the theorem, we assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
-Moreover the uniqueness hold true under this stronger assumption
+Moreover the uniqueness holds true under this stronger assumption
 \cite{yokota,serbinowski}.
 In our boundary case uniqueness definitely fails, since geodesics between points in a round hemisphere are not unique.
 
@@ -144,7 +144,7 @@ For $\CAT(\kappa)$ spaces, we will follow the conventions in \cite{akp}.
 
 First let us describe the tractrix flow informally.
 Suppose that two points $p$ and $q$ in ${\spc{U}}$ are connected to each other by a thread of fixed length $r$.
-Imagine that the point $q$ follow the curve $\gamma$ and drags $p$ if the thread is tight; 
+Imagine that the point $q$ follows the curve $\gamma$ and drags $p$ if the thread is tight; 
 if the thread is not tight, then $p$ does not move.
 Then the trajectory of the point $p$ will be called $r$-\emph{tractrix of $p$ with respect to~$\gamma$}.
 The family of maps $\phi_t$ that send the initial position of $p$ to its position at the time $t$ will be called the $r$-\emph{tractrix flow} defined by $\gamma$.
@@ -174,7 +174,7 @@ Moreover, if $r=\tfrac\pi2$, then
 \end{enumerate}
 \end{thm}
 
-Historically the first relative of tractrix flow
+Historically the first relative of the tractrix flow
 is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 
@@ -317,9 +317,10 @@ Finally, by \ref{thm:retraction:Phi}, if $\kappa<1$, then $\Phi$ is a strictly s
 \appendix
 \section{Time-dependent gradient flow}
 
-Here we will define gradient flow for time-dependent family of functions and prove its existence for certain families.
-The proof relies mostly on an existence result for gradient flow for time-independent families --- with minor conditions on the space, the same proof should work once the existence of time-independent gradient flow is proved.
-For instance the proof works nearly without changes for spaces with lower curvature bound
+Here we prove the existence, uniqueness and contractivity  of the gradient flow for a time-dependent family of functions.
+The proof relies mostly on the corresponding statements  for time-independent families --- with minor conditions on the space.
+% the same proof should work once the existence of time-independent gradient flow is proved.
+The same  proof works nearly without changes for spaces with lower curvature bound
 and it should work in nearly any space with well defined angles between geodesics starting at one point.
 
 \parbf{Time-independent flow.}
@@ -334,14 +335,14 @@ such that the following two conditions
 \begin{aligned}
 \langle u,w\rangle &\ge d_{p}f(w),
 \\
-\langle u,u\rangle &= d_{p}f(u).
+\langle u,u\rangle &= d_{p}f(u)
 \end{aligned}
 \eqlbl{<u,w>}
 \]
 hold for any tangent vector $w\in \T_p$.%
 \footnote{Here \emph{tangent vector} means \emph{element of tangent cone}, we use this term despite the tangent cone is not a vector space.
 The scalar product $\langle u,w\rangle$ is defined as $|u|\cdot|w|\cdot\cos\theta$ where $\theta$ is the angle between the vectors.}
-The vector $u$ is called \emph{gradient of $f$ at $p$}; briefly $u=\nabla_pf$.
+The vector $u$ is called the \emph{gradient of $f$ at $p$}; briefly $u=\nabla_pf$.
 %ADDREF
 
 A locally Lipschitz map $t\mapsto \alpha(t)$ is called \emph{$f$-gradient curve} if it satisfies the following equation
@@ -358,7 +359,7 @@ Let ${\spc{U}}$ be a complete length $\CAT(\kappa)$ space and
 $f$ a Lipschitz and semiconcave function defined on an open set $\Dom f\subset {\spc{U}}$.
 Then for any point $p\in \Dom f$  
 there is a unique $f$-gradient curve $t\mapsto\alpha(t)$ with initial point $\alpha(0)=p$ defined on a maximal semiopen interval $[0,T)$ for some $T\in(0,\infty]$.
-Moreover if $T<\infty$ then $\alpha$ escapes from any closed set $K\subset \Omega$.
+Moreover if $T<\infty$ then $\alpha$ escapes from any closed set $K\subset \Dom f$.
 \end{thm}
 
 \parbf{Time-dependent gradient flow.}
@@ -375,11 +376,11 @@ A family of functions $f_t$ will be called \emph{semiconcave} if
 the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
 A family $f_t$ is called \emph{locally semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is semiconcave. 
 
-Note that one can not expect that a direct generalization of equation \ref{grad-flow} holds for a family of functions $f_t$.
+Note that one cannot expect that a direct generalization of equation \ref{grad-flow} holds for any family of functions $f_t$.
 
 For example, consider a $1$-Lipschitz curve $\alpha$ in the real line. 
 It is reasonable to assume that $\alpha$ is an $f_t$-gradient curve for the family $f_t(x)=-|x-\alpha(t)|$.
-(Indeed $\alpha$ can be realized as a limit of the gradient curves for a family of functions obtained by smoothing $f_t$.)
+(Indeed $\alpha$ can be realized as a limit of  gradient curves for a family of functions obtained by smoothing $f_t$.)
 On the other hand, $\alpha^+(t)$ might be undefined,
 but even if it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t\equiv0$.
 
@@ -394,7 +395,7 @@ where $\dir qp\in \T_{q}$ denotes a unit tangent vector at $q$ in the direction 
 If $\alpha^+(t)=\nabla_{\alpha(t)}f_t$ for all $t$, then \ref{def:tdflow} holds;
 it follows from \ref{<u,w>}.
 On the other hand, the example above shows that the converse does not hold;
-that is, \ref{def:tdflow} generalize the definition~\ref{grad-flow}.
+that is, \ref{def:tdflow} generalizes the definition~\ref{grad-flow}.
 
 \begin{thm}{Distance estimate}\label{Distance estimate}
 Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\kappa)$ space $\spc{U}$ and $s\ge 0$.
@@ -453,7 +454,7 @@ Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
 Suppose $f_t$ is a family of $\lambda$-concave functions for $t\in [a,b)$ and $\Dom f_t\supset B(z,2\cdot r)$ for some fixed $z\in\spc{U}$, $r>0$ and any~$t$.
 
 Let $\alpha\:[a,b)\to B(z,r)$ be Lipschitz.
-Then $\alpha$ is a $f_t$-gradient curve if and only if 
+Then $\alpha$ is an $f_t$-gradient curve if and only if 
 \[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot \left[\frac{f_t(p)-f_t\circ\alpha(t)}{|p-\alpha(t)|}-\tfrac\lambda2\cdot |p-\alpha(t)|\right]+o(\eps)\eqlbl{def:tdflow-plus}\]
 for any $t\in [a,b)$ and $p\in B(z,r)\setminus \{\alpha (t)\}$.
 \end{thm}
@@ -526,7 +527,7 @@ Uniqueness of this curve follows from the distance estimate \ref{dist-est-s=0}.
 
 Note that $\alpha$ is $L$-Lipschitz.
 In particular, if $b<\infty$, then $\alpha(t)\to p'$ as $t\to b$.
-If $(p',b)\in \Omega$, then we can repeating the the procedure, otherwise it escapes from any closed set in $\Omega$. 
+If $(p',b)\in \Omega$, then we can repeat the procedure, otherwise $\alpha$ escapes from any closed set in $\Omega$. 
 \qeds
 
 \section{Another way}\label{Another way}
