@@ -184,56 +184,47 @@ Second relative is the \emph{pursuer flow} introduced and studied by Stephanie A
 
 Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
 
-Unfortunately Proposition~\ref{prop-def} does not follow directly from these papers; for this reason we provide in the appendix a short proof of the existence of
+Unfortunately Proposition~\ref{prop-def} does not follow directly from the results in these papers; for this reason we provide in the appendix a short proof of the existence of
 gradient flows of Lipschitz time-dependent family of semiconcave functions in $\CAT(\kappa)$ spaces.
-The proposition follows from the distance estimate (\ref{Distance estimate}) and the existence of gradient curves (\ref{prop:time-dependent}).
 
 \parit{Proof.}
-Set $f_t=- \max\{\tfrac\pi2,\dist_{\gamma(t)}\}$.
-Consider the map $\phi^t\:\alpha(a)\mapsto \alpha(t)$, where $\alpha$ is a $f_t$-gradient curve;
-By \ref{prop:time-dependent}, if $\phi^t(p)$ is unique if it is defined.
-Consider the function $\ell(t)\z=|\phi^t(p)-\gamma(t)|$.
-By the definition of the flow it follows that $\ell'\le 0$ if $\ell> \tfrac\pi2$.
-It follows that $\phi^t$ maps $\bar B[\gamma(a),\tfrac\pi2]$ to $\bar B[\gamma(t),\tfrac\pi2]$ for any $t$.
+Suppose $f_t=- \max\{r,\dist_{\gamma(t)}\}$ is a family functions defined in $B(\gamma(t),r\z+\delta)$ for sufficiently small $\delta>0$.
+Note that the family $f_t$ is Lipschitz.
+By $\CAT(1)$-comparison, $f_t$ is $\lambda$-concave for a fixed $\lambda$.
+Moreover if $r<\tfrac\pi2$, then $\lambda=0$ and if $r=\tfrac\pi2$, then $\lambda\to 0$ as $\delta\to 0$. 
 
-By $\CAT(1)$-comparison, given $\eps>0$ there is $\delta>0$ such that $f_t$ is $\eps$-concave in $ B(\gamma(t),\tfrac\pi2+\delta)$ for any $t$.
+Consider the map $\phi_t\:\alpha(a)\mapsto \alpha(t)$, where $\alpha$ is a $f_t$-gradient curve.
+By \ref{prop:time-dependent}, if $\phi_t(p)$ is defined, then it is unique.
+
+Consider the function $\ell(t)\z=|\phi_t(p)-\gamma(t)|$.
+By the definition of the flow we have that $\ell'\le 0$ if $\ell> r$.
+It follows that $\phi_t$ maps $\bar B[\gamma(a),r]$ to $\bar B[\gamma(t),r]$ for any $t$.
+
+
 Applying the distance estimate (\ref{Distance estimate}) for $s=0$, we get that 
-\[|\phi^t(p)-\phi^t(q)|\le |p-q|\cdot e^{\eps\cdot (t-a)}\]
+\[|\phi_t(p)-\phi_t(q)|\le |p-q|\cdot e^{\lambda\cdot (t-a)}\]
 for any $p,q\in \bar B[\gamma(a),\tfrac\pi2]$, $t\ge a$.
-Since $\eps>0$ is arbitrary, (\ref{non-strict}) follows.
-The proof of (\ref{strict}) is analogous.
-To prove part (\ref{sharafutdinov}) it is sufficient to notice that $\phi^t(p)=p$ up to the moment when $|p-\gamma(t)|=\tfrac\pi2$.
+If $r\le \tfrac\pi2$, then the inequality holds for arbitrary $\lambda> 0$;
+hence (\ref{non-strict}) follows.
+
+\parit{(\ref{strict}).} 
+Given a partition $a=t_0<t_1<\dots<t_n=b$, consider a locally constant approximation $\hat f_t$ of the family $f_t$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t\le t_{i+1}$.
+Denote by $\hat\phi_t$ the corresponding flow.
+
+Observe that for any $p\in \bar B[\gamma(a),r]$, $p_i=\hat\phi_{t_i}(p)$ is the composition of the closest point projections to $B[\gamma(t_1),r],\dots,B[\gamma(t_i),r]$.
+
+We may assume that the partition is sufficiently fine, in this case the all the distances $|p_i-p_{i-1}|$ and each closet point projection $p_{i-1}\mapsto p_i$ is short.
+Moreover the comparison imply that for a fixed $\eps>0$ we have that
+\[|p_i-q_i|\le e^{-\eps\cdot |p_i-p_{i-1}|}\cdot|p_{i-1}-q_{i-1}|\]
+for any other sequence of points $q_i=\hat\phi_{t_i}(q)$ with $q\in \bar B[\gamma(a),r]$.
+It follows that
+\[|p_n-q_n|\le e^{-\eps\cdot |p_n-p|}\cdot|p-q|.\]
+
+By the distance estimate (\ref{Distance estimate}) the flow $\hat\phi_t$ converges to $\phi_t$ as the partition gets finer and finer,
+hence the result.
+
+\parit{(\ref{sharafutdinov}).} it is sufficient to notice that $\phi_t(p)=p$ up to the moment when $|p-\gamma(t)|=\tfrac\pi2$.
 \qeds
-
-In addition we give the following sketch of a very direct proof;
-a reader experienced with $\CAT(\kappa)$ comparison should be able to fill the details.
-
-\parit{Stretch of an alternative proof.}
-First let us define a \emph{discrete} tractrix.
-Fix positive numbers $r<\pi$ and $\eps<\pi-r$. 
-A sequence of points $q_0,\dots,q_n$ in  ${\spc{U}}$ will be called an $\eps$-chain if $|q_i-q_{i-1}|_{\spc{U}}<\eps$ for each $i$.
-Suppose $p=p_0$ is a point that lies on distance at most $r$ from  $q_0$.
-Consider a sequence $p_0,\dots,p_n$ defined recursively the following way:
-\emph{$p_i$ is the closest point to $p_{i-1}$ on the geodesic $[p_{i-1}q_i]$ that lies on the distance at most $r$ from $q_i$}.
-The sequence $p_0,\dots,p_n$ will be called \emph{discrete tractrix} of $p$ with respect to the $\eps$-chain $q_0,\dots,q_n$.
-
-Note that the triangle inequality implies that $(p_i)$ is an $\eps$-chain.
-Since $|p_{i-1}-q_i|_{\spc{U}}<\pi$ for each $i$, the geodesic $[p_{i-1},q_i]$ is uniquely defined and 
-so is the discrete tractrix $(p_i)$.
-
-Now assume that $\gamma\:[a,b]\to \spc{U}$ is a Lipschitz curve.
-Fix a fine partition $a=t_0\z<\dots<t_n=b$ and set $q_i=\gamma(t_i)$.
-Since the partition is fine, we can assume that $(q_i)$ is an $\eps$-chain for any $\eps>0$ fixed in advance.
-Moreover, we may assume that each arc $\gamma|_{[t_{i-1},t_i]}$ has diameter at most $\eps$ for each $i$.
-Applying $\CAT(1)$ comparison it is straightforward to prove that for finer and finer partition the $p$-chain converges to a curve $\tau\:[a,b]\to \spc{U}$ which is an $r$-tractrix of $p$ with respect to $\gamma$.
-The needed distance estimates follow from the corresponding estimates in the discrete case.
-\qeds
-
-
-
-
-
-
 
 \section{Proofs}\label{sec:proofs}
 
