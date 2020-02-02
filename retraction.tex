@@ -17,12 +17,10 @@ We construct short retractions of a CAT(1) space to its small convex subsets.
 This construction provides an alternative geometric description of an analytic tool introduced by Wilfrid Kendall.
 
 Our construction uses a \emph{tractrix flow} which can be defined as a gradient flow for a family of functions of certain type.
-In an appendix we prove a general existence result for gradient flows of time-dependent locally Lipschitz semiconcave functions, which might be of independent interest.
+In an appendix we prove a general existence result for gradient flows of time-dependent locally Lipschitz semiconcave functions, which is of independent interest.
 \end{abstract}
 
-
 \section{Introduction}
-
 
 Recall that a  subset $K$ in a metric space ${\spc{U}}$ is called \emph{weakly convex} if any two points $x,y\in K$ can be connected by a minimizing geodesic in $K$.
 
@@ -65,19 +63,18 @@ If $\kappa\le 1$, then there is a short retraction $\Psi\:\spc{U}\times \spc{U}\
 
 \end{thm}
 
-It is well known that if $\spc{U}$ be a complete length $\CAT(0)$ space, then the midpoint map $\spc{U}\times \spc{U}\to \spc{U}$ is $\tfrac1{\sqrt{2}}$-Lipschitz and therefore it induces a short retraction $\spc{U}\times \spc{U}\to\Delta$. 
+It is well known that if $\spc{U}$ is a complete length $\CAT(0)$ space, then the midpoint map $\spc{U}\times \spc{U}\to \spc{U}$ is $\tfrac1{\sqrt{2}}$-Lipschitz and therefore it induces a short retraction $\spc{U}\times \spc{U}\to\Delta$. 
 The corollary provides an analogous statement for $\CAT(1)$ spaces.
 
-
 \parbf{Motivation.}
-In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regular geodesic ball or radius $r<\tfrac\pi2$ in a manifold with sectional curvature at most 1, then for an appropriate choice of constant $\lambda$, the following function
+In \cite[(4.1)]{kendall}, Wilfrid Kendall observed that if $\spc{B}$ is a regular geodesic ball of radius $r<\tfrac\pi2$ in a manifold with sectional curvature at most 1, then, for an appropriate choice of constant $\lambda$, the function
 \[(x,y)\mapsto 
 \frac{1+\lambda-\cos|x-y|_{\spc{B}}}{\cos|p-x|_{\spc{B}}\cdot \cos|p-y|_{\spc{B}}}
 \]
 has convex level sets in ${\spc{B}}\times {\spc{B}}$.
 He also shows the existence of a nonnegative convex function on ${\spc{B}}\times {\spc{B}}$ that vanishes only on the diagonal \cite[(4.2)]{kendall}.
 These observations became a useful tool to study Dirichlet problem and its relatives;
-it makes possible to extend a number of results from Hadamard manifolds to Riemannian manifolds of small size
+they allowed to extend a number of results from Hadamard manifolds to Riemannian manifolds of small size
 and more generally to $\CAT(1)$ spaces~\cite{yokota,BFHMSZ,fuglede,serbinowski}. 
 
 Our original goal was to make this tool transparent for geometers.
@@ -103,16 +100,15 @@ Then ${\spc{U}}$ is $1$-complemented.
 Let us list a few existence results which follow from the theorem, assuming that the space ${\spc{U}}$ is as above:
 \begin{enumerate}[(a)]
 \item\label{dirichlet}   The existence of a solution $u$ of Dirichlet problem on the minimization of energy 
-in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannian manifold with prescirbed trace $tr(u)$.
-(See \cite{KS} and \cite[Theorem 1.4]{guo-wenger}).
-\item The existence of a minimal integral $k$-current filling of any prescribed boundaryless $(k-1)$ integral current in ${\spc{U}}$. 
-(See \cite{Ambrosio} and \cite[Theorem 3.3]{Wenger-1comp}.)
-\item   The existence of a conformally parametrized disc $u:D\to {\spc{U}}$ of minimal area for a given boundary curve $\gamma$, which is a Jordan curve of finite length in ${\spc{U}}$.
-(See \cite{LWplateau} and \cite[Theorem 1.2]{guo-wenger}).
+in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannian manifold with prescirbed trace $tr(u)$; see \cite{KS} and \cite[Theorem 1.4]{guo-wenger}.
+\item The existence of a minimal integral $k$-current filling any prescribed boundary in ${\spc{U}}$; 
+see \cite{Ambrosio} and \cite[Theorem 3.3]{Wenger-1comp}.
+\item   The existence of a conformally parametrized disc $u:D\to {\spc{U}}$ of minimal area for a given boundary curve $\gamma$, which is a Jordan curve of finite length in ${\spc{U}}$;
+see \cite{LWplateau} and \cite[Theorem 1.2]{guo-wenger}.
 \item\label{center} For any Radon measure $\mu$ on ${\spc{U}}$ there exists a center of mass $x\in {\spc{U}}$ for the measure~$\mu$ \cite{Sturm, yokota}.
 \end{enumerate}
 
-If in the theorem, we assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
+If in the theorem we assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
 Moreover the uniqueness holds true under this stronger assumption
 \cite{yokota,serbinowski}.
 In our boundary case uniqueness definitely fails, since geodesics between points in a round hemisphere are not unique.
@@ -300,7 +296,7 @@ In particular, $\Theta$ is short.
 
 Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac1{\sqrt{2}}\cdot(\spc{U}\times\spc{U})$.
 Moreover \ref{join-formula} implies that the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving.
-In particular the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
+In particular, the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
 
 Further note that $|q-y|_{\spc{U}\star\spc{U}}$ for any $y\in \spc{U}\star\spc{U}$ and $q=\Theta(p,p)$.
 Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star\spc{U}\to K$.
