@@ -82,7 +82,7 @@ Corollary~\ref{cor} can be considered as a more geometric version of this tool.
 While Kendall's condition is optimal for uniqueness and regularity questions, the existence statements can be derived from Theorem~\ref{thm:retraction:Phi} in a
 slightly greater generality, as  we are going to explain now.
 
-The following definition was introduced by Stefan Wenger \cite{Wenger-1comp};
+We will need the following definition, introduced by Stefan Wenger \cite{Wenger-1comp};
 for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}.
 
 A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of the ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
@@ -111,7 +111,8 @@ see \cite{LWplateau} and \cite[Theorem 1.2]{guo-wenger}.
 If in the theorem we assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
 Moreover the uniqueness holds true under this stronger assumption
 \cite{yokota,serbinowski}.
-In our boundary case uniqueness definitely fails, since geodesics between points in a round hemisphere are not unique.
+In our boundary case uniqueness definitely fails;
+for example geodesics between points in a round hemisphere are not unique.
 
 The uniqueness in each case can be shown using Corollary \ref{cor}.
 Indeed if there are different solutions of one of these problems, then their product in ${\spc{U}}\times {\spc{U}}$ does not lie in the diagonal.
@@ -124,7 +125,7 @@ The important properties of the tractrix flow are collected in Proposition~\ref{
 In particular, (1) if $\spc{U}$ is $\CAT(1)$ and $r\le \tfrac\pi2$, then $\phi_t$ is short for any $t$, 
 and (2) if $r< \tfrac\pi2$, then the local Lipschitz constant of $\phi_t$ at $p$ is strictly less than 1 if $p\ne \phi_t(p)$.
 
-In the proof of Theorem~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space arising by gluing $\spc{U}$ with a spherical cone over $K$ along $K$;
+In the proof of Theorem~\ref{thm:retraction:Phi}, the tractrix flow is applied in a space obtained by gluing to $\spc{U}$ a spherical cone over $K$;
 this space is $\CAT(1)$ by Reshetnyak's gluing theorem.
 In Appendix~\ref{Another way} we indicate another way to prove Theorem~\ref{thm:retraction:Phi}.
 
@@ -151,9 +152,9 @@ The family of maps $\phi_t$ that send the initial position of $p$ to its positio
 
 More formally, suppose $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
-\[f_t=- \max\{r,\dist_{\gamma(t)}\}\]
-if the initial point lies in $\bar B[\gamma(a),r]$;
+\[f_t=- \max\{r,\dist_{\gamma(t)}\};\]
 here $\bar B[x,r]$ denotes the closed ball of radius $r$ centered at $x$ and $\dist_{x}$ denotes the distance function from the point $x$.
+We also assume that the initial point lies in $\bar B[\gamma(a),r]$.
 
 The $r$-\emph{tractrix flow} with respect to $\gamma$ is defined as a family of maps
 \[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\]
@@ -163,14 +164,19 @@ for an $r$-tractrix $\tau\:[a,b]\to \spc{U}$ that starts at $p$; that is, $\tau(
 The following proposition includes the properties of the tractrix flow which will be used further in the paper.
 
 \begin{thm}{Proposition}\label{prop-def}
-Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space for $\kappa\le 1$ and $r<\pi$.
-Then the $r$-tractrix flow $\phi_t\:\bar B[\gamma(a),r]\to\bar B[\gamma(t),r]$ is uniquely defined for any  1-Lipschitz curve $\gamma\:[a,b]\to \spc{U}$.
-
-Moreover, if $r=\tfrac\pi2$, then
+Let $\gamma\:[a,b]\to \spc{U}$ be a 1-Lipschitz curve in a complete length $\CAT(\kappa)$ space $\spc{U}$ for some $\kappa\le 1$
+and $r<\pi$.
+Set $B_t=\bar B[\gamma(t),r]$.
+Then the $r$-tractrix flow $\phi_t\:\bar B_a\to\bar B_t$ is uniquely defined.
+Moreover
 \begin{enumerate}[(a)]
- \item\label{non-strict} $\phi_t$ is short for any $t$;
- \item\label{strict} if $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
- \item\label{sharafutdinov} If the family of balls $B_t=\bar B[\gamma(t),r]$ is decreasing in $t$ (that is, if $B_{t_1}\supset B_{t_2}$ for $t_1<t_2$), then $\phi_t$ is a strong deformation retraction from $B_a$ to $B_b$.
+\item  \label{approx} For any $t$, the map $\phi_t$ is a limit of compositions $\theta_{t_n} \circ \dots\circ \theta_{t_0}$
+for $\delta \to 0$, where $a=t_0<\dots<t_n=t$ is any partition of $[a,t]$ with $|t_i-t_{i-1}|<\delta$
+and where $\theta_{t_i} : B_{t_{i-1}}\to  B_{t_i}$  denotes the closest point projection.
+\item \label{sharafutdinov} If the family of balls $B_t$ is decreasing in $t$ (that is, if $B_{t_1}\supset B_{t_2}$ for $t_1<t_2$), then $\phi_b$ is a strong deformation retraction from $B_a$ to $B_b$.
+\item \label{non-strict} If $r=\tfrac\pi2$, then $\phi_t$ is short for any $t$;
+ \item\label{strict} If $r=\tfrac\pi2$ and  $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, 
+ where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
 \end{enumerate}
 \end{thm}
 
@@ -180,7 +186,7 @@ Second relative is the \emph{pursuer flow} introduced and studied by Stephanie A
 
 Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
 
-Unfortunately Proposition~\ref{prop-def} does not follow directly from the results in these papers; for this reason we provide in the appendix a short proof of the existence of
+Unfortunately Proposition~\ref{prop-def} does not follow directly from the results in these papers; for this reason we provide in an appendix a short proof of the existence of
 gradient flows of Lipschitz time-dependent family of semiconcave functions in $\CAT(\kappa)$ spaces.
 
 \parit{Proof.}
@@ -194,33 +200,38 @@ By \ref{prop:time-dependent}, if $\phi_t(p)$ is defined, then it is unique.
 
 Consider the function $\ell(t)\z=|\phi_t(p)-\gamma(t)|$.
 By the definition of the flow we have that $\ell'\le 0$ if $\ell> r$.
-It follows that $\phi_t$ maps $\bar B[\gamma(a),r]$ to $\bar B[\gamma(t),r]$ for any $t$.
+It follows that $\phi_t$ maps $B_a$ to $B_t$ for any $t$.
 
 
+\parit{(\ref{approx}).} 
+Given a partition $a=t_0<t_1<\dots<t_n=t$ with $|t_i -t_{i-1}|<\delta$, consider a locally constant approximation $\hat f_t$ of the family $f_t$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t  < t_{i+1}$.
+Denote by $\hat\phi_t$ the corresponding flow.
+
+Given $p\in B_a$, set $p_i=\hat\phi_{t_i}(p)$.
+Observe that $p_{i}=\theta_{t_i}(p_{i-1})$ for each $i$.
+
+By the distance estimate (\ref{Distance estimate}) the flow $\hat\phi_t$ converges to $\phi_t$ as the partition gets finer and finer, hence the result.
+
+\parit{(\ref{sharafutdinov}).} It is sufficient to notice that $\phi_t(p)=p$ if
+ $|p-\gamma(s)| \leq r$ for all $a\leq s \leq t$.
+
+
+\parit{(\ref{non-strict}).} 
 Applying the distance estimate (\ref{Distance estimate}) for $s=0$, we get that 
 \[|\phi_t(p)-\phi_t(q)|\le |p-q|\cdot e^{\lambda\cdot (t-a)}\]
-for any $p,q\in \bar B[\gamma(a),\tfrac\pi2]$, $t\ge a$.
+for any $p,q\in B_a$, $t\ge a$.
 If $r\le \tfrac\pi2$, then the inequality holds for arbitrary $\lambda> 0$;
 hence (\ref{non-strict}) follows.
 
 \parit{(\ref{strict}).} 
-Given a partition $a=t_0<t_1<\dots<t_n=b$, consider a locally constant approximation $\hat f_t$ of the family $f_t$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t\le t_{i+1}$.
-Denote by $\hat\phi_t$ the corresponding flow.
-
-Observe that for any $p\in \bar B[\gamma(a),r]$, $p_i=\hat\phi_{t_i}(p)$ is the composition of the closest point projections to $B[\gamma(t_1),r],\dots,B[\gamma(t_i),r]$.
-
-We may assume that the partition is sufficiently fine, in this case the all the distances $|p_i-p_{i-1}|$ and each closet point projection $p_{i-1}\mapsto p_i$ is short.
-Moreover the comparison imply that for a fixed $\eps>0$ we have that
-\[|p_i-q_i|\le e^{-\eps\cdot |p_i-p_{i-1}|}\cdot|p_{i-1}-q_{i-1}|\]
-for any other sequence of points $q_i=\hat\phi_{t_i}(q)$ with $q\in \bar B[\gamma(a),r]$.
-It follows that
-\[|p_n-q_n|\le e^{-\eps\cdot |p_n-p|}\cdot|p-q|.\]
-
-By the distance estimate (\ref{Distance estimate}) the flow $\hat\phi_t$ converges to $\phi_t$ as the partition gets finer and finer,
-hence the result.
-
-\parit{(\ref{sharafutdinov}).} it is sufficient to notice that $\phi_t(p)=p$ up to the moment when $|p-\gamma(t)|=\tfrac\pi2$.
-\qeds
+ The proof of the strict inequality follows directly from  (\ref{approx})
+ and the following general consequence of the CAT($\kappa$) comparison:
+ 
+ 
+ There exists some $\eps>0$ such that 
+ the closest point projection $\theta:\bar B[q,\frac \pi 2 +\eps ]\to\bar B[q,\frac \pi  2]$  in any CAT($\kappa$) is strictly short and satisfies 
+ \[|\theta (p) -\theta (p')| \leq e^{-\eps\cdot |\theta (p) -p|}\cdot|p-p'|.\]
+\qedsf
 
 \section{Proofs}\label{sec:proofs}
 
@@ -378,7 +389,7 @@ but even if it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t
 
 Instead we define \emph{$f_t$-gradient curve} as a Lipschitz curve $\alpha$ that satisfies the following inequality 
 for any point $p$, time $t$, and
-small $\epsilon >0$:  
+small $\eps >0$:  
 \[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot d_{\alpha(t)}f_t(\dir{\alpha(t)}p)+o(\eps),\eqlbl{def:tdflow}\]
 where $\dir qp\in \T_{q}$ denotes a unit tangent vector at $q$ in the direction of $p$
 (if there is no geodesic $[\alpha(t)\,p]$ then we impose no condition).
