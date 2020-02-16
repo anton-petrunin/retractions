@@ -31,7 +31,7 @@ then we say that $f$ is a \emph{strictly short retraction from ${\spc{U}}$ to $K
 
 \begin{thm}{Theorem}\label{thm:retraction:Phi}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
-Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and there is $p$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in K$.
+Suppose $K$ is a weakly convex closed subset in $\spc{U}$ and there is $p\in \spc{U}$ such that $|p-x|\le \tfrac\pi2$ for any point $x\in K$.
 
 
 \begin{enumerate}[(a)]
@@ -47,7 +47,7 @@ This statement is a generalization of the following well known statement about $
 then the closest point projection ${\spc{U}}\to K$ is a short retraction.
 Moreover, if $\spc{U}$ is a $\CAT(\kappa)$ space for some $\kappa<0$, then  the closest point projection is a strictly short retraction}.
 
-The proposition and a small trick imply the followng:
+The theorem and a small trick imply the followng:
 
 \begin{thm}{Corollary}\label{cor}
 Let $\spc{U}$ be a complete length $\CAT(\kappa)$ space.
@@ -135,8 +135,9 @@ The tricks in both proofs show that it is useful to consider singular spaces eve
 this is a powerful freedom of Alexandrov's world.
 More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, Paul Creutz~\cite{creutz}, and Stephan Stadler~\cite{stadler}. 
 
-\parbf{Acknowledgements.} A. Lytchak was partially supported by the DFG grant SPP 2026.
-A. Petrunin was partially supported by the Simons foundation collaboration grant for mathematicians 584781.
+\parbf{Acknowledgements.}
+A. Lytchak was partially supported by DFG grant SPP 2026.
+A. Petrunin was partially supported by Simons foundation collaboration grant for mathematicians 584781.
 
 
 \section{Tractrix flow}\label{sec:Tractrix flow}
@@ -153,8 +154,9 @@ The family of maps $\phi_t$ that send the initial position of $p$ to its positio
 More formally, suppose $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve. 
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
 \[f_t=- \max\{r,\dist_{\gamma(t)}\};\]
-here $\bar B[x,r]$ denotes the closed ball of radius $r$ centered at $x$ and $\dist_{x}$ denotes the distance function from the point $x$.
+here $\dist_{x}$ denotes the distance function from the point $x$.
 We also assume that the initial point lies in $\bar B[\gamma(a),r]$.
+(We denote by $\bar B[x,r]$ and $B(x,r)$ the closed and open balls of radius $r$ centered at $x$.) 
 
 The $r$-\emph{tractrix flow} with respect to $\gamma$ is defined as a family of maps
 \[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\]
@@ -184,23 +186,22 @@ Historically the first relative of the tractrix flow
 is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 
-Let us also mention that time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
-
+The time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad} and  by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}.
 Unfortunately Proposition~\ref{prop-def} does not follow directly from the results in these papers; for this reason we provide in an appendix a short proof of the existence of
 gradient flows of Lipschitz time-dependent family of semiconcave functions in $\CAT(\kappa)$ spaces.
 
 \parit{Proof.}
-Suppose $f_t=- \max\{r,\dist_{\gamma(t)}\}$ is a family functions defined in $B(\gamma(t),r\z+\delta)$ for sufficiently small $\delta>0$.
+Consider $f_t=- \max\{r,\dist_{\gamma(t)}\}$ as a family of functions defined in $B(\gamma(t),r\z+\delta)$ for sufficiently small $\delta>0$.
 Note that the family $f_t$ is Lipschitz.
-By $\CAT(1)$-comparison, $f_t$ is $\lambda$-concave for a fixed $\lambda$.
+By $\CAT(1)$-comparison, each $f_t$ is $\lambda$-concave for a fixed $\lambda$.
 Moreover if $r<\tfrac\pi2$, then $\lambda=0$ and if $r=\tfrac\pi2$, then $\lambda\to 0$ as $\delta\to 0$. 
 
 Consider the map $\phi_t\:\alpha(a)\mapsto \alpha(t)$, where $\alpha$ is a $f_t$-gradient curve.
 By \ref{prop:time-dependent}, if $\phi_t(p)$ is defined, then it is unique.
 
 Consider the function $\ell(t)\z=|\phi_t(p)-\gamma(t)|$.
-By the definition of the flow we have that $\ell'\le 0$ if $\ell> r$.
-It follows that $\phi_t$ maps $B_a$ to $B_t$ for any $t$.
+By the definition of the flow, we have that $\ell'\le 0$ if $\ell> r$.
+It follows that $\phi_t$ is defined for all $t$ and maps $B_a$ to $B_t$.
 
 
 \parit{(\ref{approx}).} 
@@ -225,18 +226,18 @@ hence (\ref{non-strict}) follows.
 
 \parit{(\ref{strict}).} 
  The proof of the strict inequality follows directly from  (\ref{approx})
- and the following general consequence of the CAT($\kappa$) comparison:
+ and the following general consequence of the $\CAT(\kappa)$ comparison:
  
  
  There exists some $\eps>0$ such that 
- the closest point projection $\theta:\bar B[q,\frac \pi 2 +\eps ]\to\bar B[q,\frac \pi  2]$  in any CAT($\kappa$) is strictly short and satisfies 
- \[|\theta (p) -\theta (p')| \leq e^{-\eps\cdot |\theta (p) -p|}\cdot|p-p'|.\]
+ the closest point projection $\theta:\bar B[w,\frac \pi 2 +\eps ]\to\bar B[w,\frac \pi  2]$  in any $\CAT(\kappa)$ is strictly short and satisfies 
+ \[|\theta (p) -\theta (q)| \leq e^{-\eps\cdot |\theta (p) -p|}\cdot|p-q|.\]
 \qedsf
 
 \section{Proofs}\label{sec:proofs}
 
 Recall that spherical join $\spc{U}\star\spc{V}$ of two metric spaces $\spc{U}$ and $\spc{V}$
-is defined as the unit sphere equipped with the angle metric in the product of Euclidean cones $\Cone \spc{U}\times \Cone\spc{V}$. 
+is defined as the unit sphere (equipped with the angle metric) in the product of Euclidean cones $\Cone \spc{U}\times \Cone\spc{V}$. 
 If diameters of $\spc{U}$ and $\spc{V}$ do not exceed $\pi$, then $\spc{U}\star\spc{V}$
 can be defined as a metric space that admits an onto map $\iota\:\spc{U}\times\spc{V}\times[0,\tfrac\pi2]\to \spc{U}\star\spc{V}$ such that
 \[
@@ -309,7 +310,7 @@ Note that the diagonal $\tfrac1{\sqrt{2}}\cdot\Delta$ is a convex set in $\tfrac
 Moreover \ref{join-formula} implies that the restriction of $\Theta$ to $\tfrac1{\sqrt{2}}\cdot\Delta$ is distance preserving.
 In particular, the image $K=\Theta(\tfrac1{\sqrt{2}}\cdot\Delta)$ is a weakly convex set in $\spc{U}\star\spc{U}$.
 
-Further note that $|q-y|_{\spc{U}\star\spc{U}}$ for any $y\in \spc{U}\star\spc{U}$ and $q=\Theta(p,p)$.
+Further note that $|q-y|_{\spc{U}\star\spc{U}}\le \tfrac\pi2$ for any $y\in \spc{U}\star\spc{U}$ and $q=\Theta(p,p)$.
 Applying \ref{thm:retraction:Phi}, we get a short retraction $\Phi\:\spc{U}\star\spc{U}\to K$.
 Since $\Theta$ is short, it induces the needed short retraction $\Psi\:\spc{U}\times\spc{U}\to \Delta$.
 
