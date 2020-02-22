@@ -1,3 +1,4 @@
+\RequirePackage{snapshot}
 \documentclass[oneside,a4paper, 12pt]{article}
 \usepackage{anysize}
 \usepackage{retraction}
@@ -86,7 +87,7 @@ We will need the following definition, introduced by Stefan Wenger \cite{Wenger-
 for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}.
 
 A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of the ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
-%The statement makes sense since any metric space ${\spc{U}}$ forms a subset in its ultracompletion ${\spc{U}}^{\omega}$, or more precisely, ${\spc{U}}$ admits a canonical isometric embedding into ${\spc{U}}^{\omega}$. 
+Examples of $1$-complemented spaces include all proper spaces, all CAT(0) spaces and all $L^p$ spaces for $1\leq p\leq \infty$.
 
 Recall that if ${\spc{U}}$ is $\CAT(\kappa)$, then so is~${\spc{U}}^\omega$. 
 Applying these observations together with Theorem~\ref{thm:retraction:Phi}, we obtain
@@ -136,8 +137,10 @@ this is a powerful freedom of Alexandrov's world.
 More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, Paul Creutz~\cite{creutz}, and Stephan Stadler~\cite{stadler}. 
 
 \parbf{Acknowledgements.}
+We thank Christine Brenier for helpful comments.
 A. Lytchak was partially supported by DFG grant SPP 2026.
 A. Petrunin was partially supported by Simons foundation collaboration grant for mathematicians 584781.
+
 
 
 \section{Tractrix flow}\label{sec:Tractrix flow}
@@ -160,8 +163,7 @@ We also assume that the initial point lies in $\bar B[\gamma(a),r]$.
 
 The $r$-\emph{tractrix flow} with respect to $\gamma$ is defined as a family of maps
 \[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\]
-defined by $\phi_t\:p\mapsto \tau(t)$
-for an $r$-tractrix $\tau\:[a,b]\to \spc{U}$ that starts at $p$; that is, $\tau(a)=p$.
+whose trajectory  $t\mapsto \phi_t(p)$ is the $r$-tractrix starting at $p\in \bar B[\gamma(a),r]$.
 
 The following proposition includes the properties of the tractrix flow which will be used further in the paper.
 
