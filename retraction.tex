@@ -390,7 +390,7 @@ On the other hand, $\alpha^+(t)$ might be undefined,
 but even if it is defined, $\alpha^+(t)\ne0$ in general, while $\nabla_{\alpha(t)} f_t\equiv0$.
 
 
-Instead we define \emph{$f_t$-gradient curve} as a Lipschitz curve $\alpha$ that satisfies the following inequality 
+Instead we define \emph{$f_t$-gradient curve} as a Lipschitz curve $\alpha$ that satisfies the following inequality
 for any point $p$, time $t$, and
 small $\eps >0$:  
 \[\dist_p\circ\alpha(t+\eps)\le \dist_p\circ\alpha(t)-\eps\cdot d_{\alpha(t)}f_t(\dir{\alpha(t)}p)+o(\eps),\eqlbl{def:tdflow}\]
@@ -401,6 +401,7 @@ If $\alpha^+(t)=\nabla_{\alpha(t)}f_t$ for all $t$, then \ref{def:tdflow} holds;
 it follows from \ref{<u,w>}.
 On the other hand, the example above shows that the converse does not hold;
 that is, \ref{def:tdflow} generalizes the definition~\ref{grad-flow}.
+Our defining  inequality \ref{def:tdflow} is closely related to the so called \emph{evolution variational inequality} \cite[Thm 4.0.4(iii)]{ambrosio-gigli-savare}.
 
 \begin{thm}{Distance estimate}\label{Distance estimate}
 Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\kappa)$ space $\spc{U}$ and $s\ge 0$.
