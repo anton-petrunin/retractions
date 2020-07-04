@@ -76,7 +76,7 @@ has convex level sets in ${\spc{B}}\times {\spc{B}}$.
 He also shows the existence of a nonnegative convex function on ${\spc{B}}\times {\spc{B}}$ that vanishes only on the diagonal \cite[(4.2)]{kendall}.
 These observations became a useful tool to study the Dirichlet problem and its relatives;
 they allowed to extend a number of results from Hadamard manifolds to Riemannian manifolds of small size
-and more generally to $\CAT(1)$ spaces~\cite{yokota,BFHMSZ,fuglede,serbinowski}. 
+and more generally to $\CAT(1)$ spaces~\cite{yokota,BFHMSZ,fuglede,serbinowski,lytchak-stadler}. 
 
 Our original goal was to make this tool transparent for geometers.
 Corollary~\ref{cor} can be considered as a more geometric version of this tool.
@@ -87,7 +87,7 @@ We will need the following definition, introduced by Stefan Wenger \cite{Wenger-
 for the definitions of ultrafilters and ultracompletions we refer to \cite{Wenger-1comp,guo-wenger,akp}.
 
 A metric space ${\spc{U}}$ is called \emph{$1$-complemented} if for some \emph{non-principal ultrafilter} $\omega$  there exists a short retraction of the ultracompletion ${\spc{U}}^{\omega}$ to~${\spc{U}}$.
-Examples of $1$-complemented spaces include all proper spaces, all CAT(0) spaces and all $L^p$ spaces for $1\leq p\leq \infty$.
+Examples of $1$-complemented spaces include all proper spaces, all CAT(0) spaces and all $L^p$ spaces for $1\leq p\leq \infty$ \cite[Proposition 2.1]{guo-wenger}.
 
 Recall that if ${\spc{U}}$ is $\CAT(\kappa)$, then so is~${\spc{U}}^\omega$. 
 Applying these observations together with Theorem~\ref{thm:retraction:Phi}, we obtain
@@ -102,7 +102,7 @@ Let us list a few existence results which follow from the theorem, assuming that
 \begin{enumerate}[(a)]
 \item\label{dirichlet}   The existence of a solution $u$ of Dirichlet problem on the minimization of energy 
 in $W^{1,2} (\Omega, {\spc{U}})$ on any Lipschitz domain $\Omega$ in a Riemannian manifold with prescribed trace $tr(u)$; see \cite{KS} and \cite[Theorem 1.4]{guo-wenger}.
-\item The existence of a minimal integral $k$-current filling any prescribed boundary in ${\spc{U}}$; 
+\item\label{current} The existence of a minimal integral $k$-current filling any prescribed boundary in ${\spc{U}}$; 
 see \cite{Ambrosio} and \cite[Theorem 3.3]{Wenger-1comp}.
 \item   The existence of a conformally parametrized disc $u:D\to {\spc{U}}$ of minimal area for a given boundary curve $\gamma$, which is a Jordan curve of finite length in ${\spc{U}}$;
 see \cite{LWplateau} and \cite[Theorem 1.2]{guo-wenger}.
@@ -110,7 +110,7 @@ see \cite{LWplateau} and \cite[Theorem 1.2]{guo-wenger}.
 \end{enumerate}
 
 If in the theorem we assume strict inequality $|p-x|< \tfrac\pi2$, then the existence results are known  in all the cases (\ref{dirichlet}--\ref{center}).
-Moreover the uniqueness holds true under this stronger assumption
+Moreover, the uniqueness holds true under this stronger assumption in  the cases (\ref{dirichlet}), (\ref{current}), and (\ref{center}); see
 \cite{yokota,serbinowski}.
 In our boundary case uniqueness definitely fails;
 for example geodesics between points in a round hemisphere are not unique.
@@ -137,7 +137,9 @@ this is a powerful freedom of Alexandrov's world.
 More involved examples of such arguments are given by Dmitry Burago, Sergei Ferleger, and Alexey Kanonenko \cite{BFK}, Paul Creutz~\cite{creutz}, and Stephan Stadler~\cite{stadler}. 
 
 \parbf{Acknowledgements.}
-We thank Christine Brenier and Nicola Gigli for helpful comments.
+We thank Christine Brenier,
+Nicola Gigli,
+and the anonymous referee for helpful comments.
 A. Lytchak was partially supported by DFG grant SPP 2026.
 A. Petrunin was partially supported by Simons foundation collaboration grant for mathematicians 584781.
 
@@ -158,26 +160,26 @@ More formally, suppose $\gamma\:[a,b]\to \spc{U}$ is a 1-Lipschitz curve.
 An $r$-tractrix with respect to $\gamma$ is defined as a gradient curve for the time-dependent family of functions 
 \[f_t=- \max\{r,\dist_{\gamma(t)}\};\]
 here $\dist_{x}$ denotes the distance function from the point $x$.
-We also assume that the initial point lies in $\bar B[\gamma(a),r]$.
-(We denote by $\bar B[x,r]$ and $B(x,r)$ the closed and open balls of radius $r$ centered at $x$.) 
+We also assume that the initial point lies in $\bar B(\gamma(a),r)$.
+(We denote by $\bar B(x,r)$ and $B(x,r)$ the closed and open balls of radius $r$ centered at $x$.) 
 
 The $r$-\emph{tractrix flow} with respect to $\gamma$ is defined as a family of maps
-\[\phi_t\:\bar B[\gamma(a),r]\z\to\bar B[\gamma(t),r]\]
-whose trajectory  $t\mapsto \phi_t(p)$ is the $r$-tractrix starting at $p\in \bar B[\gamma(a),r]$.
+\[\phi_t\:\bar B(\gamma(a),r)\z\to\bar B(\gamma(t),r)\]
+whose trajectory  $t\mapsto \phi_t(p)$ is the $r$-tractrix starting at $p\in \bar B(\gamma(a),r)$.
 
 The following proposition includes the properties of the tractrix flow which will be used further in the paper.
 
 \begin{thm}{Proposition}\label{prop-def}
 Let $\gamma\:[a,b]\to \spc{U}$ be a 1-Lipschitz curve in a complete length $\CAT(\kappa)$ space $\spc{U}$ for some $\kappa\le 1$
 and $r<\pi$.
-Set $B_t=\bar B[\gamma(t),r]$.
+Set $\bar B_t=\bar B(\gamma(t),r)$.
 Then the $r$-tractrix flow $\phi_t\:\bar B_a\to\bar B_t$ is uniquely defined.
 Moreover
 \begin{enumerate}[(a)]
 \item  \label{approx} For any $t$, the map $\phi_t$ is a limit of compositions $\theta_{t_n} \circ \dots\circ \theta_{t_0}$
 for $\delta \to 0$, where $a=t_0<\dots<t_n=t$ is any partition of $[a,t]$ with $|t_i-t_{i-1}|<\delta$
-and where $\theta_{t_i} : B_{t_{i-1}}\to  B_{t_i}$  denotes the closest point projection.
-\item \label{sharafutdinov} If the family of balls $B_t$ is decreasing in $t$ (that is, if $B_{t_1}\supset B_{t_2}$ for $t_1<t_2$), then $\phi_b$ is a strong deformation retraction from $B_a$ to $B_b$.
+and where $\theta_{t_i} : \bar B_{t_{i-1}}\to  \bar B_{t_i}$  denotes the closest point projection.
+\item \label{sharafutdinov} If the family of balls $\bar B_t$ is decreasing in $t$ (that is, if $\bar B_{t_1}\supset \bar B_{t_2}$ for $t_1<t_2$), then $\phi_b$ is a strong deformation retraction from $\bar B_a$ to $\bar B_b$.
 \item \label{non-strict} If $r=\tfrac\pi2$, then $\phi_t$ is short for any $t$;
  \item\label{strict} If $r=\tfrac\pi2$ and  $\kappa<1$, then there is a positive constant $\eps$ such that the local Lipschitz constant of $\phi_t$ at $p$ is bounded above by $\exp(-\eps\cdot\ell)$, 
  where $\ell=|p-\phi_t(p)|_{\spc{U}}$.
@@ -185,7 +187,7 @@ and where $\theta_{t_i} : B_{t_{i-1}}\to  B_{t_i}$  denotes the closest point pr
 \end{thm}
 
 Historically the first relative of the tractrix flow
-is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $B_t$). 
+is the so called \emph{Sharafutdinov's retraction} \cite{sharafutdinov} --- a family of maps associated to a continuous family of convex sets (in our case these sets are the balls $\bar B_t$). 
 Second relative is the \emph{pursuer flow} introduced and studied by Stephanie Alexander, Richard Bishop, Robert Ghrist and Chanyoung Jun \cite{ABG,jun-thesis,jun,jun:grad}.
 
 Time-dependent gradient flows were studied by Chanyoung Jun \cite{jun-thesis,jun:grad}, by Lucas C. F. Ferreira and Julio C. Valencia-Guevara \cite{ferreira-valencia}, and by Alexander Mielke, Riccarda Rossi, and Giuseppe Savar\'{e} \cite{mielke-rossi-savare}.
@@ -203,14 +205,14 @@ By \ref{prop:time-dependent}, if $\phi_t(p)$ is defined, then it is unique.
 
 Consider the function $\ell(t)\z=|\phi_t(p)-\gamma(t)|$.
 By the definition of the flow, we have that $\ell'\le 0$ if $\ell> r$.
-It follows that $\phi_t$ is defined for all $t$ and maps $B_a$ to $B_t$.
+It follows that $\phi_t$ is defined for all $t$ and maps $\bar B_a$ to $\bar B_t$.
 
 
 \parit{(\ref{approx}).} 
 Given a partition $a=t_0<t_1<\dots<t_n=t$ with $|t_i -t_{i-1}|<\delta$, consider a locally constant approximation $\hat f_t$ of the family $f_t$ defined by $\hat f_t=f_{t_i}$ if $t_i\le t  < t_{i+1}$.
 Denote by $\hat\phi_t$ the corresponding flow.
 
-Given $p\in B_a$, set $p_i=\hat\phi_{t_i}(p)$.
+Given $p\in \bar B_a$, set $p_i=\hat\phi_{t_i}(p)$.
 Observe that $p_{i}=\theta_{t_i}(p_{i-1})$ for each $i$.
 
 By the distance estimate (\ref{Distance estimate}) the flow $\hat\phi_t$ converges to $\phi_t$ as the partition gets finer and finer, hence the result.
@@ -222,7 +224,7 @@ By the distance estimate (\ref{Distance estimate}) the flow $\hat\phi_t$ converg
 \parit{(\ref{non-strict}).} 
 Applying the distance estimate (\ref{Distance estimate}) for $s=0$, we get that 
 \[|\phi_t(p)-\phi_t(q)|\le |p-q|\cdot e^{\lambda\cdot (t-a)}\]
-for any $p,q\in B_a$, $t\ge a$.
+for any $p,q\in \bar B_a$, $t\ge a$.
 If $r\le \tfrac\pi2$, then the inequality holds for arbitrary $\lambda> 0$;
 hence (\ref{non-strict}) follows.
 
@@ -232,7 +234,7 @@ hence (\ref{non-strict}) follows.
  
  
  There exists some $\eps>0$ such that 
- the closest point projection $\theta:\bar B[w,\frac \pi 2 +\eps ]\to\bar B[w,\frac \pi  2]$  in any $\CAT(\kappa)$ is strictly short and satisfies 
+ the closest point projection $\theta:\bar B(w,\frac \pi 2 +\eps)\to\bar B(w,\frac \pi  2)$  in any $\CAT(\kappa)$ is strictly short and satisfies 
  \[|\theta (p) -\theta (q)| \leq e^{-\eps\cdot |\theta (p) -p|}\cdot|p-q|.\]
 \qedsf
 
@@ -267,18 +269,26 @@ moreover ${\spc{U}}$ and $\spc{J}$ are convex subsets in $\spc{W}$.
 
 
 Let $\gamma$ be the geodesic in $\spc{W}$ from $p$ to the pole $s$ of $\spc{J}$.
-Set $B_t=\bar B[\gamma(t),\tfrac\pi2]_{\spc{W}}$, then
+Set $\bar B_t=\bar B(\gamma(t),\tfrac\pi2)_{\spc{W}}$, then
 \begin{itemize}
-\item $B_0=\bar B[p,\tfrac\pi2]_{\spc{U}}\cup \spc{J}$,
-\item $B_{\frac\pi2}=\spc{J}$, in particular $B_{\frac\pi2}\cap \spc{U}=K$,
-\item the family $B_t$ is decreasing in $t$.
+\item $\bar B_0=\bar B(p,\tfrac\pi2)_{\spc{U}}\cup \spc{J}$,
+\item $\bar B_{\frac\pi2}=\spc{J}$, in particular $\bar B_{\frac\pi2}\cap \spc{U}=K$,
+\item the family $\bar B_t$ is decreasing in $t$.
 \end{itemize}
-According to \ref{prop-def}(\ref{sharafutdinov}), the $\tfrac\pi2$-tractrix flow $\phi_t$ is a strong deformation retraction of $B_0$ to $B_{\frac\pi2}$.
+To see the last statement, note that $\spc{J}\subset \bar B_0$.
+Further, by definition of a spherical join we have $|x-p|_{\spc{W}} \le |x\z-\gamma (s)|_{\spc{W}}$ for any $x\in K$.
+By construction of the metric on $\spc{W}$ the same inequality holds for any
+$x\in \spc{U}$,
+Therefore $\bar B_s\subset \bar B_0$.
+Finally, by $\CAT(1)$ comparison, $\bar B_t\supset \bar B_s\cap \bar B_0=\bar B_s$ for any $s\ge t \ge 0$.
+
+
+According to \ref{prop-def}(\ref{sharafutdinov}), the $\tfrac\pi2$-tractrix flow $\phi_t$ is a strong deformation retraction of $\bar B_0$ to $\bar B_{\frac\pi2}$.
 By \ref{prop-def}(\ref{non-strict}) $\phi_{\frac\pi2}$ is a short.
 If $\kappa<1$, then by \ref{prop-def}(\ref{strict}), $\phi_{\frac\pi2}$ is a strictly short retraction.
 
 Since ${\spc{U}}$ is $\CAT(1)$,
-given a point $x\in B(p,\pi)$ there is unique geodesic $\gamma_x$ parametrized by its length from $p$ to $x$. 
+given a point $x\in B(p,\pi)_{\spc{U}}$ there is unique geodesic $\gamma_x$ parametrized by its length from $p$ to $x$. 
 By $\CAT(1)$ comparison, the map 
 \[\Theta(x)=
 \begin{cases}
@@ -287,7 +297,7 @@ p&\text{if\ }|p-x|_{\spc{U}}\ge \pi,
 \gamma_x(\pi-|p-x|_{\spc{U}})&\text{if\ }|p-x|_{\spc{U}}< \pi.
 \end{cases}
 \]
-is a short retraction of ${\spc{U}}$ to $\bar B[p,\tfrac\pi2]_{\spc{U}}=B_0\cap \spc{U}$.
+is a short retraction of ${\spc{U}}$ to $\bar B(p,\tfrac\pi2)_{\spc{U}}=\bar B_0\cap \spc{U}$.
 Moreover $\Theta$ is strictly short retraction if $\kappa<1$.
 
 Therefore the composition $\Phi=\phi_{\frac\pi2}\circ\Theta$ induces a short retraction of ${\spc{U}}$ to $K$
@@ -379,7 +389,7 @@ the function $(x,t)\mapsto f_t(x)$ is $L$-Lipschitz for some constant $L$.
 
 A family of functions $f_t$ will be called \emph{semiconcave} if 
 the function $x\mapsto f_t(x)$ is $\lambda$-concave for each $t$.
-A family $f_t$ is called \emph{locally semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is semiconcave. 
+A family $f_t$ is called \emph{locally semiconcave} if for each $(p_0,t_0)\in \Omega$ there is a neighborhood $\Omega'$ and $\lambda\in\RR$ such that the restriction of $f_t$ to $\Omega'$ is $\lambda$-concave. 
 
 Note that one cannot expect that a direct generalization of equation \ref{grad-flow} holds for any family of functions $f_t$.
 
@@ -408,10 +418,12 @@ Let $f_t$ and $h_t$ be two families of $\lambda$-concave functions on a $\CAT(\k
 Assume $f_t$ and $h_t$ have common domain $\Omega\subset {\spc{U}}\times \RR$ and $|f_t(x)-h_t(x)|\le s$ for any $(x,t)\in \Omega$.
 Assume $t\mapsto \alpha(t)$ and $t\mapsto \beta(t)$ are $f_t$- and $h_t$-gradient curves respectively defined on a common interval $t\in [a,b)$; set $\ell(t)\z=|\alpha(t)\z-\beta(t)|_{\spc{U}}$.
 If for all $t$ a minimizing geodesic $[\alpha(t)\,\beta(t)]$ lies in $\set{x\in {\spc{U}}}{(x,t)\in \Omega}$, then
-\[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),\]
+\[\ell'(t)\le \lambda\cdot\ell(t)+2\cdot s/\ell(t),
+\eqlbl{eq:ell'=<}\]
 assuming that the left hand side is defined.
 Moreover
-\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(a)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot (t-a)}.\]
+\[\ell(t)^2+\tfrac{2\cdot s}\lambda\le(\ell(a)^2+\tfrac{2\cdot s}\lambda)\cdot e^{2\cdot\lambda\cdot (t-a)}.
+\eqlbl{eq:ell2=<}\]
 
 In particular the inequalities hold for any $t\in\II$ if $\Omega\supset B(p,2\cdot r)\times \II$ and $\alpha(t),\beta(t)\z\in B(p, r)$ for any $t\in \II$.
 \end{thm}
@@ -452,7 +464,7 @@ for $\eps>0$; hence the statement.
 
 Since $\alpha$ and $\beta$ are Lipschitz, $t\mapsto \ell(t)$ is a Lipschitz function.
 By Rademacher's theorem, its derivative $\ell'$ is defined almost everywhere and it satisfies the fundamental theorem of calculus.
-Therefore the first inequality implies the second one.
+Therefore \ref{eq:ell'=<} implies \ref{eq:ell2=<}.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:def-time-dependent}
@@ -573,8 +585,9 @@ that is,
 $\Phi(x)\in K$ for any $x\in \spc{U}$
 and 
 $\Phi(k)=k$ for any $k\in K$.
-It remains to show that $x\mapsto x'$ is short; 
-the latter can be done by straightforward calculations.
+
+It remains to show that $x\mapsto x'$ is short which can be done by straightforward lengthy computations.
+We leave it as an advanced exercise to the reader.
 \qeds
 
 {\small\sloppy

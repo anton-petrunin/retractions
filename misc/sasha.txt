@@ -1,0 +1,55 @@
+Тоша, привет!
+
+Кто-то дотошный попался нам ка рецензент. Есть у меня подозрение ... Спасибо ему, что почитал внимательно.
+
+
+Вот что я думаю по его замечаниям:
+
+1)  Можно поменять "$\bar B[p,r]$ "  to "$\bar B(p,r)$".
+That's your choice.
+
+2) Add  after "$1\leq p \leq \infty$",  the reference ", [7, Proposition 2.1]."
+
+3) Change the phrase (alsa insert  "," after "Moreover" )
+"Moreover,  the uniqueness holds true under this stronger assumption in (a), (b) and (d), see [2,5]".
+
+4) Add after the bullets something like:
+"To see the validity of the last statement we can argue as follows.  By CAT(1) convexity comparison,  for $s\geq t \qeq 0$ the ball
+$B_t$  contains the intersection of $B_s$ and $B_{0$.  It thus remains to prove  $B_s\subset B_0$.
+However, $J\subset B_0$. Furthermore, for any $x\in K$ we have $d(x,p) \leq d(x, \gamma (s))$, by definition of a spherical join.
+By construction of the metric on $W$ the same inequality holds for all
+$p\in U$, thus finishing the proof of the inclusion".
+
+5)  It does not matter, but write "$B(x,p)\cap U$" instead of "$B(x,p)$".
+
+
+
+6) Yes, do as suggested.
+
+7) I would also do as suggested, assign to  the inequalities some numbers.
+
+
+8) The main point.  I would not include the calculations.  I would  replace the last sentence by something like
+"It is possible to see  that the constructed retraction $x\to x'$ is short. Unfortunately, the only proof we have  requires some non-trivial and somewhat lengthy  computations. We leave the possibly existing  shorter proof  along these lines to the interested reader."
+
+
+And I would write in a separate letter, that we have followed all advices of the referee but the last one.  We have not presented the calculations finishing the alternative proof due to their length and the fact that we do not know how to explain the calculations in a geometric way.
+
+
+I would also add to the acknowledgements  after "Brenier" the words  "and the anonymous referee"
+
+
+Can we also add on page 2 at the and of the first paragraph to
+[2-5] a reference to my paper with Stephan Stadler:
+
+Alexander Lytchak and Stephan Stadler
+"Improvements of upper curvature bounds"
+To appear in Trans. Amer. Math. Soc.
+2020
+arXiv: 1910.05287
+
+
+
+Что ты скажешь?
+
+Саша
